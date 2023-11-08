@@ -1,0 +1,95 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="TrangChu.Master.cs" Inherits="NonBaoHiemRoyalHelmet.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Royal Helmet</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="css/Style.css" rel="stylesheet"/>
+    <link href="css/Font.css" rel="stylesheet"/>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header class="Header">
+            <div class="Header-list">
+                <ul style="display:flex; justify-content:space-around; align-items:center; list-style-type:none";>
+                   <li><a href=" " targer="_self" class="Header-lk">Home</a></li>
+                   <li><a href=" " targer="_self" class="Header-lk">Sản phẩm</a></li>
+                   <li><a href=" " targer="_self" class="Header-lk">Về chúng tôi</a></li>
+                   <li><a href=" " targer="_self" class="Header-lk">Liên hệ</a></li>
+               </ul>
+            </div>
+
+            <div class="Header-line">
+                <hr width="100%" align="center" color="#e8bd72"/>
+            </div>
+
+            <div class="Header-funtion">
+                <div>
+                    <img class="logo" src="image/RoyalHelmet-logo.png" style="text-align: center" />
+                </div>
+            </div>
+        </header>
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+
+        <footer class="Footer">
+            <div class="Footer-decor">
+                <h3 style="color: #ffffff; font-size: 36px; line-height: 40px; margin: 0px 0px 18px; text-align: center;"><i>CHÀO MỪNG ĐẾN VỚI</i><br />
+                    <span style="color: #e8bd72; font-size: 36px; font-weight: 700; line-height: 40px; text-align: center;">ROYAL HELMET</span></h3>
+            </div>
+
+            <div class="Footer-title">
+                <h3 class="Footer-heading">ROYAL HELMET</h3>
+                <ul class="Footer-list">
+                    <li class="Footer-list-item">Địa chỉ: KCN Vĩnh Lộc, Huyện Bình Chánh, Tp.HCM</li>
+                    <li class="Footer-list-item">Điện thoại: 1900636066</li>
+                    <li class="Footer-list-item">Email: info@royalhelmet.com.vn</li>
+                    <li class="Footer-list-item">Website: www.royalhelmet.com.vn</li>
+                </ul>
+            </div>
+
+            <div class="Footer-title">
+                <h3 class="Footer-heading">SHOWROOM</h3>
+                <ul class="Footer-list">
+
+                    <li class="Footer-list-item">
+                        <h5>Hà Nội</h5>
+                    </li>
+                    <li class="Footer-list-item">Địa Chỉ: 466 đường Bưởi, P. Vĩnh Phúc, Q. Ba Đình, Hà Nội</li>
+                    <li class="Footer-list-item">Điện thoại: 08 38 38 44 66</li>
+                    <li class="Footer-list-item">
+                        <h5>Hồ Chi Minh</h5>
+                    </li>
+                    <li class="Footer-list-item">Địa Chỉ: 147 Đồng Đen, Phường 11, Quận Tân Bình</li>
+                    <li class="Footer-list-item">Điện thoại: 0903.891.499</li>
+                </ul>
+            </div>
+
+            <div class="Footer-title">
+                <h3 class="Footer-heading">SOCIAL MEDIA</h3>
+                <ul class="Footer-list">
+                    <li class="Footer-list-item">
+                        <a href="" target="_blank" class="Footer-item-link">Facebook</a>
+                    </li>
+                    <li class="Footer-list-item">
+                        <a href="" target="_blank" class="Footer-item-link">TikTok</a>
+                    </li>
+                    <li class="Footer-list-item">
+                        <a href="" target="_blank" class="Footer-item-link">Youtube</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="Footer-line">
+                <hr width="80%" align="center" color="#e8bd72"/>
+            </div>
+
+            
+        </footer>
+    </form>
+</body>
+</html>
