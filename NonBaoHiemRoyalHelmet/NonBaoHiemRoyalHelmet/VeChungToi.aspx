@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/TrangChu.Master" AutoEventWireup="true" CodeBehind="VeChungToi.aspx.cs" Inherits="NonBaoHiemRoyalHelmet.DanhSachSanPham" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -17,7 +18,7 @@
                 </div>
             </div>
 
-           <%-- <div class="VCT-123">
+            <%-- <div class="VCT-123">
                 <div class="VCT-p">
                     <p>Ngoài sự nỗ lực của ban lãnh đạo, toàn thể cán bộ công nhân viên, sức mạnh chính tạo nên sự thành công ấy chính là tiêu chí lấy khách hàng làm trung tâm, luôn lắng nghe, thấu hiểu khách hàng để tạo ra những sản phẩm hoàn hảo, mang lại sự hài lòng cao nhất cho người sử dụng. “Niềm tin khách hàng là sự thành công lớn nhất của chúng tôi”. Với tiêu chí ấy, các thương hiệu mũ bảo hiểm Royal, ROC, ROYCE, KIO...liên tục đạt được các chứng chỉ cao nhất về chất lượng trong nước cũng như quốc tế. Mũ bảo hiểm Royal, ROC, JC nhiều năm liền được người tiêu dùng bình chọn là Hàng Việt Nam Chất Lượng Cao...Đây là thước đo cao nhất của người tiêu dùng dành cho một thương hiệu Việt.</p>
                 </div>
