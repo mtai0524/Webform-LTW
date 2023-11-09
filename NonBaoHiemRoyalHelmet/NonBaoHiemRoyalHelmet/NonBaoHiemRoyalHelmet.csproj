@@ -77,6 +77,8 @@
   <ItemGroup>
     <Content Include="css\Font.css" />
     <Content Include="css\Style.css" />
+    <Content Include="image\Home\spnb1.jpg" />
+    <Content Include="image\Home\spnb2.jpg" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>

@@ -40,9 +40,21 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<div style="margin-top: -27px; background-color: #0F1A2C; width: 100%; height: 250px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <div class="VCT-title">
+        <span style="font-size: 18px; margin-top:-100px"><b>———————————————— SẢN PHẨM NỔI BẬT ————————————————</b></span>
+    </div>
+    <div style="display: flex; width: 100%; justify-content: center; align-items: center; height: 200px;margin-top:-40px">
+        <img style="width: 350px; height: 150px; margin: 0 10px;" src="image/Home/spnb2.jpg" />
+        <img style="width: 350px; height: 150px; margin: 0 10px;" src="image/Home/spnb1.jpg" />
+    </div>
+</div>
+
     <div class="VCT-aspx" style="text-align: center">
+
         <p>Phan Đức Lê Nam - 2121001091</p>
         <div class="VCT-title">
+
             <span><b>———————————————— MŨ BẢO HIỂM ————————————————</b></span>
         </div>
         <h13 style="font-size: 12px">Chúng tôi lấy chất lượng sản phẩm làm kim chỉ nam trong mọi hoạt động góp phần bảo vệ con người.</h13>
@@ -63,6 +75,6 @@
                 <li><a href="#">Mũ bảo hiểm xe đạp</a></li>
             </ul>
         </div>
-        <asp:DetailsView ID="DetailsView1" runat="server" Height="194px" Width="400px"></asp:DetailsView>
+        <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="125px"></asp:DetailsView>
     </div>
 </asp:Content>
