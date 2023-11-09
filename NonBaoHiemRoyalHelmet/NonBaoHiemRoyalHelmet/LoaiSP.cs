@@ -11,7 +11,8 @@ namespace NonBaoHiemRoyalHelmet
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations.Schema;
     public partial class LoaiSP
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,7 +20,6 @@ namespace NonBaoHiemRoyalHelmet
         {
             this.SanPhams = new HashSet<SanPham>();
         }
-    
         public string MaLoaiSP { get; set; }
         public string TenLoaiSP { get; set; }
     

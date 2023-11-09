@@ -11,35 +11,60 @@ namespace NonBaoHiemRoyalHelmet
 {
     public partial class Site1 : System.Web.UI.MasterPage
     {
+        private string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=QuanLyBanHangRoyalHelmet;Integrated Security=True";
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                DisplayData();
+            }
         }
-
-        protected void btnConnect_Click(object sender, EventArgs e)
+        public void DisplayData()
         {
-            //string connectionString = ConfigurationManager.ConnectionStrings["ConnectionStringName"].ConnectionString;
-            //using (SqlConnection connection = new SqlConnection(connectionString))
-            //{
-            //    connection.Open();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
 
-            //    // Thực hiện truy vấn để lấy dữ liệu từ database
-            //    string query = "SELECT * FROM QuanLyBanHangRoyalHelmet";
-            //    SqlCommand command = new SqlCommand(query, connection);
-            //    SqlDataReader reader = command.ExecuteReader();
+                // Truy vấn dữ liệu
+                string query = "SELECT * FROM LoaiSP";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        // hiển thị data trong GridView
+                        GridView1.DataSource = reader;
+                        GridView1.DataBind();
 
-            //    // Xử lý dữ liệu lấy được, ví dụ: hiển thị trong một label
-            //    while (reader.Read())
-            //    {
-            //        string data = reader["TenCot"].ToString();
-            //        // Hiển thị dữ liệu lấy được trên trang
-            //        lbShow.Text = data;
-            //    }
+                        GridView1.HeaderRow.Cells[0].Text = "Mã Loại SP";
+                        GridView1.HeaderRow.Cells[1].Text = "Tên Loại SP";
+                    }
+                }
 
-            //    // Đóng kết nối
-            //    connection.Close();
-            //}
-            SqlDataSource1.DataBind();
+                // Đóng kết nối
+                connection.Close();
+            }
+        }
+    protected void btnConnect_Click(object sender, EventArgs e)
+        {
+            //SqlDataSource1.DataBind();
+
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    lbStatus.Text = "Kết nối thành công!";
+                }
+                catch (Exception ex)
+                {
+                    lbStatus.Text = "Lỗi kết nối: " + ex.Message;
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
         }
     }
 }

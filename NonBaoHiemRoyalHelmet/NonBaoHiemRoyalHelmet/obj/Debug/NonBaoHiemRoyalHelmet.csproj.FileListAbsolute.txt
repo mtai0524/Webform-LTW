@@ -175,3 +175,7 @@ E:\Project Webform\Webform-LTW\NonBaoHiemRoyalHelmet\NonBaoHiemRoyalHelmet\obj\D
 E:\Project Webform\Webform-LTW\NonBaoHiemRoyalHelmet\NonBaoHiemRoyalHelmet\obj\Debug\NonBaoHiemRoyalHelmet.csproj.CopyComplete
 E:\Project Webform\Webform-LTW\NonBaoHiemRoyalHelmet\NonBaoHiemRoyalHelmet\obj\Debug\NonBaoHiemRoyalHelmet.dll
 E:\Project Webform\Webform-LTW\NonBaoHiemRoyalHelmet\NonBaoHiemRoyalHelmet\obj\Debug\NonBaoHiemRoyalHelmet.pdb
+E:\Project Webform\Webform-LTW\NonBaoHiemRoyalHelmet\NonBaoHiemRoyalHelmet\bin\EntityFramework.dll
+E:\Project Webform\Webform-LTW\NonBaoHiemRoyalHelmet\NonBaoHiemRoyalHelmet\bin\EntityFramework.SqlServer.dll
+E:\Project Webform\Webform-LTW\NonBaoHiemRoyalHelmet\NonBaoHiemRoyalHelmet\bin\EntityFramework.xml
+E:\Project Webform\Webform-LTW\NonBaoHiemRoyalHelmet\NonBaoHiemRoyalHelmet\bin\EntityFramework.SqlServer.xml

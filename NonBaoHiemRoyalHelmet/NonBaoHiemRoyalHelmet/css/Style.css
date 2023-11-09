@@ -1,5 +1,10 @@
 ﻿.body {
-    
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 * {
@@ -11,10 +16,23 @@
 }
 
 
+/*danh sách tên sp*/
+
+
+
+
 /*Header*/
+
+
 .Header {
     background-color: #0f1a2c;
     padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px; /* Tùy chọn: Thêm padding để tạo khoảng trắng xung quanh */
 }
 
 
@@ -52,7 +70,7 @@
 
 .Footer-list-item {
     padding-left: 0;
-    list-style: none;   
+    list-style: none;
 }
 
 .Footer-item-link {
@@ -120,4 +138,3 @@
     padding-left: 20px;
     padding-right: 20px;
 }
-

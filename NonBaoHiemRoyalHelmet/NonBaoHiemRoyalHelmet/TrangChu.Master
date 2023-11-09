@@ -9,6 +9,30 @@
     </asp:ContentPlaceHolder>
     <link href="css/Style.css" rel="stylesheet"/>
     <link href="css/Font.css" rel="stylesheet"/>
+    <style>
+        .logo {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .Header {
+            background-color: #103151;
+            padding-top: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .Header-list li {
+            margin-right: 20px;
+        }
+
+            .Header-list li a {
+                font-size: 1.2rem;
+            }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -16,37 +40,34 @@
             <div class="Header-list">
                 <ul style="display:flex; justify-content:space-around; align-items:center; list-style-type:none";>
                    <li><a href="Home.aspx" targer="_self" class="Header-lk">Home</a></li>
-                   <li><a href="SanPham.aspx" targer="_self" class="Header-lk">Sản phẩm</a></li>
-                   <li><a href="Vechungtoi.aspx" targer="_self" class="Header-lk">Về chúng tôi</a></li>
+                   <li><a style="margin-right:25px" href="SanPham.aspx" targer="_self" class="Header-lk">Sản phẩm</a></li>
+                   <li><a style="margin-left:40px" href="Vechungtoi.aspx" targer="_self" class="Header-lk">Về chúng tôi</a></li>
                    <li><a href="#" targer="_self" class="Header-lk">Liên hệ</a></li>
                </ul>
             </div>
-
             <div class="Header-line">
-                <hr width="100%" align="center" color="#e8bd72"/>
+                <hr width="2000vh" align="center" color="#e8bd72"/>
             </div>
+          <div class="Header-funtion">
+    <div>
+        <img class="logo" src="image/RoyalHelmet-logo.png" style="text-align: center; margin-top:-30px; width:3.2rem" />
+    </div>
+              <div style="margin-top:-24px;background-color:#0F1A2C; width:200vh; height:100px">
 
-            <div class="Header-funtion">
-                <div>
-                    <img class="logo" src="image/RoyalHelmet-logo.png" style="text-align: center" />
-                </div>
-            </div>
+              </div>
+</div>
+
         </header>
 
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                    <asp:Button ID="btnConnect" runat="server" OnClick="btnConnect_Click" Text="Connect" />
                     <br />
-                    <asp:Label ID="lbShow" runat="server" Text="Label"></asp:Label>
                 </asp:ContentPlaceHolder>
 
 
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="MaLoaiSP" DataSourceID="SqlDataSource1">
-            <Columns>
-                <asp:BoundField DataField="MaLoaiSP" HeaderText="MaLoaiSP" ReadOnly="True" SortExpression="MaLoaiSP" />
-                <asp:BoundField DataField="TenLoaiSP" HeaderText="TenLoaiSP" SortExpression="TenLoaiSP" />
-            </Columns>
+        <asp:GridView ID="GridView1" runat="server">
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:QuanLyBanHangRoyalHelmetConnectionString %>" ProviderName="<%$ ConnectionStrings:QuanLyBanHangRoyalHelmetConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [LoaiSP]"></asp:SqlDataSource>
+        <asp:Label ID="lbStatus" runat="server" Text="Trạng thái"></asp:Label>
+                    <asp:Button ID="btnConnect" runat="server" OnClick="btnConnect_Click" Text="Connect" />
 
 
         <footer class="Footer">
