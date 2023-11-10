@@ -11,7 +11,7 @@ namespace NonBaoHiemRoyalHelmet
 {
     public partial class Site1 : System.Web.UI.MasterPage
     {
-        private string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=QuanLyBanHangRoyalHelmet;Integrated Security=True";
+        private string connectionString = ConfigurationManager.ConnectionStrings["QuanLyBanHangRoyalHelmetConnectionString"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
