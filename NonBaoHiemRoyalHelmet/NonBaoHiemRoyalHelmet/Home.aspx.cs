@@ -15,7 +15,6 @@ namespace NonBaoHiemRoyalHelmet
     {
         private readonly QuanLyBanHangContext context = new QuanLyBanHangContext(); // có thể thay bằng QuanLyBanHangRoyalHelmetEntities do ADO tự tạo trước
 
-        StringBuilder danhSachSp = new StringBuilder();
 
         private string connectionString = ConfigurationManager.ConnectionStrings["QuanLyBanHangRoyalHelmetConnectionString"].ConnectionString;
 
@@ -27,23 +26,16 @@ namespace NonBaoHiemRoyalHelmet
             {
                 try
                 {
-                    StringBuilder danhSachSp = new StringBuilder();
-                    // Thực hiện truy vấn LINQ để lấy dữ liệu từ cơ sở dữ liệu
-                    var result = context.SanPham.ToList();
-
-                    // In kết quả
-                    foreach (var item in result)
-                    {
-                        danhSachSp.AppendLine($" <br/> Id: {item.MaSP}, Name: {item.TenSP} ");
-                    }
-                    Label1.Text = danhSachSp.ToString();
-
-
                     // repeater hien thi danh sach san pham
-                    var listSp = context.SanPham.ToList();
-                    rptListProd.DataSource = listSp;
+                    var listSp = context.SanPham.Take(10).ToList(); // lấy 10 sản phẩm từ vị trí thứ 5
+                    rptListProd.DataSource = listSp.Select(sp => new
+                    {
+                        HinhAnh = sp.HinhAnh,
+                        TenSp = sp.TenSP,
+                        GiaBan = sp.GiaBan,
+                        DetailUrl = $"ChiTiet.aspx?MaSanPham={sp.MaSP}"
+                    });
                     rptListProd.DataBind();
-
                 }
                 catch (Exception ex)
                 {

@@ -65,13 +65,14 @@
       <PropertyRef Name="MaSP" />
     </Key>
     <Property Name="MaSP" Type="nchar" MaxLength="6" Nullable="false" />
-    <Property Name="TenSP" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="MoTa" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="TrongLuong" Type="nvarchar" MaxLength="10" Nullable="false" />
-    <Property Name="KichCo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenSP" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="TrongLuong" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="KichCo" Type="nvarchar" MaxLength="200" Nullable="false" />
     <Property Name="SoLuongTon" Type="int" Nullable="false" />
     <Property Name="GiaBan" Type="int" Nullable="false" />
     <Property Name="MaLoaiSP" Type="nchar" MaxLength="4" Nullable="false" />
+    <Property Name="HinhAnh" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>

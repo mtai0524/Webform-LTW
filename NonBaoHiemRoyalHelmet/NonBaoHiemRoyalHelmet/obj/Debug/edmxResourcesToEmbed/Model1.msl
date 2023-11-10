@@ -76,6 +76,7 @@
           <ScalarProperty Name="SoLuongTon" ColumnName="SoLuongTon" />
           <ScalarProperty Name="GiaBan" ColumnName="GiaBan" />
           <ScalarProperty Name="MaLoaiSP" ColumnName="MaLoaiSP" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

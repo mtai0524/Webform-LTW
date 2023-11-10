@@ -27,7 +27,7 @@
 
                 .horizontal-list li a {
                     text-transform: uppercase;
-                    font-size: 8px;
+                    font-size: 12px;
                     text-decoration: none;
                     color: #103151;
                     font-weight: bold;
@@ -37,30 +37,36 @@
                         color: #bf924a;
                     }
 
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Đưa danh sách vào giữa */
-}
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Đưa danh sách vào giữa */
+        }
 
-.card {
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin: 10px;
-    width: 200px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+        .card {
+            border: 1px solid #ddd;
+            padding-top: 15px;
+            margin: 10px;
+            width: 200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-.card img {
-    width: 100%;
-    height: auto;
-}
+            .card img {
+                width: 100%;
+                height: auto;
+            }
 
-.card-body {
-    text-align: center;
-}
+        .card-body {
+            text-align: center;
+            background-color: #E8BD72;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
 
-
+            .card-body:hover h3 {
+                font-weight: 800;
+                color: #FFFFFF;
+            }
     </style>
 
 </asp:Content>
@@ -99,22 +105,24 @@
                 <li><a href="#">Mũ bảo hiểm xe đạp</a></li>
             </ul>
         </div>
-        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
         <br />
-       <div class="card-container">
-    <asp:Repeater ID="rptListProd" runat="server">
-        <ItemTemplate>
-            <div class="card">
-                <img src='<%# Eval("ImageUrl") %>' alt='<%# Eval("ProductName") %>' />
-                <div class="card-body">
-                    <h3><%# Eval("TenSp") %></h3>
-                    <%--<p>Mô tả: <%# Eval("MoTa") %></p>--%>
-                    <p><%# Convert.ToDecimal(Eval("GiaBan")).ToString("N0") %> ₫</p>  <%--hiển thị tiền dạng việt nam--%>
-                </div>
-            </div>
-        </ItemTemplate>
-    </asp:Repeater>
-</div>
+        <div class="card-container">
+            <asp:Repeater ID="rptListProd" runat="server">
+                <ItemTemplate>
+                    <div class="card">
+                        <a href='<%# Eval("DetailUrl") %>'>
+                            <img src='<%# Eval("HinhAnh") %>' alt='<%# Eval("TenSp") %>' />
+                        </a>
+                        <div class="card-body">
+                            <h3 class="tenSp"><%# Eval("TenSp") %></h3>
+                            <%--<p>Mô tả: <%# Eval("MoTa") %></p>--%>
+                            <p><%# Convert.ToDecimal(Eval("GiaBan")).ToString("N0") %> ₫</p>
+                            <%--hiển thị tiền dạng việt nam--%>
+                        </div>
+                    </div>
+                </ItemTemplate>
+            </asp:Repeater>
+        </div>
 
     </div>
 </asp:Content>

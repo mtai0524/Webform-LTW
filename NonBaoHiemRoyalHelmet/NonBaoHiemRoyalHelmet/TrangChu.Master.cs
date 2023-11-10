@@ -38,6 +38,7 @@ namespace NonBaoHiemRoyalHelmet
                         GridView1.HeaderRow.Cells[0].Text = "Mã Loại SP";
                         GridView1.HeaderRow.Cells[1].Text = "Tên Loại SP";
                     }
+
                 }
 
                 // Đóng kết nối

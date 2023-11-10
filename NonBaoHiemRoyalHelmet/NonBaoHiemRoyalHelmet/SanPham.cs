@@ -28,11 +28,10 @@ namespace NonBaoHiemRoyalHelmet
         public int SoLuongTon { get; set; }
         public int GiaBan { get; set; }
         public string MaLoaiSP { get; set; }
+        public string HinhAnh { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTDH> CTDHs { get; set; }
         public virtual LoaiSP LoaiSP { get; set; }
-        //public string HinhAnh { get; set; }
-
     }
 }

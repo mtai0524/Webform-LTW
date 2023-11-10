@@ -70,13 +70,14 @@
             <PropertyRef Name="MaSP" />
           </Key>
           <Property Name="MaSP" Type="nchar" MaxLength="6" Nullable="false" />
-          <Property Name="TenSP" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="MoTa" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="TrongLuong" Type="nvarchar" MaxLength="10" Nullable="false" />
-          <Property Name="KichCo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TenSP" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="MoTa" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="TrongLuong" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="KichCo" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="SoLuongTon" Type="int" Nullable="false" />
           <Property Name="GiaBan" Type="int" Nullable="false" />
           <Property Name="MaLoaiSP" Type="nchar" MaxLength="4" Nullable="false" />
+          <Property Name="HinhAnh" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -255,13 +256,14 @@
             <PropertyRef Name="MaSP" />
           </Key>
           <Property Name="MaSP" Type="String" MaxLength="6" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="TenSP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="MoTa" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="TrongLuong" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="KichCo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TenSP" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MoTa" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TrongLuong" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KichCo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="SoLuongTon" Type="Int32" Nullable="false" />
           <Property Name="GiaBan" Type="Int32" Nullable="false" />
           <Property Name="MaLoaiSP" Type="String" MaxLength="4" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="HinhAnh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="CTDHs" Relationship="Self.PK_CTDH_SanPham" FromRole="SanPham" ToRole="CTDH" />
           <NavigationProperty Name="LoaiSP" Relationship="Self.FK_SanPham_LoaiSP" FromRole="SanPham" ToRole="LoaiSP" />
         </EntityType>
@@ -445,6 +447,7 @@
                 <ScalarProperty Name="SoLuongTon" ColumnName="SoLuongTon" />
                 <ScalarProperty Name="GiaBan" ColumnName="GiaBan" />
                 <ScalarProperty Name="MaLoaiSP" ColumnName="MaLoaiSP" />
+                <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
