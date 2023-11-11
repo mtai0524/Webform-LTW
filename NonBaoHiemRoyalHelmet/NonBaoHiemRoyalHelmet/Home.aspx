@@ -60,7 +60,7 @@
             text-align: center;
             background-color: #E8BD72;
             padding-top: 15px;
-            padding-bottom: 15px;
+            height:90px;
         }
 
             .card-body:hover h3 {

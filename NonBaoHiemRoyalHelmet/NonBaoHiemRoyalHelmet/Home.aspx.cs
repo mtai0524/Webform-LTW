@@ -27,7 +27,7 @@ namespace NonBaoHiemRoyalHelmet
                 try
                 {
                     // repeater hien thi danh sach san pham
-                    var listSp = context.SanPham.Take(10).ToList(); // lấy 10 sản phẩm từ vị trí thứ 5
+                    var listSp = context.SanPham.Take(15).ToList(); // lấy 15 sản phẩm
                     rptListProd.DataSource = listSp.Select(sp => new
                     {
                         HinhAnh = sp.HinhAnh,
