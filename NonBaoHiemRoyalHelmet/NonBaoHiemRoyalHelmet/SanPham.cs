@@ -22,13 +22,14 @@ namespace NonBaoHiemRoyalHelmet
     
         public string MaSP { get; set; }
         public string TenSP { get; set; }
+        public string Hinh1 { get; set; }
+        public string Hinh2 { get; set; }
         public string MoTa { get; set; }
         public string TrongLuong { get; set; }
         public string KichCo { get; set; }
         public int SoLuongTon { get; set; }
         public int GiaBan { get; set; }
         public string MaLoaiSP { get; set; }
-        public string HinhAnh { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTDH> CTDHs { get; set; }

@@ -76,10 +76,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin\css\my-task.style.min.css" />
+    <Content Include="admin\js\apexcharts.bundle.js" />
+    <Content Include="admin\js\chart-apex.js" />
+    <Content Include="admin\js\hr.js" />
+    <Content Include="admin\js\index.js" />
+    <Content Include="admin\js\libscripts.bundle.js" />
+    <Content Include="admin\js\task.js" />
+    <Content Include="admin\js\template.js" />
     <Content Include="css\Font.css" />
     <Content Include="css\Style.css" />
     <Content Include="image\Home\spnb1.jpg" />
     <Content Include="image\Home\spnb2.jpg" />
+    <Content Include="image\NonBaoHiemHinh2\M20D_white.jpg" />
     <Content Include="image\NonBaoHiem\H01.jpg" />
     <Content Include="image\NonBaoHiem\M138B.jpg" />
     <Content Include="image\NonBaoHiem\m139.jpg" />
@@ -98,6 +107,7 @@
     <Content Include="image\NonBaoHiem\M268.jpg" />
     <Content Include="image\NonBaoHiem\M379.jpg" />
     <Content Include="image\NonBaoHiem\TxtM139.jpg" />
+    <Content Include="ChiTiet.aspx" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -108,7 +118,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <Content Include="ChiTiet.aspx" />
+    <Content Include="QuanTriVien.aspx" />
     <Content Include="SanPham.aspx" />
     <Content Include="VeChungToi.aspx" />
     <Content Include="image\RoyalHelmet-logo.png" />
@@ -119,10 +129,24 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
     <Compile Include="CTDH.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="data\QuanLyBanHangContext.cs" />
+    <Compile Include="ChiTiet.aspx.cs">
+      <DependentUpon>ChiTiet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChiTiet.aspx.designer.cs">
+      <DependentUpon>ChiTiet.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DonHang.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -147,15 +171,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
-    <Compile Include="QuanTriVien.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ChiTiet.aspx.cs">
-      <DependentUpon>ChiTiet.aspx</DependentUpon>
+    <Compile Include="QuanTriVien.aspx.cs">
+      <DependentUpon>QuanTriVien.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ChiTiet.aspx.designer.cs">
-      <DependentUpon>ChiTiet.aspx</DependentUpon>
+    <Compile Include="QuanTriVien.aspx.designer.cs">
+      <DependentUpon>QuanTriVien.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuanTriVien.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="SanPham.aspx.cs">
       <DependentUpon>SanPham.aspx</DependentUpon>
@@ -167,9 +192,6 @@
     <Compile Include="SanPham.cs">
       <DependentUpon>Model1.tt</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="VeChungToi.aspx.cs">
       <DependentUpon>VeChungToi.aspx</DependentUpon>
@@ -204,6 +226,7 @@
     <Content Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <Content Include="Admin.Master" />
     <None Include="packages.config" />
     <Content Include="TrangChu.Master" />
     <None Include="Web.Debug.config">

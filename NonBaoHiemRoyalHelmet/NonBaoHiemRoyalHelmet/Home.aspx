@@ -46,21 +46,31 @@
         .card {
             border: 1px solid #ddd;
             padding-top: 15px;
+            border-radius: 9px;
             margin: 10px;
             width: 200px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
         }
 
             .card img {
                 width: 100%;
                 height: auto;
+                transition: transform 0.3s ease-in-out;
             }
+
+                .card img:hover {
+                    transform: scale(0.8);
+                }
+
 
         .card-body {
             text-align: center;
             background-color: #E8BD72;
             padding-top: 15px;
-            height:90px;
+            height: 90px;
+            border-bottom-left-radius: 9px;
+            border-end-end-radius: 9px;
         }
 
             .card-body:hover h3 {
@@ -111,7 +121,7 @@
                 <ItemTemplate>
                     <div class="card">
                         <a href='<%# Eval("DetailUrl") %>'>
-                            <img src='<%# Eval("HinhAnh") %>' alt='<%# Eval("TenSp") %>' />
+                            <img src='<%# Eval("Hinh1") %>' alt='<%# Eval("TenSp") %>' />
                         </a>
                         <div class="card-body">
                             <h3 class="tenSp"><%# Eval("TenSp") %></h3>
@@ -120,6 +130,7 @@
                             <%--hiển thị tiền dạng việt nam--%>
                         </div>
                     </div>
+
                 </ItemTemplate>
             </asp:Repeater>
         </div>

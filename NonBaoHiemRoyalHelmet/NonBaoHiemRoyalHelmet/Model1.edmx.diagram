@@ -4,14 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="85c18939790745c1ba7cd46b6c6f5716" Name="Diagram1">
+      <Diagram DiagramId="e22a84ad36c7481fb8935128a06e32ec" Name="Diagram1">
         <EntityTypeShape EntityType="QuanLyBanHangRoyalHelmetModel.CTDH" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyBanHangRoyalHelmetModel.DonHang" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyBanHangRoyalHelmetModel.KhachHang" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyBanHangRoyalHelmetModel.LoaiSP" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyBanHangRoyalHelmetModel.QuanTriVien" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyBanHangRoyalHelmetModel.SanPham" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyBanHangRoyalHelmetModel.sysdiagram" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBanHangRoyalHelmetModel.SanPham" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
         <AssociationConnector Association="QuanLyBanHangRoyalHelmetModel.PK_CTDH_DonHang" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyBanHangRoyalHelmetModel.PK_CTDH_SanPham" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyBanHangRoyalHelmetModel.FK_DonHang_KhachHang" ManuallyRouted="false" />

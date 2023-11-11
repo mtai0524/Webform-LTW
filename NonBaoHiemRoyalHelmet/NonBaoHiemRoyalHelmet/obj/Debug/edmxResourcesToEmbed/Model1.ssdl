@@ -5,8 +5,8 @@
       <PropertyRef Name="MaDH" />
       <PropertyRef Name="MaSP" />
     </Key>
-    <Property Name="MaDH" Type="nchar" MaxLength="5" Nullable="false" />
-    <Property Name="MaSP" Type="nchar" MaxLength="6" Nullable="false" />
+    <Property Name="MaDH" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="MaSP" Type="nvarchar" MaxLength="6" Nullable="false" />
     <Property Name="SoLuong" Type="int" Nullable="false" />
     <Property Name="DonGia" Type="int" Nullable="false" />
   </EntityType>
@@ -14,7 +14,7 @@
     <Key>
       <PropertyRef Name="MaDH" />
     </Key>
-    <Property Name="MaDH" Type="nchar" MaxLength="5" Nullable="false" />
+    <Property Name="MaDH" Type="nvarchar" MaxLength="5" Nullable="false" />
     <Property Name="MaKH" Type="nvarchar" MaxLength="4" Nullable="false" />
     <Property Name="MaQTV" Type="nvarchar" MaxLength="5" Nullable="false" />
     <Property Name="NgayDH" Type="date" Nullable="false" />
@@ -34,15 +34,15 @@
     <Property Name="DiaChi" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="SoDT" Type="nvarchar" MaxLength="15" Nullable="false" />
     <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="AnhDaiDien" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="TaiKhoan" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="MatKhau" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AnhDaiDien" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TaiKhoan" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MatKhau" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="LoaiSP">
     <Key>
       <PropertyRef Name="MaLoaiSP" />
     </Key>
-    <Property Name="MaLoaiSP" Type="nchar" MaxLength="4" Nullable="false" />
+    <Property Name="MaLoaiSP" Type="nvarchar" MaxLength="4" Nullable="false" />
     <Property Name="TenLoaiSP" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="QuanTriVien">
@@ -55,34 +55,25 @@
     <Property Name="NgaySinh" Type="date" Nullable="false" />
     <Property Name="DiaChi" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="DienThoai" Type="nvarchar" MaxLength="15" Nullable="false" />
-    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="AnhDaiDien" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="TaiKhoan" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="MatKhau" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AnhDaiDien" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TaiKhoan" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MatKhau" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="SanPham">
     <Key>
       <PropertyRef Name="MaSP" />
     </Key>
-    <Property Name="MaSP" Type="nchar" MaxLength="6" Nullable="false" />
-    <Property Name="TenSP" Type="nvarchar" MaxLength="200" Nullable="false" />
-    <Property Name="MoTa" Type="nvarchar" MaxLength="200" Nullable="false" />
-    <Property Name="TrongLuong" Type="nvarchar" MaxLength="200" Nullable="false" />
-    <Property Name="KichCo" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="MaSP" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="TenSP" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Hinh1" Type="nvarchar" MaxLength="200" />
+    <Property Name="Hinh2" Type="nvarchar" MaxLength="200" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TrongLuong" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="KichCo" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="SoLuongTon" Type="int" Nullable="false" />
     <Property Name="GiaBan" Type="int" Nullable="false" />
-    <Property Name="MaLoaiSP" Type="nchar" MaxLength="4" Nullable="false" />
-    <Property Name="HinhAnh" Type="nvarchar(max)" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
+    <Property Name="MaLoaiSP" Type="nvarchar" MaxLength="4" Nullable="false" />
   </EntityType>
   <Association Name="FK_DonHang_KhachHang">
     <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1" />
@@ -151,7 +142,6 @@
     <EntitySet Name="LoaiSP" EntityType="Self.LoaiSP" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="QuanTriVien" EntityType="Self.QuanTriVien" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SanPham" EntityType="Self.SanPham" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_DonHang_KhachHang" Association="Self.FK_DonHang_KhachHang">
       <End Role="KhachHang" EntitySet="KhachHang" />
       <End Role="DonHang" EntitySet="DonHang" />

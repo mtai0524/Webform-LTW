@@ -32,11 +32,7 @@ namespace NonBaoHiemRoyalHelmet
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         // hiển thị data trong GridView
-                        GridView1.DataSource = reader;
-                        GridView1.DataBind();
-
-                        GridView1.HeaderRow.Cells[0].Text = "Mã Loại SP";
-                        GridView1.HeaderRow.Cells[1].Text = "Tên Loại SP";
+                       
                     }
 
                 }

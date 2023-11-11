@@ -30,11 +30,13 @@ namespace NonBaoHiemRoyalHelmet
                     var listSp = context.SanPham.Take(15).ToList(); // lấy 15 sản phẩm
                     rptListProd.DataSource = listSp.Select(sp => new
                     {
-                        HinhAnh = sp.HinhAnh,
+                        Hinh1 = sp.Hinh1, // Hinh1 bên trái phải đặt đúng tên trong database
+                        Hinh2 = sp.Hinh2, // Hinh1 bên trái phải đặt đúng tên trong database
                         TenSp = sp.TenSP,
-                        GiaBan = sp.GiaBan,
-                        DetailUrl = $"ChiTiet.aspx?MaSanPham={sp.MaSP}"
+                        GiaBan = sp.GiaBan.ToString("N0"),
+                        DetailUrl = $"ChiTiet.aspx?MaSanPham={sp.MaSP}",
                     });
+                    //rptListProd.DataSource = listSp;
                     rptListProd.DataBind();
                 }
                 catch (Exception ex)

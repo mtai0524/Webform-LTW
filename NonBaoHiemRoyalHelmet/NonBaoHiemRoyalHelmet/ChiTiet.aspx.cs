@@ -23,14 +23,24 @@ namespace NonBaoHiemRoyalHelmet
                 {
                     if (Request.QueryString["MaSanPham"] != null)
                     {
-                        maSP = Request.QueryString["MaSanPham"];
-                        lbTenSp.Text = maSP;
-                    }
-                    var sanPham = context.SanPham.FirstOrDefault(sp => sp.MaSP == maSP);
+                        string productId = Request.QueryString["MaSanPham"];
+                        var sanPham = context.SanPham.SingleOrDefault(sp => sp.MaSP == productId);
 
-                    // repeater hien thi chi tiet san pham
-                    rptDetailProd.DataSource = sanPham;
-                    rptDetailProd.DataBind();
+                        if (sanPham != null)
+                        {
+                            // Hiển thị thông tin chi tiết sản phẩm
+                            rptDetailProd.DataSource = new List<SanPham> { sanPham };
+                            rptDetailProd.DataBind();
+                        }
+                        else
+                        {
+                            // Xử lý khi không tìm thấy sản phẩm
+                        }
+                    }
+                    else
+                    {
+                        // Xử lý khi không có mã sản phẩm được chuyển đến
+                    }
                 }
                 catch (Exception ex)
                 {

@@ -31,6 +31,5 @@ namespace NonBaoHiemRoyalHelmet
         public virtual DbSet<LoaiSP> LoaiSPs { get; set; }
         public virtual DbSet<QuanTriVien> QuanTriViens { get; set; }
         public virtual DbSet<SanPham> SanPhams { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }
