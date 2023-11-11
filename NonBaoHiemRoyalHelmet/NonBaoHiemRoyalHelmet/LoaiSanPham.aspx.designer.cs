@@ -11,25 +11,25 @@ namespace NonBaoHiemRoyalHelmet
 {
 
 
-    public partial class test
+    public partial class LoaiSanPham
     {
 
         /// <summary>
-        /// listLoaiSp control.
+        /// rptDetailProd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater listLoaiSp;
+        protected global::System.Web.UI.WebControls.Repeater rptDetailProd;
 
         /// <summary>
-        /// rptListProd control.
+        /// lbMaLoaiSp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptListProd;
+        protected global::System.Web.UI.WebControls.Label lbMaLoaiSp;
     }
 }

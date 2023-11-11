@@ -104,17 +104,16 @@
         <asp:BulletedList ID="listTenSP" runat="server" CssClass="horizontal-list">
         </asp:BulletedList>
     </div>  --%>
+        <asp:Repeater ID="listLoaiSp" runat="server">
+            <ItemTemplate>
+                <div style="width: 50%; margin: auto;">
+                    <ul class="horizontal-list">
+                        <li><a href='<%# Eval("URLLoaiSP") %>'><%# Eval("TenLoaiSP") %></a></li>
+                    </ul>
+                </div>
+            </ItemTemplate>
+        </asp:Repeater>
 
-        <div style="width: 50%; margin: auto;">
-            <ul class="horizontal-list">
-                <li><a href="#">Mũ bảo hiểm 3/4 đầu</a></li>
-                <li><a href="#">Mũ bảo hiểm Fullface</a></li>
-                <li><a href="#">Kính Mũ Bảo Hiểm</a></li>
-                <li><a href="#">Mũ bảo hiểm 1/2 đầu</a></li>
-                <li><a href="#">Mũ bảo hiểm trẻ em</a></li>
-                <li><a href="#">Mũ bảo hiểm xe đạp</a></li>
-            </ul>
-        </div>
         <br />
         <div class="card-container">
             <asp:Repeater ID="rptListProd" runat="server">

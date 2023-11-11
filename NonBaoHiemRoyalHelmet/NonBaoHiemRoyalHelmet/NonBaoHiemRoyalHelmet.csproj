@@ -84,6 +84,7 @@
     <Content Include="admin\js\libscripts.bundle.js" />
     <Content Include="admin\js\task.js" />
     <Content Include="admin\js\template.js" />
+    <Content Include="LoaiSanPham.aspx" />
     <Content Include="css\Font.css" />
     <Content Include="css\Style.css" />
     <Content Include="image\Home\spnb1.jpg" />
@@ -135,6 +136,13 @@
     </Compile>
     <Compile Include="Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="LoaiSanPham.aspx.cs">
+      <DependentUpon>LoaiSanPham.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoaiSanPham.aspx.designer.cs">
+      <DependentUpon>LoaiSanPham.aspx</DependentUpon>
     </Compile>
     <Compile Include="CTDH.cs">
       <DependentUpon>Model1.tt</DependentUpon>

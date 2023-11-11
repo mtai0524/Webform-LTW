@@ -13,7 +13,7 @@ namespace NonBaoHiemRoyalHelmet
 {
     public partial class test : System.Web.UI.Page
     {
-        private readonly QuanLyBanHangContext context = new QuanLyBanHangContext(); // có thể thay bằng QuanLyBanHangRoyalHelmetEntities do ADO tự tạo trước
+        private readonly QuanLyBanHangRoyalHelmetEntities context = new QuanLyBanHangRoyalHelmetEntities(); // có thể thay bằng QuanLyBanHangRoyalHelmetEntities do ADO tự tạo trước
 
 
         private string connectionString = ConfigurationManager.ConnectionStrings["QuanLyBanHangRoyalHelmetConnectionString"].ConnectionString;
@@ -22,12 +22,23 @@ namespace NonBaoHiemRoyalHelmet
         {
 
             // Mở kết nối
-            using (var context = new QuanLyBanHangContext())
+            using (var context = new QuanLyBanHangRoyalHelmetEntities())
             {
                 try
                 {
+                    // lay tat ca loai san pham
+                    var listLoai = context.LoaiSPs.ToList();
+
+                    listLoaiSp.DataSource = listLoai.Select(sp => new
+                    {
+                        TenLoaiSP = sp.TenLoaiSP,
+                        URLLoaiSP = $"LoaiSanPham.aspx?MaLoaiSanPham={sp.MaLoaiSP}",
+                    });
+                    listLoaiSp.DataBind();
+
+
                     // repeater hien thi danh sach san pham
-                    var listSp = context.SanPham.Take(15).ToList(); // lấy 15 sản phẩm
+                    var listSp = context.SanPhams.Take(15).ToList(); // lấy 15 sản phẩm
                     rptListProd.DataSource = listSp.Select(sp => new
                     {
                         Hinh1 = sp.Hinh1, // Hinh1 bên trái phải đặt đúng tên trong database
