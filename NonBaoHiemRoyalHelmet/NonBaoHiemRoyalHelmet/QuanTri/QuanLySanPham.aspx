@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" EnableViewState="true" EnableEventValidation="true" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="QuanLySanPham.aspx.cs" Inherits="NonBaoHiemRoyalHelmet.QuanTri.QuanLySanPham" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="QuanLySanPham.aspx.cs" Inherits="NonBaoHiemRoyalHelmet.QuanTri.QuanLySanPham" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -66,9 +66,9 @@
                             <td style="width: 110px"><%# Eval("MaLoaiSP") %></td>
                             <td style="width: 110px"><%# Eval("LoaiSp.TenLoaiSp") %></td>
                             <td>
-                                <asp:Button CssClass="btn btn-outline-success" runat="server" Text="Sửa" CommandArgument='<%# Eval("MaSp") %>' />
-                    <asp:Button CssClass="btn btn-outline-danger" runat="server" Text="Xoá" CommandName="DeleteProduct" CommandArgument='<%# Eval("MaSP") %>' OnClientClick="return confirm('Are you sure you want to delete this product?');" PostBackUrl="~/QuanLySanPham.aspx" />
-       </td>
+                                <asp:Button CssClass="btn btn-outline-success" runat="server" Text="Sửa" OnClick="btnEdit_Click" CommandArgument='<%# Eval("MaSP") %>' />
+                                <asp:Button CssClass="btn btn-outline-danger" runat="server" Text="Xoá" CommandName="DeleteProduct" CommandArgument='<%# Eval("MaSP") %>' OnClientClick="return confirm('Bạn có chắc chắn xóa sản phẩm này?');" PostBackUrl="~/QuanLySanPham.aspx" />
+                            </td>
 
                         </tr>
                     </ItemTemplate>
@@ -76,7 +76,4 @@
             </tbody>
         </table>
     </form>
-
-
-
 </asp:Content>

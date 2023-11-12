@@ -63,6 +63,7 @@ namespace NonBaoHiemRoyalHelmet.QuanTri
                 if (deleteSuccess)
                 {
                     ShowListProduct();
+                    ScriptManager.RegisterStartupScript(this, GetType(), "showToastr", "toastr.success('Product deleted successfully!');", true);
                 }
                 else
                 {
@@ -82,6 +83,8 @@ namespace NonBaoHiemRoyalHelmet.QuanTri
 
                     if (row > 0)
                     {
+                        ScriptManager.RegisterStartupScript(this, GetType(), "showToastr", "toastr.success('Product deleted successfully!');", true);
+
                         return true;
                     }
                     else
@@ -97,6 +100,13 @@ namespace NonBaoHiemRoyalHelmet.QuanTri
             }
         }
 
+        protected void btnEdit_Click(object sender, EventArgs e)
+        {
+            // Lấy MaSP từ CommandArgument
+            string maSP = (sender as Button).CommandArgument;
 
+            // Chuyển hướng đến trang chỉnh sửa và truyền tham số MaSP
+            Response.Redirect($"SuaSanPham.aspx?MaSP={maSP}");
+        }
     }
 }

@@ -84,6 +84,8 @@
     <Content Include="admin\js\libscripts.bundle.js" />
     <Content Include="admin\js\task.js" />
     <Content Include="admin\js\template.js" />
+    <Content Include="content\toastr.css" />
+    <Content Include="content\toastr.min.css" />
     <Content Include="LoaiSanPham.aspx" />
     <Content Include="css\Font.css" />
     <Content Include="css\Style.css" />
@@ -120,8 +122,16 @@
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Content Include="QuanTri\QuanLySanPham.aspx" />
+    <Content Include="QuanTri\SuaSanPham.aspx" />
     <Content Include="QuanTri\ThemSanPham.aspx" />
     <Content Include="SanPham.aspx" />
+    <Content Include="content\toastr.scss" />
+    <Content Include="content\toastr.less" />
+    <None Include="Scripts\jquery-1.6.3-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.6.3.js" />
+    <Content Include="Scripts\jquery-1.6.3.min.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
     <Content Include="VeChungToi.aspx" />
     <Content Include="image\RoyalHelmet-logo.png" />
     <Content Include="Home.aspx" />
@@ -189,6 +199,13 @@
     </Compile>
     <Compile Include="QuanTri\QuanLySanPham.aspx.designer.cs">
       <DependentUpon>QuanLySanPham.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuanTri\SuaSanPham.aspx.cs">
+      <DependentUpon>SuaSanPham.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuanTri\SuaSanPham.aspx.designer.cs">
+      <DependentUpon>SuaSanPham.aspx</DependentUpon>
     </Compile>
     <Compile Include="QuanTri\ThemSanPham.aspx.cs">
       <DependentUpon>ThemSanPham.aspx</DependentUpon>
