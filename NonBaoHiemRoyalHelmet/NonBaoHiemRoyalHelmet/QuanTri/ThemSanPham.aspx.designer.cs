@@ -42,6 +42,42 @@ namespace NonBaoHiemRoyalHelmet.QuanTri
         protected global::System.Web.UI.WebControls.TextBox txtTenSP;
 
         /// <summary>
+        /// txtTrongLuong control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTrongLuong;
+
+        /// <summary>
+        /// txtKichCo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtKichCo;
+
+        /// <summary>
+        /// txtSoLuongTon control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtSoLuongTon;
+
+        /// <summary>
+        /// txtGiaBan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtGiaBan;
+
+        /// <summary>
         /// txtMoTa control.
         /// </summary>
         /// <remarks>

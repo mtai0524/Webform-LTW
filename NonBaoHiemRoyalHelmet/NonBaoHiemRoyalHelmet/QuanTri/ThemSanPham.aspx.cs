@@ -61,10 +61,10 @@ namespace NonBaoHiemRoyalHelmet.QuanTri
                 sanPham.MaSP = txtMaSP.Text;
                 sanPham.TenSP = txtTenSP.Text;
                 sanPham.MoTa = txtMoTa.Text;
-                sanPham.TrongLuong = "TrongLuong";
-                sanPham.KichCo = "KichCo";
-                sanPham.SoLuongTon = 1;
-                sanPham.GiaBan = 10;
+                sanPham.TrongLuong = txtTrongLuong.Text;
+                sanPham.KichCo = txtKichCo.Text;
+                sanPham.SoLuongTon = Convert.ToInt32(txtSoLuongTon.Text);
+                sanPham.GiaBan = Convert.ToInt32(txtGiaBan.Text);
                 sanPham.MaLoaiSP = selectedProductType;
                 sanPham.Hinh2 = "dasdas";
 
@@ -82,10 +82,7 @@ namespace NonBaoHiemRoyalHelmet.QuanTri
                         fileUpload.SaveAs(imagePath);
 
                         // Lưu đường dẫn hình ảnh vào đối tượng SanPham
-                        sanPham.Hinh1 = "/image/NonBaoHiem/" + fileName; // Đường dẫn tương đối
-
-                        // Nếu muốn lưu đường dẫn vật lý, sử dụng imagePath
-                        // sanPham.Hinh1 = imagePath;
+                        sanPham.Hinh1 = "/image/NonBaoHiem/" + fileName;
                     }
                     catch (Exception ex)
                     {
@@ -94,7 +91,6 @@ namespace NonBaoHiemRoyalHelmet.QuanTri
                 }
 
 
-                // Kết nối đến cơ sở dữ liệu (chỉnh sửa chuỗi kết nối theo cấu hình của bạn)
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
@@ -105,7 +101,6 @@ namespace NonBaoHiemRoyalHelmet.QuanTri
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        // Thêm các tham số để tránh SQL injection
                         command.Parameters.AddWithValue("@MaSP", sanPham.MaSP);
                         command.Parameters.AddWithValue("@TenSP", sanPham.TenSP);
                         command.Parameters.AddWithValue("@Hinh1", sanPham.Hinh1);
@@ -122,10 +117,7 @@ namespace NonBaoHiemRoyalHelmet.QuanTri
                     }
                 }
 
-                // Thông báo thành công hoặc chuyển hướng đến trang khác
                 Response.Write("Thêm sản phẩm thành công!");
-                // Hoặc chuyển hướng đến trang danh sách sản phẩm, ví dụ:
-                // Response.Redirect("DanhSachSanPham.aspx");
             }
             catch (Exception ex)
             {
