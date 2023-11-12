@@ -18,7 +18,10 @@ namespace NonBaoHiemRoyalHelmet.QuanTri
         private string connectionString = ConfigurationManager.ConnectionStrings["QuanLyBanHangRoyalHelmetConnectionString"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-            LoadProductTypes();
+            if (!IsPostBack)
+            {
+                LoadProductTypes();
+            }
         }
 
         protected void LoadProductTypes()

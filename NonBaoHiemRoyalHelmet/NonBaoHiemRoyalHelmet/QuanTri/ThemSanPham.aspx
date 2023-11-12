@@ -26,7 +26,7 @@
                 <tr>
                     <td>Mã loại:</td>
                     <td>
-                        <asp:DropDownList ID="ddlMaLoaiSP" runat="server">
+                        <asp:DropDownList ID="ddlMaLoaiSP" runat="server" AutoPostBack="false">
                             <asp:ListItem Text="- Select -" Value="" />
                         </asp:DropDownList></td>
                 </tr>
