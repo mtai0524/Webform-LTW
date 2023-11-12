@@ -13,6 +13,14 @@
     <link href="/admin/css/my-task.style.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/icofont/4.7.0/css/icofont.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/@icon/icofont/icofont.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+   
 </head>
 <body>
 
