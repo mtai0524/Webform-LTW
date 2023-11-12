@@ -8,16 +8,14 @@
 
     <div class="VCT">
 
-        <asp:Repeater ID="rptDetailProd" runat="server">
-
+        <asp:Repeater ID="rptLoaiSP" runat="server">
             <ItemTemplate>
-                
+                <span class="VCT-title"><b><%# Eval("TenLoaiSp") %></b></span>
 
             </ItemTemplate>
         </asp:Repeater>
     </div>
 
-    <asp:Label ID="lbMaLoaiSp" runat="server" Text="Label"></asp:Label>
 
 </asp:Content>
 

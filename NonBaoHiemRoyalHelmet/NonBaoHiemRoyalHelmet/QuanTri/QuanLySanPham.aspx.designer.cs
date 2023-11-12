@@ -7,20 +7,29 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NonBaoHiemRoyalHelmet
+namespace NonBaoHiemRoyalHelmet.QuanTri
 {
 
 
-    public partial class LoaiSanPham
+    public partial class QuanLySanPham
     {
 
         /// <summary>
-        /// rptLoaiSP control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptLoaiSP;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+
+        /// <summary>
+        /// adminShowProducts control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater adminShowProducts;
     }
 }

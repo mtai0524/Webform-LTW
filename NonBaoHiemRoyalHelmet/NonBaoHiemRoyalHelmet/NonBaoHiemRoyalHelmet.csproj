@@ -119,7 +119,8 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <Content Include="QuanTriVien.aspx" />
+    <Content Include="QuanTri\QuanLySanPham.aspx" />
+    <Content Include="QuanTri\ThemSanPham.aspx" />
     <Content Include="SanPham.aspx" />
     <Content Include="VeChungToi.aspx" />
     <Content Include="image\RoyalHelmet-logo.png" />
@@ -179,16 +180,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
-    <Compile Include="QuanTriVien.aspx.cs">
-      <DependentUpon>QuanTriVien.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="QuanTriVien.aspx.designer.cs">
-      <DependentUpon>QuanTriVien.aspx</DependentUpon>
-    </Compile>
     <Compile Include="QuanTriVien.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuanTri\QuanLySanPham.aspx.cs">
+      <DependentUpon>QuanLySanPham.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuanTri\QuanLySanPham.aspx.designer.cs">
+      <DependentUpon>QuanLySanPham.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuanTri\ThemSanPham.aspx.cs">
+      <DependentUpon>ThemSanPham.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuanTri\ThemSanPham.aspx.designer.cs">
+      <DependentUpon>ThemSanPham.aspx</DependentUpon>
     </Compile>
     <Compile Include="SanPham.aspx.cs">
       <DependentUpon>SanPham.aspx</DependentUpon>
@@ -247,6 +254,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

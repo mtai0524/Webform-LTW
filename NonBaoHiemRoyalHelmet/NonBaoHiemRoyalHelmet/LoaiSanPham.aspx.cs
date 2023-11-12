@@ -28,7 +28,7 @@ namespace NonBaoHiemRoyalHelmet
 
                         if (loaiSp != null)
                         {
-                            lbMaLoaiSp.Text = loaiSp.MaLoaiSP;
+
                         }
                         else
                         {

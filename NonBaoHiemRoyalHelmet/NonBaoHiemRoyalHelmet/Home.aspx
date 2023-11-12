@@ -99,20 +99,18 @@
             <span><b>———————————————— MŨ BẢO HIỂM ————————————————</b></span>
         </div>
         <h13 style="font-size: 12px">Chúng tôi lấy chất lượng sản phẩm làm kim chỉ nam trong mọi hoạt động góp phần bảo vệ con người.</h13>
-        <%--nếu không có margin: auto thì nó kh ra giữa được--%>        <%--      <div style="width: 50%; margin: auto;">
-            
-        <asp:BulletedList ID="listTenSP" runat="server" CssClass="horizontal-list">
-        </asp:BulletedList>
-    </div>  --%>
-        <asp:Repeater ID="listLoaiSp" runat="server">
-            <ItemTemplate>
-                <div style="width: 50%; margin: auto;">
-                    <ul class="horizontal-list">
-                        <li><a href='<%# Eval("URLLoaiSP") %>'><%# Eval("TenLoaiSP") %></a></li>
-                    </ul>
-                </div>
-            </ItemTemplate>
-        </asp:Repeater>
+        <div style="margin-top:20px" class="card-container">
+
+            <asp:Repeater ID="listLoaiSp" runat="server">
+                <ItemTemplate>
+                    <div>
+                        <ul class="horizontal-list">
+                            <li><a href='<%# Eval("URLLoaiSP") %>'><%# Eval("TenLoaiSP") %></a></li>
+                        </ul>
+                    </div>
+                </ItemTemplate>
+            </asp:Repeater>
+        </div>
 
         <br />
         <div class="card-container">
