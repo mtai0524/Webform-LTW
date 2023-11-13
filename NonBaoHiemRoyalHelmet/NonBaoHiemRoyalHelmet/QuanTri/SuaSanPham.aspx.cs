@@ -99,7 +99,7 @@ namespace NonBaoHiemRoyalHelmet.QuanTri
             decimal giaBan = Convert.ToDecimal(txtGiaBan.Text);
 
             // Truy vấn SQL cập nhật thông tin sản phẩm
-            string updateQuery = "UPDATE SanPham SET TenSP = @TenSP, Hinh1 = @Hinh1, MoTa = @MoTa, TrongLuong = @TrongLuong, KichCo = @KichCo, SoLuongTon = @SoLuongTon, GiaBan = @GiaBan WHERE MaSP = @MaSP";
+            string updateQuery = "UPDATE SanPham SET TenSP = @TenSP, Hinh1 = @Hinh1, MoTa = @MoTa, TrongLuong = @TrongLuong, KichCo = @KichCo, SoLuongTon = @SoLuongTon, GiaBan = @GiaBan,MaLoaiSP = @MaLoaiSP WHERE MaSP = @MaSP";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -112,6 +112,7 @@ namespace NonBaoHiemRoyalHelmet.QuanTri
                     command.Parameters.AddWithValue("@KichCo", kichCo);
                     command.Parameters.AddWithValue("@SoLuongTon", soLuongTon);
                     command.Parameters.AddWithValue("@GiaBan", giaBan);
+                    command.Parameters.AddWithValue("@MaLoaiSP", ddlMaLoaiSP.SelectedValue);
                     command.Parameters.AddWithValue("@MaSP", maSP);
 
                     connection.Open();
