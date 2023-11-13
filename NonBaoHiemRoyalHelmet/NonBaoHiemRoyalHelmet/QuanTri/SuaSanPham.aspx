@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="SuaSanPham.aspx.cs" Inherits="NonBaoHiemRoyalHelmet.QuanTri.SuaSanPham" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-   <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
     <style>
         #themSanPham {
             margin: 20px;
@@ -88,6 +89,12 @@
                     <td>Upload hình ảnh:</td>
                     <td>
                         <asp:FileUpload ID="fileUpload" runat="server" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Upload hình ảnh 2:</td>
+                    <td>
+                        <asp:FileUpload ID="fileUpload2" runat="server" />
                     </td>
                 </tr>
                 <tr>

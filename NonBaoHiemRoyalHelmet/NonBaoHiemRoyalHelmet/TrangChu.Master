@@ -34,6 +34,7 @@
             .Header-list li a {
                 font-size: 1.2rem;
             }
+
     </style>
 </head>
 <body>
@@ -51,12 +52,12 @@
                 <hr width="2000vh" align="center" color="#e8bd72"/>
             </div>
           <div class="Header-funtion">
-    <div>
-        <img class="logo" src="image/RoyalHelmet-logo.png" style="text-align: center; margin-top:-27px; width:3.2rem" />
-    </div>
-              <div style="margin-top:-27px;background-color:#0F1A2C; width:200vh; height:100px">
-              </div>
-</div>
+                <div>
+                     <a href="Home.aspx"><img class="logo" src="image/RoyalHelmet-logo.png" style="text-align: center; margin-top:-27px; width:3.2rem" /></a>
+                 </div>
+                  <div style="margin-top:-27px;background-color:#0F1A2C; width:200vh; height:100px">
+                  </div>
+          </div>
 
         </header>
 

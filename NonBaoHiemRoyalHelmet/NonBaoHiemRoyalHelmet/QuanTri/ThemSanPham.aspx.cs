@@ -66,7 +66,6 @@ namespace NonBaoHiemRoyalHelmet.QuanTri
                 sanPham.SoLuongTon = Convert.ToInt32(txtSoLuongTon.Text);
                 sanPham.GiaBan = Convert.ToInt32(txtGiaBan.Text);
                 sanPham.MaLoaiSP = selectedProductType;
-                sanPham.Hinh2 = "dasdas";
 
                 // Lưu hình ảnh vào thư mục trên server
                 if (fileUpload.HasFile)
@@ -90,6 +89,26 @@ namespace NonBaoHiemRoyalHelmet.QuanTri
                     }
                 }
 
+                if (fileUpload2.HasFile)
+                {
+                    try
+                    {
+                        string fileName = Path.GetFileName(fileUpload2.FileName);
+
+                        // Lấy đường dẫn vật lý của thư mục "image" trong dự án
+                        string imagePath = Server.MapPath("/image/NonBaoHiem/") + fileName;
+
+                        // Lưu hình ảnh vào thư mục "image"
+                        fileUpload2.SaveAs(imagePath);
+
+                        // Lưu đường dẫn hình ảnh vào đối tượng SanPham
+                        sanPham.Hinh2 = "/image/NonBaoHiem/" + fileName;
+                    }
+                    catch (Exception ex)
+                    {
+                        Response.Write("Lỗi khi lưu hình ảnh: " + ex.Message);
+                    }
+                }
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {

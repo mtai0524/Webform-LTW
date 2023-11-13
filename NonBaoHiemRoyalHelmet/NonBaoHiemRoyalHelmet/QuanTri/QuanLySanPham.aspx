@@ -22,11 +22,11 @@
                 background-color: #f2f2f2;
             }
     </style>
-    <form id="form1"  runat="server">
+    <form id="form1" runat="server">
         <nav aria-label="breadcrumb">
-            <ol style="background-color:#F9FBFD" class="breadcrumb">
-                <li class="breadcrumb-item"><a >Trang chủ</a></li>
-                <li class="breadcrumb-item"><a href="QuanLySanPham.aspx" style="font-weight:bold; color:#F19828" >Danh sách sản phẩm</a></li>
+            <ol style="background-color: #F9FBFD" class="breadcrumb">
+                <li class="breadcrumb-item"><a>Trang chủ</a></li>
+                <li class="breadcrumb-item"><a href="QuanLySanPham.aspx" style="font-weight: bold; color: #F19828">Danh sách sản phẩm</a></li>
             </ol>
         </nav>
         <h2>Danh sách sản phẩm</h2>
@@ -36,6 +36,7 @@
             <thead>
                 <tr>
                     <th>Hình ảnh</th>
+                    <th>Hình ảnh 2</th>
                     <th>Mã sản phẩm</th>
                     <th>Tên sản phẩm</th>
                     <th>Mô tả</th>
@@ -54,6 +55,9 @@
                         <tr>
                             <td style="width: 110px">
                                 <img height="88px" src='<%# Eval("Hinh1") %>' alt='<%# Eval("TenSp") %>' /></td>
+
+                            <td style="width: 110px">
+                                <img height="88px" src='<%# Eval("Hinh2") %>' alt='<%# Eval("TenSp") %>' /></td>
 
                             <td style="width: 110px"><%# Eval("MaSp") %></td>
                             <td style="width: 290px"><%# Eval("TenSp") %></td>

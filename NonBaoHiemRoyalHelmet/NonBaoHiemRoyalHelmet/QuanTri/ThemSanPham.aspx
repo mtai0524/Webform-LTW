@@ -92,6 +92,12 @@
                     </td>
                 </tr>
                 <tr>
+                    <td>Upload hình ảnh 2:</td>
+                    <td>
+                        <asp:FileUpload ID="fileUpload2" runat="server" />
+                    </td>
+                </tr>
+                <tr>
                     <td colspan="2">
                         <asp:Button CssClass="btn btn-outline-primary" ID="btnThemSanPham" runat="server" Text="Thêm sản phẩm" OnClick="btnThemSanPham_Click" />
                         <%--OnClick="btnThemSanPham_Click"--%>

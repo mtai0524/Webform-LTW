@@ -83,6 +83,7 @@ namespace NonBaoHiemRoyalHelmet.QuanTri
 
             // Kiểm tra xem FileUpload có chứa dữ liệu không
             string hinh1 = GetProductImage(maSP);
+            string hinh2 = GetProductImage2(maSP);
             if (fileUpload.HasFile)
             {
                 // Nếu có, thực hiện cập nhật hình ảnh mới
@@ -92,6 +93,15 @@ namespace NonBaoHiemRoyalHelmet.QuanTri
                 hinh1 = "/image/" + fileName;
             }
 
+            if (fileUpload2.HasFile)
+            {
+                // Nếu có, thực hiện cập nhật hình ảnh mới
+                string fileName = Path.GetFileName(fileUpload2.FileName);
+                string filePath = Server.MapPath("/image/" + fileName);
+                fileUpload2.SaveAs(filePath);
+                hinh2 = "/image/" + fileName;
+            }
+
             string moTa = txtMoTa.Text;
             string trongLuong = txtTrongLuong.Text;
             string kichCo = txtKichCo.Text;
@@ -99,7 +109,7 @@ namespace NonBaoHiemRoyalHelmet.QuanTri
             decimal giaBan = Convert.ToDecimal(txtGiaBan.Text);
 
             // Truy vấn SQL cập nhật thông tin sản phẩm
-            string updateQuery = "UPDATE SanPham SET TenSP = @TenSP, Hinh1 = @Hinh1, MoTa = @MoTa, TrongLuong = @TrongLuong, KichCo = @KichCo, SoLuongTon = @SoLuongTon, GiaBan = @GiaBan,MaLoaiSP = @MaLoaiSP WHERE MaSP = @MaSP";
+            string updateQuery = "UPDATE SanPham SET TenSP = @TenSP, Hinh1 = @Hinh1, Hinh2 = @Hinh2, MoTa = @MoTa, TrongLuong = @TrongLuong, KichCo = @KichCo, SoLuongTon = @SoLuongTon, GiaBan = @GiaBan,MaLoaiSP = @MaLoaiSP WHERE MaSP = @MaSP";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -107,6 +117,7 @@ namespace NonBaoHiemRoyalHelmet.QuanTri
                 {
                     command.Parameters.AddWithValue("@TenSP", tenSP);
                     command.Parameters.AddWithValue("@Hinh1", hinh1);
+                    command.Parameters.AddWithValue("@Hinh2", hinh2);
                     command.Parameters.AddWithValue("@MoTa", moTa);
                     command.Parameters.AddWithValue("@TrongLuong", trongLuong);
                     command.Parameters.AddWithValue("@KichCo", kichCo);
@@ -126,6 +137,33 @@ namespace NonBaoHiemRoyalHelmet.QuanTri
                     }
                     else
                     {
+                    }
+                }
+            }
+        }
+
+        private string GetProductImage2(string maSP)
+        {
+            // Lấy đường dẫn hình ảnh của sản phẩm từ cơ sở dữ liệu
+            string selectQuery = "SELECT Hinh2 FROM SanPham WHERE MaSP = @MaSP";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(selectQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@MaSP", maSP);
+
+                    connection.Open();
+                    object result = command.ExecuteScalar();
+                    connection.Close();
+
+                    if (result != null)
+                    {
+                        return result.ToString();
+                    }
+                    else
+                    {
+                        return string.Empty;
                     }
                 }
             }
