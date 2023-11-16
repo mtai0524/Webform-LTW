@@ -34,7 +34,47 @@
             .Header-list li a {
                 font-size: 1.2rem;
             }
+.wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
+        .Footer {
+            display: flex;
+            justify-content: space-around;
+            background-color: #0F1A2C;
+            color: #ffffff;
+            padding: 40px 0;
+            text-align: center;
+            flex-wrap: wrap;
+        }
+
+        .Footer-title {
+            flex: 1;
+            margin: 0 20px;
+            margin-bottom: 30px;
+        }
+
+        .Footer-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .Footer-list-item {
+            margin-bottom: 10px;
+        }
+
+        .Footer-item-link {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .Footer-line {
+            margin: 20px auto;
+            width: 80%;
+            border: 1px solid #e8bd72;
+        }
     </style>
 </head>
 <body>
@@ -43,7 +83,7 @@
             <div class="Header-list">
                 <ul style="display:flex; justify-content:space-around; align-items:center; list-style-type:none";>
                    <li><a href="Home.aspx" targer="_self" class="Header-lk">Home</a></li>
-                   <li><a style="margin-right:25px" href="SanPham.aspx" targer="_self" class="Header-lk">Sản phẩm</a></li>
+                   <li><a style="margin-right:25px" href="LoaiSanPham.aspx" targer="_self" class="Header-lk">Sản phẩm</a></li>
                    <li><a style="margin-left:40px" href="Vechungtoi.aspx" targer="_self" class="Header-lk">Về chúng tôi</a></li>
                    <li><a href="#" targer="_self" class="Header-lk">Liên hệ</a></li>
                </ul>
@@ -70,61 +110,56 @@
         <asp:Label ID="lbStatus" runat="server" Text="Trạng thái"></asp:Label>
                     <asp:Button ID="btnConnect" runat="server" OnClick="btnConnect_Click" Text="Connect" />
 
+   <footer class="Footer">
+ <div>
 
-        <footer class="Footer">
-            <div class="Footer-decor">
-                <h3 style="color: #ffffff; font-size: 36px; line-height: 40px; margin: 0px 0px 18px; text-align: center;"><i>CHÀO MỪNG ĐẾN VỚI</i><br />
-                    <span style="color: #e8bd72; font-size: 36px; font-weight: 700; line-height: 40px; text-align: center;">ROYAL HELMET</span></h3>
-            </div>
+ </div>
+        <h3 style="color: #ffffff; font-size: 36px; line-height: 40px; margin: 0px 0px 18px; text-align: center;"><i>CHÀO MỪNG ĐẾN VỚI</i><br />
+            <span style="color: #e8bd72; font-size: 36px; font-weight: 700; line-height: 40px; text-align: center;">ROYAL HELMET</span></h3>
 
-            <div class="Footer-title">
-                <h3 class="Footer-heading">ROYAL HELMET</h3>
-                <ul class="Footer-list">
-                    <li class="Footer-list-item">Địa chỉ: KCN Vĩnh Lộc, Huyện Bình Chánh, Tp.HCM</li>
-                    <li class="Footer-list-item">Điện thoại: 1900636066</li>
-                    <li class="Footer-list-item">Email: info@royalhelmet.com.vn</li>
-                    <li class="Footer-list-item">Website: www.royalhelmet.com.vn</li>
-                </ul>
-            </div>
+    <div class="Footer-title">
+        <h3 class="Footer-heading">ROYAL HELMET</h3>
+        <ul class="Footer-list">
+            <li class="Footer-list-item">Địa chỉ: KCN Vĩnh Lộc, Huyện Bình Chánh, Tp.HCM</li>
+            <li class="Footer-list-item">Điện thoại: 1900636066</li>
+            <li class="Footer-list-item">Email: info@royalhelmet.com.vn</li>
+            <li class="Footer-list-item">Website: www.royalhelmet.com.vn</li>
+        </ul>
+    </div>
 
-            <div class="Footer-title">
-                <h3 class="Footer-heading">SHOWROOM</h3>
-                <ul class="Footer-list">
+    <div class="Footer-title">
+        <h3 class="Footer-heading">SHOWROOM</h3>
+        <ul class="Footer-list">
+            <li class="Footer-list-item">
+                <h5>Hà Nội</h5>
+            </li>
+            <li class="Footer-list-item">Địa Chỉ: 466 đường Bưởi, P. Vĩnh Phúc, Q. Ba Đình, Hà Nội</li>
+            <li class="Footer-list-item">Điện thoại: 08 38 38 44 66</li>
+            <li class="Footer-list-item">
+                <h5>Hồ Chi Minh</h5>
+            </li>
+            <li class="Footer-list-item">Địa Chỉ: 147 Đồng Đen, Phường 11, Quận Tân Bình</li>
+            <li class="Footer-list-item">Điện thoại: 0903.891.499</li>
+        </ul>
+    </div>
 
-                    <li class="Footer-list-item">
-                        <h5>Hà Nội</h5>
-                    </li>
-                    <li class="Footer-list-item">Địa Chỉ: 466 đường Bưởi, P. Vĩnh Phúc, Q. Ba Đình, Hà Nội</li>
-                    <li class="Footer-list-item">Điện thoại: 08 38 38 44 66</li>
-                    <li class="Footer-list-item">
-                        <h5>Hồ Chi Minh</h5>
-                    </li>
-                    <li class="Footer-list-item">Địa Chỉ: 147 Đồng Đen, Phường 11, Quận Tân Bình</li>
-                    <li class="Footer-list-item">Điện thoại: 0903.891.499</li>
-                </ul>
-            </div>
+    <div class="Footer-title">
+        <h3 class="Footer-heading">SOCIAL MEDIA</h3>
+        <ul class="Footer-list">
+            <li class="Footer-list-item">
+                <a href="" target="_blank" class="Footer-item-link">Facebook</a>
+            </li>
+            <li class="Footer-list-item">
+                <a href="" target="_blank" class="Footer-item-link">TikTok</a>
+            </li>
+            <li class="Footer-list-item">
+                <a href="" target="_blank" class="Footer-item-link">Youtube</a>
+            </li>
+        </ul>
+    </div>
 
-            <div class="Footer-title">
-                <h3 class="Footer-heading">SOCIAL MEDIA</h3>
-                <ul class="Footer-list">
-                    <li class="Footer-list-item">
-                        <a href="" target="_blank" class="Footer-item-link">Facebook</a>
-                    </li>
-                    <li class="Footer-list-item">
-                        <a href="" target="_blank" class="Footer-item-link">TikTok</a>
-                    </li>
-                    <li class="Footer-list-item">
-                        <a href="" target="_blank" class="Footer-item-link">Youtube</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="Footer-line">
-                <hr width="80%" align="center" color="#e8bd72"/>
-            </div>
-
-            
-        </footer>
+    <div class="Footer-line"></div>
+</footer>
     </form>
 </body>
 </html>

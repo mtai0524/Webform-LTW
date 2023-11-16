@@ -127,6 +127,13 @@
     <Content Include="SanPham.aspx" />
     <Content Include="content\toastr.scss" />
     <Content Include="content\toastr.less" />
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.6.3-vsdoc.js" />
     <Content Include="Scripts\jquery-1.6.3.js" />
     <Content Include="Scripts\jquery-1.6.3.min.js" />
@@ -148,15 +155,21 @@
     <Compile Include="Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
     </Compile>
+    <Compile Include="CTDH.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DonHang.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KhachHang.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="LoaiSanPham.aspx.cs">
       <DependentUpon>LoaiSanPham.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="LoaiSanPham.aspx.designer.cs">
       <DependentUpon>LoaiSanPham.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CTDH.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="data\QuanLyBanHangContext.cs" />
     <Compile Include="ChiTiet.aspx.cs">
@@ -165,12 +178,6 @@
     </Compile>
     <Compile Include="ChiTiet.aspx.designer.cs">
       <DependentUpon>ChiTiet.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="DonHang.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="KhachHang.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="LoaiSP.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -251,13 +258,6 @@
   <ItemGroup>
     <Content Include="font\Barlow-Italic.woff" />
     <Content Include="font\Barlow-Italic.woff2" />
-    <EntityDeploy Include="Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Content>
     <Content Include="Admin.Master" />
     <None Include="packages.config" />
     <Content Include="TrangChu.Master" />

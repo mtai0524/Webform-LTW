@@ -15,6 +15,15 @@ namespace NonBaoHiemRoyalHelmet
     {
 
         /// <summary>
+        /// lnkShowAllProducts control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkShowAllProducts;
+
+        /// <summary>
         /// rptLoaiSP control.
         /// </summary>
         /// <remarks>
@@ -22,5 +31,14 @@ namespace NonBaoHiemRoyalHelmet
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptLoaiSP;
+
+        /// <summary>
+        /// rptListSp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptListSp;
     }
 }

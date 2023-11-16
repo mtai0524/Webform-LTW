@@ -11,7 +11,7 @@
             justify-content: center;
             align-items: center;
             height: 20vh;
-            margin-bottom:280px;
+            margin-bottom: 280px;
         }
 
         .card {
@@ -25,23 +25,23 @@
         }
 
             .card img {
-        border: 1px solid #fff;
-        border-radius: 9px;
-        margin-top: 150px;
-        padding: 40px;
-        margin-right: 20px;
-        width: 250px;
-        height: auto;
-        box-shadow: 3px 4px 8px 5px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease-in-out;
-    }
+                border: 1px solid #fff;
+                border-radius: 9px;
+                margin-top: 150px;
+                padding: 40px;
+                margin-right: 20px;
+                width: 250px;
+                height: auto;
+                box-shadow: 3px 4px 8px 5px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease-in-out;
+            }
 
-    .card img:hover {
-        transform: scale(1.1);
-    }
+                .card img:hover {
+                    transform: scale(1.1);
+                }
 
         .card-body {
-            margin-top:40px;
+            margin-top: 40px;
             text-align: left;
         }
 
@@ -58,8 +58,9 @@
             margin-top: -70px;
             margin-bottom: 120px;
         }
-        h3.tenSp{
-            font-weight:900;
+
+        h3.tenSp {
+            font-weight: 900;
         }
     </style>
     <div class="VCT">
@@ -74,9 +75,13 @@
                     <div class="card">
                         <img src='<%# Eval("Hinh1") %>' alt='<%# Eval("TenSp") %>' />
                         <div class="card-body">
-                            <h3 style="font-weight:900; color:#E8BD72"><%# Eval("TenSp") %></h3><br />
-                            <span style="font-size:13px">Mã sản phẩm:<span style="font-size:13px;color:#E8BD72"> <%# Eval("TenSp") %></span></span><br />
-                            <span style="font-size:13px">Loại:<span style="font-size:13px;color:red"> <%# Eval("LoaiSp.TenLoaiSp") %></span></span><br />
+                            <h3 style="font-weight: 900; color: #E8BD72"><%# Eval("TenSp") %></h3>
+                            <br />
+                            <span style="font-size: 13px">Mã sản phẩm:<span style="font-size: 13px; color: #E8BD72"> <%# Eval("TenSp") %></span></span><br />
+                            <span style="font-size: 13px">Loại:<a href='<%# "LoaiSanPham.aspx?MaLoaiSanPham=" + Eval("LoaiSp.MaLoaiSP") %>' style="font-size: 13px; color: red; text-decoration:none">
+                                <%# Eval("LoaiSp.TenLoaiSp") %>
+                            </a></span>
+                            <br />
                             <br />
                             <p style="color: red; font-weight: bolder"><%# Convert.ToDecimal(Eval("GiaBan")).ToString("N0") %> ₫</p>
                             <br />
@@ -86,12 +91,12 @@
                         </div>
                     </div>
                 </div>
-                 <script>
-                     $(document).ready(function () {
-                         $('.card img').hover(
-                             function () {
-                                 // Thay đổi đường dẫn ảnh trong database
-                                 var newImageUrl = '<%# Eval("Hinh2") %>';
+                <script>
+                    $(document).ready(function () {
+                        $('.card img').hover(
+                            function () {
+                                // Thay đổi đường dẫn ảnh trong database
+                                var newImageUrl = '<%# Eval("Hinh2") %>';
                                  $(this).attr('src', newImageUrl);
                              },
                              function () {
@@ -101,12 +106,12 @@
                              }
                          );
                      });
-                 </script>
+                </script>
             </ItemTemplate>
         </asp:Repeater>
     </div>
 
-   
+
 
 
 </asp:Content>
