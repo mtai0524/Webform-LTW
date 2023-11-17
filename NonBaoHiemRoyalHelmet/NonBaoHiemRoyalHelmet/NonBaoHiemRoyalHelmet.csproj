@@ -86,6 +86,8 @@
     <Content Include="admin\js\template.js" />
     <Content Include="content\toastr.css" />
     <Content Include="content\toastr.min.css" />
+    <Content Include="DangKi.aspx" />
+    <Content Include="DangNhap.aspx" />
     <Content Include="LoaiSanPham.aspx" />
     <Content Include="css\Font.css" />
     <Content Include="css\Style.css" />
@@ -157,6 +159,20 @@
     </Compile>
     <Compile Include="CTDH.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DangKi.aspx.cs">
+      <DependentUpon>DangKi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DangKi.aspx.designer.cs">
+      <DependentUpon>DangKi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DangNhap.aspx.cs">
+      <DependentUpon>DangNhap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DangNhap.aspx.designer.cs">
+      <DependentUpon>DangNhap.aspx</DependentUpon>
     </Compile>
     <Compile Include="DonHang.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -232,6 +248,7 @@
       <DependentUpon>Model1.tt</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="User.cs" />
     <Compile Include="VeChungToi.aspx.cs">
       <DependentUpon>VeChungToi.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

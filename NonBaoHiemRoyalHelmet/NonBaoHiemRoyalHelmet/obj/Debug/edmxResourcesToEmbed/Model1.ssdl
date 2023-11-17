@@ -52,7 +52,6 @@
     <Property Name="MaQTV" Type="nvarchar" MaxLength="5" Nullable="false" />
     <Property Name="HoTen" Type="nvarchar" MaxLength="30" Nullable="false" />
     <Property Name="GioiTinh" Type="nvarchar" MaxLength="4" Nullable="false" />
-    <Property Name="NgaySinh" Type="date" Nullable="false" />
     <Property Name="DiaChi" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="DienThoai" Type="nvarchar" MaxLength="15" Nullable="false" />
     <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />

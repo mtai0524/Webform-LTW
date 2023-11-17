@@ -86,6 +86,7 @@
                    <li><a style="margin-right:25px" href="LoaiSanPham.aspx" targer="_self" class="Header-lk">Sản phẩm</a></li>
                    <li><a style="margin-left:40px" href="Vechungtoi.aspx" targer="_self" class="Header-lk">Về chúng tôi</a></li>
                    <li><a href="#" targer="_self" class="Header-lk">Liên hệ</a></li>
+                   <li><a href="DangKi.aspx" targer="_self" class="Header-lk">Đăng kí</a></li>
                </ul>
             </div>
             <div class="Header-line">

@@ -59,7 +59,6 @@
     <Property Name="MaQTV" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="HoTen" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="GioiTinh" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="NgaySinh" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="DienThoai" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
