@@ -14,6 +14,17 @@ namespace NonBaoHiemRoyalHelmet
         private string connectionString = ConfigurationManager.ConnectionStrings["QuanLyBanHangRoyalHelmetConnectionString"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
+            //if (Session["UserID"] != null)
+            //{
+            //    string userId = Session["UserID"].ToString();
+            //    lblUserId.Text = $"UserID: {userId}";
+            //}
+
+            if (Session["Username"] != null)
+            {
+                string username = Session["Username"].ToString();
+                lblUsername.Text = $"xin chào {username}";
+            }
             if (!IsPostBack)
             {
                 DisplayData();
@@ -32,7 +43,7 @@ namespace NonBaoHiemRoyalHelmet
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         // hiển thị data trong GridView
-                       
+
                     }
 
                 }
@@ -41,7 +52,7 @@ namespace NonBaoHiemRoyalHelmet
                 connection.Close();
             }
         }
-    protected void btnConnect_Click(object sender, EventArgs e)
+        protected void btnConnect_Click(object sender, EventArgs e)
         {
             //SqlDataSource1.DataBind();
 
@@ -62,6 +73,12 @@ namespace NonBaoHiemRoyalHelmet
                     connection.Close();
                 }
             }
+        }
+        protected void lnkLogout_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+
+            Response.Redirect("Home.aspx");
         }
     }
 }

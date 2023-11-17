@@ -20,21 +20,19 @@ namespace NonBaoHiemRoyalHelmet
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Check if the session variable is not null
+
             if (Session["UserID"] != null)
             {
-                // Display the content of the UserID session variable
                 string userId = Session["UserID"].ToString();
                 lblUserId.Text = $"UserID: {userId}";
             }
 
-            // Check if the session variable is not null
             if (Session["Username"] != null)
             {
-                // Display the content of the Username session variable
                 string username = Session["Username"].ToString();
                 lblUsername.Text = $"Username: {username}";
             }
+
             // Mở kết nối
             using (var context = new QuanLyBanHangRoyalHelmetEntities())
             {

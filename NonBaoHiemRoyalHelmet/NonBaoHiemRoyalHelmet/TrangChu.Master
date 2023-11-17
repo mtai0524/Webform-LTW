@@ -75,28 +75,90 @@
             width: 80%;
             border: 1px solid #e8bd72;
         }
+        .txtHello{
+            color:#E8BD72;
+        }
+        .dropdown-container {
+    position: relative;
+}
+
+.txtHello {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color:white;
+}
+
+.dropdown-menu li {
+    display: block;
+}
+
+.dropdown-menu ul {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+.dropdown-menu li:hover > ul {
+    display: block;
+}
+
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <header class="Header">
-            <div class="Header-list">
-                <ul style="display:flex; justify-content:space-around; align-items:center; list-style-type:none";>
-                   <li><a href="Home.aspx" targer="_self" class="Header-lk">Home</a></li>
-                   <li><a style="margin-right:25px" href="LoaiSanPham.aspx" targer="_self" class="Header-lk">Sản phẩm</a></li>
-                   <li><a style="margin-left:40px" href="Vechungtoi.aspx" targer="_self" class="Header-lk">Về chúng tôi</a></li>
-                   <li><a href="#" targer="_self" class="Header-lk">Liên hệ</a></li>
-                   <li><a href="DangKi.aspx" targer="_self" class="Header-lk">Đăng kí</a></li>
-               </ul>
+            <div class="Header-list" style="position: relative;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <ul style="display: flex; justify-content: space-around; align-items: center; list-style-type: none;">
+                        <li><a href="Home.aspx" target="_self" class="Header-lk">Home</a></li>
+                        <li><a href="LoaiSanPham.aspx" target="_self" class="Header-lk">Sản phẩm</a></li>
+                        <li><a href="Vechungtoi.aspx" target="_self" class="Header-lk">Về chúng tôi</a></li>
+                        <li>
+                            <div>
+                                <a href="Home.aspx">
+                                    <img class="logo" src="image/RoyalHelmet-logo.png" style="top: 20px; text-align: center; width: 3.2rem" />
+                                </a>
+                            </div>
+                        </li>
+                        <li><a href="#" target="_self" class="Header-lk">Liên hệ</a></li>
+                        <li><a href="DangKi.aspx" target="_self" class="Header-lk">Đăng kí</a></li>
+                        <li><a href="DangNhap.aspx" target="_self" class="Header-lk">Đăng nhập</a></li>
+                    </ul>
+                    <div style="position: absolute; top: 20px; right: -350px;" class="dropdown-container">
+                        <asp:Label CssClass="txtHello" ID="lblUsername" runat="server" Text=""></asp:Label>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <asp:LinkButton ID="lnkLogout" runat="server" OnClick="lnkLogout_Click">Đăng xuất</asp:LinkButton>
+                            </li>
+                            <li><a href="#">Item 2</a>
+                                <ul>
+                                    <li><a href="#">Subitem 1</a></li>
+                                    <li><a href="#">Subitem 2</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Item 3</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+
             <div class="Header-line">
                 <hr width="2000vh" align="center" color="#e8bd72"/>
             </div>
           <div class="Header-funtion">
-                <div>
-                     <a href="Home.aspx"><img class="logo" src="image/RoyalHelmet-logo.png" style="text-align: center; margin-top:-27px; width:3.2rem" /></a>
-                 </div>
-                  <div style="margin-top:-27px;background-color:#0F1A2C; width:200vh; height:100px">
+                
+                  <div style="margin-top:-1px;background-color:#0F1A2C; width:200vh; height:100px">
                   </div>
           </div>
 
@@ -163,4 +225,10 @@
 </footer>
     </form>
 </body>
-</html>
+    <script>
+        document.getElementById('lblUsername').addEventListener('click', function () {
+            var dropdownMenu = document.querySelector('.dropdown-menu');
+            dropdownMenu.style.display = (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') ? 'block' : 'none';
+        });
+    </script>
+    </html>
