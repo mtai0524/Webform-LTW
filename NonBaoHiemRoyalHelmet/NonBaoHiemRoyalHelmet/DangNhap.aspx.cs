@@ -46,7 +46,7 @@ namespace NonBaoHiemRoyalHelmet
             {
                 connection.Open();
 
-                string query = "SELECT MaQTV FROM QuanTriVien WHERE TaiKhoan = @Username";
+                string query = "SELECT MaQTV FROM KhachHang WHERE TaiKhoan = @Username";
                 using (var command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Username", username);

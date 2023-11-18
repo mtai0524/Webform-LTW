@@ -28,7 +28,7 @@ namespace NonBaoHiemRoyalHelmet
             if (!userDAL.ValidateUser(newUsername, ""))
             {
                 // Tạo một người dùng mới và thêm vào cơ sở dữ liệu
-                QuanTriVien newUser = new QuanTriVien
+                KhachHang newUser = new KhachHang
                 {
                     TaiKhoan = newUsername,
                     MatKhau = newPassword
