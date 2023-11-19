@@ -113,6 +113,7 @@
     <Content Include="image\NonBaoHiem\M379.jpg" />
     <Content Include="image\NonBaoHiem\TxtM139.jpg" />
     <Content Include="ChiTiet.aspx" />
+    <Content Include="Mail.aspx" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -197,6 +198,13 @@
     </Compile>
     <Compile Include="LoaiSP.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mail.aspx.cs">
+      <DependentUpon>Mail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mail.aspx.designer.cs">
+      <DependentUpon>Mail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
