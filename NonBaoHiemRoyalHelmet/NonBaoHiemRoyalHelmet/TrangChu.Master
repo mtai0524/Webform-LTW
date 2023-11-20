@@ -7,8 +7,8 @@
     <title>Royal Helmet</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-    <link href="css/Style.css" rel="stylesheet"/>
-    <link href="css/Font.css" rel="stylesheet"/>
+    <link href="css/Style.css" rel="stylesheet" />
+    <link href="css/Font.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     <style>
@@ -34,7 +34,8 @@
             .Header-list li a {
                 font-size: 1.2rem;
             }
-.wrapper {
+
+        .wrapper {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -75,43 +76,44 @@
             width: 80%;
             border: 1px solid #e8bd72;
         }
-        .txtHello{
-            color:#E8BD72;
+
+        .txtHello {
+            color: #E8BD72;
         }
+
         .dropdown-container {
-    position: relative;
-}
+            position: relative;
+        }
 
-.txtHello {
-    cursor: pointer;
-}
+        .txtHello {
+            cursor: pointer;
+        }
 
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    background-color:white;
-}
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: white;
+        }
 
-.dropdown-menu li {
-    display: block;
-}
+            .dropdown-menu li {
+                display: block;
+            }
 
-.dropdown-menu ul {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 100%;
-}
+            .dropdown-menu ul {
+                display: none;
+                position: absolute;
+                top: 0;
+                left: 100%;
+            }
 
-.dropdown-menu li:hover > ul {
-    display: block;
-}
-
+            .dropdown-menu li:hover > ul {
+                display: block;
+            }
     </style>
 </head>
 <body>
@@ -141,11 +143,8 @@
                             <li>
                                 <asp:LinkButton ID="lnkLogout" runat="server" OnClick="lnkLogout_Click">Đăng xuất</asp:LinkButton>
                             </li>
-                            <li><a href="#">Item 2</a>
-                                <ul>
-                                    <li><a href="#">Subitem 1</a></li>
-                                    <li><a href="#">Subitem 2</a></li>
-                                </ul>
+                            <li>
+                                <asp:LinkButton ID="lnkAdmin" runat="server" OnClick="lnkAdmin_Click"></asp:LinkButton>
                             </li>
                             <li><a href="#">Item 3</a></li>
                         </ul>
@@ -154,81 +153,80 @@
             </div>
 
             <div class="Header-line">
-                <hr width="2000vh" align="center" color="#e8bd72"/>
+                <hr width="2000vh" align="center" color="#e8bd72" />
             </div>
-          <div class="Header-funtion">
-                
-                  <div style="margin-top:-1px;background-color:#0F1A2C; width:200vh; height:100px">
-                  </div>
-          </div>
+            <div class="Header-funtion">
+
+                <div style="margin-top: -1px; background-color: #0F1A2C; width: 200vh; height: 100px">
+                </div>
+            </div>
 
         </header>
 
-                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                    <br />
-                </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            <br />
+        </asp:ContentPlaceHolder>
 
 
-    
+
         <asp:Label ID="lbStatus" runat="server" Text="Trạng thái"></asp:Label>
-                    <asp:Button ID="btnConnect" runat="server" OnClick="btnConnect_Click" Text="Connect" />
+        <asp:Button ID="btnConnect" runat="server" OnClick="btnConnect_Click" Text="Connect" />
 
-   <footer class="Footer">
- <div>
+        <footer class="Footer">
+            <div>
+            </div>
+            <h3 style="color: #ffffff; font-size: 36px; line-height: 40px; margin: 0px 0px 18px; text-align: center;"><i>CHÀO MỪNG ĐẾN VỚI</i><br />
+                <span style="color: #e8bd72; font-size: 36px; font-weight: 700; line-height: 40px; text-align: center;">ROYAL HELMET</span></h3>
 
- </div>
-        <h3 style="color: #ffffff; font-size: 36px; line-height: 40px; margin: 0px 0px 18px; text-align: center;"><i>CHÀO MỪNG ĐẾN VỚI</i><br />
-            <span style="color: #e8bd72; font-size: 36px; font-weight: 700; line-height: 40px; text-align: center;">ROYAL HELMET</span></h3>
+            <div class="Footer-title">
+                <h3 class="Footer-heading">ROYAL HELMET</h3>
+                <ul class="Footer-list">
+                    <li class="Footer-list-item">Địa chỉ: KCN Vĩnh Lộc, Huyện Bình Chánh, Tp.HCM</li>
+                    <li class="Footer-list-item">Điện thoại: 1900636066</li>
+                    <li class="Footer-list-item">Email: info@royalhelmet.com.vn</li>
+                    <li class="Footer-list-item">Website: www.royalhelmet.com.vn</li>
+                </ul>
+            </div>
 
-    <div class="Footer-title">
-        <h3 class="Footer-heading">ROYAL HELMET</h3>
-        <ul class="Footer-list">
-            <li class="Footer-list-item">Địa chỉ: KCN Vĩnh Lộc, Huyện Bình Chánh, Tp.HCM</li>
-            <li class="Footer-list-item">Điện thoại: 1900636066</li>
-            <li class="Footer-list-item">Email: info@royalhelmet.com.vn</li>
-            <li class="Footer-list-item">Website: www.royalhelmet.com.vn</li>
-        </ul>
-    </div>
+            <div class="Footer-title">
+                <h3 class="Footer-heading">SHOWROOM</h3>
+                <ul class="Footer-list">
+                    <li class="Footer-list-item">
+                        <h5>Hà Nội</h5>
+                    </li>
+                    <li class="Footer-list-item">Địa Chỉ: 466 đường Bưởi, P. Vĩnh Phúc, Q. Ba Đình, Hà Nội</li>
+                    <li class="Footer-list-item">Điện thoại: 08 38 38 44 66</li>
+                    <li class="Footer-list-item">
+                        <h5>Hồ Chi Minh</h5>
+                    </li>
+                    <li class="Footer-list-item">Địa Chỉ: 147 Đồng Đen, Phường 11, Quận Tân Bình</li>
+                    <li class="Footer-list-item">Điện thoại: 0903.891.499</li>
+                </ul>
+            </div>
 
-    <div class="Footer-title">
-        <h3 class="Footer-heading">SHOWROOM</h3>
-        <ul class="Footer-list">
-            <li class="Footer-list-item">
-                <h5>Hà Nội</h5>
-            </li>
-            <li class="Footer-list-item">Địa Chỉ: 466 đường Bưởi, P. Vĩnh Phúc, Q. Ba Đình, Hà Nội</li>
-            <li class="Footer-list-item">Điện thoại: 08 38 38 44 66</li>
-            <li class="Footer-list-item">
-                <h5>Hồ Chi Minh</h5>
-            </li>
-            <li class="Footer-list-item">Địa Chỉ: 147 Đồng Đen, Phường 11, Quận Tân Bình</li>
-            <li class="Footer-list-item">Điện thoại: 0903.891.499</li>
-        </ul>
-    </div>
+            <div class="Footer-title">
+                <h3 class="Footer-heading">SOCIAL MEDIA</h3>
+                <ul class="Footer-list">
+                    <li class="Footer-list-item">
+                        <a href="" target="_blank" class="Footer-item-link">Facebook</a>
+                    </li>
+                    <li class="Footer-list-item">
+                        <a href="" target="_blank" class="Footer-item-link">TikTok</a>
+                    </li>
+                    <li class="Footer-list-item">
+                        <a href="" target="_blank" class="Footer-item-link">Youtube</a>
+                    </li>
+                </ul>
+            </div>
 
-    <div class="Footer-title">
-        <h3 class="Footer-heading">SOCIAL MEDIA</h3>
-        <ul class="Footer-list">
-            <li class="Footer-list-item">
-                <a href="" target="_blank" class="Footer-item-link">Facebook</a>
-            </li>
-            <li class="Footer-list-item">
-                <a href="" target="_blank" class="Footer-item-link">TikTok</a>
-            </li>
-            <li class="Footer-list-item">
-                <a href="" target="_blank" class="Footer-item-link">Youtube</a>
-            </li>
-        </ul>
-    </div>
-
-    <div class="Footer-line"></div>
-</footer>
+            <div class="Footer-line"></div>
+        </footer>
     </form>
 </body>
-    <script>
-        document.getElementById('lblUsername').addEventListener('click', function () {
-            var dropdownMenu = document.querySelector('.dropdown-menu');
-            dropdownMenu.style.display = (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') ? 'block' : 'none';
-        });
-    </script>
-    </html>
+<script>
+    document.getElementById('lblUsername').addEventListener('click', function () {
+        var dropdownMenu = document.querySelector('.dropdown-menu');
+        dropdownMenu.style.display = (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') ? 'block' : 'none';
+    });
+</script>
+</html>

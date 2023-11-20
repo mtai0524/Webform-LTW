@@ -1,67 +1,72 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
-using System.Web;
+using System.Text;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace NonBaoHiemRoyalHelmet
 {
     public partial class Mail : System.Web.UI.Page
     {
+        private readonly QuanLyBanHangRoyalHelmetEntities context = new QuanLyBanHangRoyalHelmetEntities();
+        private string connectionString = ConfigurationManager.ConnectionStrings["QuanLyBanHangRoyalHelmetConnectionString"].ConnectionString;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             SendMail();
         }
+
         void SendMail()
         {
+            // Lấy thông tin chi tiết đơn hàng từ cơ sở dữ liệu
+            List<DonHang> donHangs = context.DonHangs.ToList();
+            List<CTDH> ctdh = context.CTDHs.Include("SanPham").ToList();
+
+            // Xây dựng nội dung email
+            StringBuilder body = new StringBuilder();
+            body.AppendLine("Chi tiết đơn hàng:");
+
+            foreach (DonHang donHang in donHangs)
+            {
+                body.AppendLine($"Mã đơn hàng: {donHang.MaDH}");
+                body.AppendLine($"Ngày đặt hàng: {donHang.NgayDH}");
+                body.AppendLine("Sản phẩm:");
+
+                List<CTDH> chiTietDonHang = ctdh.Where(ct => ct.MaDH == donHang.MaDH).ToList();
+
+                foreach (CTDH item in chiTietDonHang)
+                {
+                    body.AppendLine($"- {item.SanPham.TenSP}, Số lượng: {item.SoLuong}, Giá: {item.DonGia}");
+                }
+
+                body.AppendLine("--------------");
+            }
+
+            // Gửi email
             MailMessage mail = new MailMessage();
             mail.To.Add("nguyentai24052002@gmail.com");
             mail.From = new MailAddress("duatreodaiduongden@gmail.com");
-            mail.Subject = "demo";
-            mail.Body = "demo";
+            mail.Subject = "ROYAL HELMET - CHI TIẾT ĐƠN HÀNG";
+            mail.Body = body.ToString();
+
             SmtpClient smtp = new SmtpClient("smtp.gmail.com");
             smtp.EnableSsl = true;
             smtp.Port = 587;
             smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
             smtp.Credentials = new NetworkCredential("duatreodaiduongden@gmail.com", "aiyt kzuj xpbq ygda");
-            smtp.Send(mail);
-      
-            // nguyentai: brti yino pggm lxct
-            //smtp.Credentials = new NetworkCredential("nguyenminhtai67890@gmail.com", "wguq kwmw wmac avnw");
 
-            //System.Net.Mail.MailMessage mail = new System.Net.Mail.MailMessage();
-            //mail.To.Add("duatreodaiduongden@gmail.com");
-            //mail.From = new MailAddress("itachiyeuminhem01@gmail.com", "Email head", System.Text.Encoding.UTF8);
-            //mail.Subject = "This mail is send from asp.net application";
-            //mail.SubjectEncoding = System.Text.Encoding.UTF8;
-            //mail.Body = "This is Email Body Text";
-            //mail.BodyEncoding = System.Text.Encoding.UTF8;
-            //mail.IsBodyHtml = true;
-            //mail.Priority = MailPriority.High;
-            //SmtpClient client = new SmtpClient();
-            //client.Credentials = new System.Net.NetworkCredential("itachiyeuminhem01@gmail.com", "Tai12345678.");
-            //client.Port = 587;
-            //client.Host = "smtp.gmail.com";
-            //client.EnableSsl = true;
-            //try
-            //{
-            //    client.Send(mail);
-            //    Page.RegisterStartupScript("UserMsg", "<script>alert('Successfully Send...');if(alert){ window.location='Mail.aspx';}</script>");
-            //}
-            //catch (Exception ex)
-            //{
-            //    Exception ex2 = ex;
-            //    string errorMessage = string.Empty;
-            //    while (ex2 != null)
-            //    {
-            //        errorMessage += ex2.ToString();
-            //        ex2 = ex2.InnerException;
-            //    }
-            //    Page.RegisterStartupScript("UserMsg", "<script>alert('Sending Failed...');if(alert){ window.location='Mail.aspx';}</script>");
-            //}
+            try
+            {
+                smtp.Send(mail);
+            }
+            catch (Exception ex)
+            {
+                // Xử lý nếu có lỗi khi gửi mail
+                Response.Write($"Lỗi khi gửi mail: {ex.Message}");
+            }
         }
     }
 }

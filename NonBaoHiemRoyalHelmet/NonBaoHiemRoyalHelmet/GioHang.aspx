@@ -25,10 +25,7 @@
             height: 100px;
         }
 
-        .input-soluong {
-            width: 40px;
-            text-align: center;
-        }
+        
 
         .buttons {
             margin-top: 10px;
@@ -56,10 +53,10 @@
                             <img src='<%# Eval("Hinh1") %>' alt='<%# Eval("TenSp") %>' /></td>
                         <td>
                             <%# Eval("TenSp") %><br />
-                            <asp:LinkButton ID="DelProFromCart" runat="server">Xóa</asp:LinkButton>
+                            <asp:LinkButton ID="DelProFromCart" OnClick="btnXoaSanPham_Click" runat="server" CommandArgument='<%# Eval("MaSP") %>'>Xóa</asp:LinkButton>
                         </td>
                         <td>
-                            <asp:TextBox ID="txtQuantity" runat="server" CssClass="quantity-input"></asp:TextBox>
+                            <asp:TextBox ID="txtQuantity" runat="server" ></asp:TextBox>
                         </td>
                         <td><%# Convert.ToDecimal(Eval("GiaBan")).ToString("N0") %> ₫</td>
                     </tr>
@@ -72,7 +69,7 @@
 
         <div class="buttons">
             <button>cap nhat</button>
-            <button>dat hang</button>
+            <asp:Button ID="btnDatHang" runat="server" Text="Đặt Hàng" OnClick="btnDatHang_Click" />
         </div>
     </div>
 </asp:Content>

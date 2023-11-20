@@ -19,9 +19,20 @@ namespace NonBaoHiemRoyalHelmet.QuanTri
         {
             if (!IsPostBack)
             {
-                ShowListProduct();
+                // Kiểm tra xem người dùng đã đăng nhập hay chưa
+                if (Session["AdminName"] != null)
+                {
+                    // Nếu đã đăng nhập, hiển thị danh sách sản phẩm
+                    ShowListProduct();
+                }
+                else
+                {
+                    // Nếu chưa đăng nhập, chuyển hướng đến trang đăng nhập
+                    Response.Redirect("/DangNhap.aspx");
+                }
             }
         }
+
         protected void AddProduct(object sender, EventArgs e)
         {
             Response.Redirect("ThemSanPham.aspx");

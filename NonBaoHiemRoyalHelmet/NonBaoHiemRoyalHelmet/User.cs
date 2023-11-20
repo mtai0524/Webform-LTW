@@ -37,6 +37,28 @@ namespace NonBaoHiemRoyalHelmet
                 }
             }
         }
+
+        public bool ValidateAdmin(string username, string password)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                // check taikhoan matkhau
+                string query = "SELECT COUNT(*) FROM QuanTriVien WHERE TaiKhoan = @TaiKhoan AND MatKhau = @MatKhau";
+                using (var command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@TaiKhoan", username);
+                    command.Parameters.AddWithValue("@MatKhau", password);
+
+                    int count = (int)command.ExecuteScalar();
+
+                    // Trả về true nếu tồn tại người dùng và mật khẩu đúng
+                    return count > 0;
+                }
+            }
+        }
+
         public bool IsUsernameExists(string username)
         {
             using (var connection = new SqlConnection(connectionString))

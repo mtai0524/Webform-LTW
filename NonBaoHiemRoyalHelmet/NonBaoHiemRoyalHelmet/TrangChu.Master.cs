@@ -24,6 +24,13 @@ namespace NonBaoHiemRoyalHelmet
             {
                 string username = Session["Username"].ToString();
                 lblUsername.Text = $"xin chào {username}";
+                lnkAdmin.Text = "";
+            }
+            if (Session["AdminName"] != null)
+            {
+                string username = Session["AdminName"].ToString();
+                lblUsername.Text = $"xin chào {username}";
+                lnkAdmin.Text = "Quản trị hệ thống";
             }
             if (!IsPostBack)
             {
@@ -79,6 +86,10 @@ namespace NonBaoHiemRoyalHelmet
             Session.Clear();
 
             Response.Redirect("Home.aspx");
+        }
+        protected void lnkAdmin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("QuanTri/QuanLySanPham.aspx");
         }
     }
 }

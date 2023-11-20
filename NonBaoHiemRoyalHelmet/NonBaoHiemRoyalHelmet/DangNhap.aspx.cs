@@ -32,11 +32,37 @@ namespace NonBaoHiemRoyalHelmet
                 // Chuyển hướng đến trang chính khi đăng nhập thành công
                 Response.Redirect("LoaiSanPham.aspx");
             }
-            else
+            else if(userDAL.ValidateAdmin(username, password))
             {
-                // Hiển thị thông báo lỗi
-                //lblLoginError.Text = "Tên đăng nhập hoặc mật khẩu không đúng.";
+                Session["AdminID"] = GetAdminIDByUsername(username);
+                Session["AdminName"] = username;
+                // Chuyển hướng đến trang chính khi đăng nhập thành công
+                Response.Redirect("QuanTri/QuanLySanPham.aspx");
             }
+        }
+        public string GetAdminIDByUsername(string taiKhoan)
+        {
+            string adminID = "";
+
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT MaQTV FROM QuanTriVien WHERE TaiKhoan = @TaiKhoan";
+                using (var command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@TaiKhoan", taiKhoan);
+
+                    object result = command.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        adminID = result as string;
+                    }
+                }
+            }
+
+            return adminID;
         }
         public string GetUserIDByUsername(string taiKhoan)
         {

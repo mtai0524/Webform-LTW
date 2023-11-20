@@ -18,13 +18,22 @@ namespace NonBaoHiemRoyalHelmet.QuanTri
         private string connectionString = ConfigurationManager.ConnectionStrings["QuanLyBanHangRoyalHelmetConnectionString"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (Session["AdminName"] != null)
             {
-                string maSP = Request.QueryString["MaSP"];
+                if (!IsPostBack)
+                {
+                    string maSP = Request.QueryString["MaSP"];
 
-                LoadProductDetails(maSP);
+                    LoadProductDetails(maSP);
+                }
+            }
+            else
+            {
+                // Nếu chưa đăng nhập, chuyển hướng đến trang đăng nhập
+                Response.Redirect("/DangNhap.aspx");
             }
         }
+
 
         private void LoadProductDetails(string maSP)
         {
