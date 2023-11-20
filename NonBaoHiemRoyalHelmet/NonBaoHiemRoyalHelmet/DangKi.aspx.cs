@@ -11,7 +11,7 @@ namespace NonBaoHiemRoyalHelmet
 {
     public partial class DangKi : System.Web.UI.Page
     {
-        private readonly QuanLyBanHangContext context = new QuanLyBanHangContext(); // có thể thay bằng QuanLyBanHangRoyalHelmetEntities do ADO tự tạo trước
+        private readonly QuanLyBanHangContext context = new QuanLyBanHangContext();
         private string connectionString = ConfigurationManager.ConnectionStrings["QuanLyBanHangRoyalHelmetConnectionString"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -38,18 +38,18 @@ namespace NonBaoHiemRoyalHelmet
                 //lblLoginError.Text = "Tên đăng nhập hoặc mật khẩu không đúng.";
             }
         }
-        public string GetUserIDByUsername(string username)
+        public string GetUserIDByUsername(string taiKhoan)
         {
-            string userID = ""; // Default value if not found
+            string userID = "";
 
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
 
-                string query = "SELECT MaQTV FROM KhachHang WHERE TaiKhoan = @Username";
+                string query = "SELECT MaKH FROM KhachHang WHERE TaiKhoan = @TaiKhoan";
                 using (var command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@Username", username);
+                    command.Parameters.AddWithValue("@TaiKhoan", taiKhoan);
 
                     object result = command.ExecuteScalar();
 

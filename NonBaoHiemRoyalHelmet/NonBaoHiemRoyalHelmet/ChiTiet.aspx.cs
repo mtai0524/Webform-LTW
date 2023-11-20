@@ -49,5 +49,39 @@ namespace NonBaoHiemRoyalHelmet
 
             }
         }
+
+      
+
+        protected void btnAddToCart_Click(object sender, EventArgs e)
+        {
+            // Lấy mã sản phẩm từ CommandArgument
+            string maSanPham = (sender as LinkButton).CommandArgument;
+
+            // Thêm sản phẩm vào giỏ hàng (sử dụng Session để lưu thông tin giỏ hàng)
+            AddToCart(maSanPham);
+
+            // Chuyển hướng đến trang giỏ hàng
+            Response.Redirect("GioHang.aspx");
+        }
+
+        private void AddToCart(string maSanPham)
+        {
+            // Kiểm tra xem giỏ hàng có tồn tại trong Session chưa
+            if (Session["Cart"] == null)
+            {
+                // Nếu chưa, tạo một danh sách mới để lưu các sản phẩm
+                List<SanPham> cart = new List<SanPham>();
+                cart.Add(context.SanPham.SingleOrDefault(sp => sp.MaSP == maSanPham));
+                Session["Cart"] = cart;
+            }
+            else
+            {
+                // Nếu giỏ hàng đã tồn tại, thêm sản phẩm vào danh sách
+                List<SanPham> cart = (List<SanPham>)Session["Cart"];
+                cart.Add(context.SanPham.SingleOrDefault(sp => sp.MaSP == maSanPham));
+                Session["Cart"] = cart;
+            }
+        }
+
     }
 }

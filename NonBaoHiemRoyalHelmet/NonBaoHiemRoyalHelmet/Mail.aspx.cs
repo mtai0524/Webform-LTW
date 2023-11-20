@@ -28,7 +28,7 @@ namespace NonBaoHiemRoyalHelmet
             smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
             smtp.Credentials = new NetworkCredential("duatreodaiduongden@gmail.com", "aiyt kzuj xpbq ygda");
             smtp.Send(mail);
-
+      
             // nguyentai: brti yino pggm lxct
             //smtp.Credentials = new NetworkCredential("nguyenminhtai67890@gmail.com", "wguq kwmw wmac avnw");
 

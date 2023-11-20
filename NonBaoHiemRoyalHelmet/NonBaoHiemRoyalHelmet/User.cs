@@ -10,7 +10,7 @@ namespace NonBaoHiemRoyalHelmet
 {
     public class User
     {
-        private readonly QuanLyBanHangContext context = new QuanLyBanHangContext(); // có thể thay bằng QuanLyBanHangRoyalHelmetEntities do ADO tự tạo trước
+        private readonly QuanLyBanHangContext context = new QuanLyBanHangContext();
         private string connectionString = ConfigurationManager.ConnectionStrings["QuanLyBanHangRoyalHelmetConnectionString"].ConnectionString;
 
         public User(string connectionString)

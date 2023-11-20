@@ -87,10 +87,14 @@
                             <br />
                             <h15>- <%# Eval("MoTa") %></h15><br />
                             <h15>- <%# Eval("TrongLuong") %></h15><br />
-                            <h15 style="font-weight: bolder">- <%# Eval("KichCo") %></h15>
+                            <h15 style="font-weight: bolder">- <%# Eval("KichCo") %></h15> <br />
+                    <asp:LinkButton ID="btnAddToCart" runat="server" Text="Thêm vào giỏ hàng" OnClick="btnAddToCart_Click" CommandArgument='<%# Eval("MaSP") %>' />
+
                         </div>
                     </div>
+
                 </div>
+
                 <script>
                     $(document).ready(function () {
                         $('.card img').hover(
