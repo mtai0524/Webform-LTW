@@ -99,8 +99,8 @@ namespace NonBaoHiemRoyalHelmet
                     // Tạo mã KH dựa trên số lượng người dùng và tăng dần lên.
                     string maKH = $"KH{userCount + 1:D2}"; // +1 tăng lên một đơn vị, D2 số nguyên 2 chữ số
 
-                    string insertQuery = "INSERT INTO KhachHang (MaKH, TaiKhoan, TenKH ,MatKhau, Email, SoDT, NgaySinh, GioiTinh, AnhDaiDien) " +
-                                         "VALUES (@MaKH, @TaiKhoan, @TenKH ,@MatKhau, @Email, @SoDT, @NgaySinh, @GioiTinh, @AnhDaiDien)";
+                    string insertQuery = "INSERT INTO KhachHang (MaKH, TaiKhoan, TenKH ,MatKhau, Email, SoDT, NgaySinh, GioiTinh, AnhDaiDien, DiaChi) " +
+                                         "VALUES (@MaKH, @TaiKhoan, @TenKH ,@MatKhau, @Email, @SoDT, @NgaySinh, @GioiTinh, @AnhDaiDien, @DiaChi)";
                     using (var command = new SqlCommand(insertQuery, connection))
                     {
                         command.Parameters.AddWithValue("@MaKH", maKH);
@@ -112,6 +112,7 @@ namespace NonBaoHiemRoyalHelmet
                         command.Parameters.AddWithValue("@NgaySinh", user.NgaySinh);
                         command.Parameters.AddWithValue("@GioiTinh", user.GioiTinh);
                         command.Parameters.AddWithValue("@AnhDaiDien", user.AnhDaiDien);
+                        command.Parameters.AddWithValue("@DiaChi", user.DiaChi);
 
                         command.ExecuteNonQuery();
                     }

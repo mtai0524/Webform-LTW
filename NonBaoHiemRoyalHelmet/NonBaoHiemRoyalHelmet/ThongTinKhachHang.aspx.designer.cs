@@ -11,26 +11,8 @@ namespace NonBaoHiemRoyalHelmet
 {
 
 
-    public partial class DangKi
+    public partial class ThongTinKhachHang
     {
-
-        /// <summary>
-        /// txtNewUsername control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNewUsername;
-
-        /// <summary>
-        /// txtNewPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNewPassword;
 
         /// <summary>
         /// txtTenKH control.
@@ -78,15 +60,6 @@ namespace NonBaoHiemRoyalHelmet
         protected global::System.Web.UI.WebControls.TextBox txtSoDienThoai;
 
         /// <summary>
-        /// txtNgaySinh control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNgaySinh;
-
-        /// <summary>
         /// txtDiaChi control.
         /// </summary>
         /// <remarks>
@@ -94,6 +67,15 @@ namespace NonBaoHiemRoyalHelmet
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDiaChi;
+
+        /// <summary>
+        /// txtNgaySinh control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNgaySinh;
 
         /// <summary>
         /// fileAnhDaiDien control.
@@ -105,12 +87,21 @@ namespace NonBaoHiemRoyalHelmet
         protected global::System.Web.UI.WebControls.FileUpload fileAnhDaiDien;
 
         /// <summary>
-        /// btnRegister control.
+        /// imgAnhDaiDien control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegister;
+        protected global::System.Web.UI.HtmlControls.HtmlImage imgAnhDaiDien;
+
+        /// <summary>
+        /// btnUpdateInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUpdateInfo;
     }
 }

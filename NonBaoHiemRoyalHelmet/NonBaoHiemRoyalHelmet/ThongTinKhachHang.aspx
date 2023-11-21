@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/TrangChu.Master" AutoEventWireup="true" CodeBehind="DangKi.aspx.cs" Inherits="NonBaoHiemRoyalHelmet.DangKi" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/TrangChu.Master" AutoEventWireup="true" CodeBehind="ThongTinKhachHang.aspx.cs" Inherits="NonBaoHiemRoyalHelmet.ThongTinKhachHang" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
@@ -57,10 +57,26 @@
                 margin-right: -100px;
             }
 
-        .diachi {
-            width: 100%;
-            height: 70px;
+        .circle-image {
+            width: 150px;
+            height: 150px;
+            overflow: hidden;
+            border-radius: 50%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
+
+            .circle-image img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 50%;
+            }
+            .diachi{
+                width:100%;
+                height:70px;
+            }
     </style>
 </asp:Content>
 
@@ -68,14 +84,8 @@
     <%--không cần tạo form để upload hình ảnh do TrangChu.Master đã có form, trang đăng kí đã nằm trong form rồi--%>
 
     <div class="registration-form">
-        <div class="form-group">
-            <label for="txtNewUsername">Tên đăng nhập:</label>
-            <asp:TextBox ID="txtNewUsername" runat="server" />
-        </div>
-        <div class="form-group">
-            <label for="txtNewPassword">Mật khẩu:</label>
-            <asp:TextBox ID="txtNewPassword" runat="server" TextMode="Password" />
-        </div>
+
+
         <div class="form-group">
             <label for="txtTenKH">Tên khách hàng:</label>
             <asp:TextBox ID="txtTenKH" runat="server" />
@@ -96,20 +106,25 @@
             <asp:TextBox ID="txtSoDienThoai" runat="server" />
         </div>
         <div class="form-group">
-            <label for="txtNgaySinh">Ngày sinh:</label>
-            <asp:TextBox ID="txtNgaySinh" runat="server" TextMode="Date" />
-        </div>
-        <div class="form-group">
             <label for="txtDiaChi">Địa chỉ:</label>
             <asp:TextBox CssClass="diachi" ID="txtDiaChi" runat="server" TextMode="MultiLine" />
         </div>
         <div class="form-group">
+            <label for="txtNgaySinh">Ngày sinh:</label>
+            <asp:TextBox ID="txtNgaySinh" runat="server" TextMode="Date" />
+        </div>
+
+        <div class="form-group text-center">
             <label for="fileAnhDaiDien">Ảnh đại diện:</label>
             <asp:FileUpload ID="fileAnhDaiDien" runat="server" />
+            <!-- Hiển thị ảnh đại diện -->
+            <div class="circle-image">
+                <img id="imgAnhDaiDien" runat="server" src="" alt="Ảnh đại diện" />
+            </div>
         </div>
 
         <div class="form-group">
-            <asp:Button CssClass="my-button" ID="btnRegister" runat="server" Text="Đăng Ký" OnClick="btnRegister_Click" />
+            <asp:Button CssClass="my-button" ID="btnUpdateInfo" runat="server" Text="Đăng Ký" OnClick="btnUpdateInfo_Click" />
         </div>
     </div>
 

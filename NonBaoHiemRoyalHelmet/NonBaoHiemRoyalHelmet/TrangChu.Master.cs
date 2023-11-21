@@ -25,12 +25,14 @@ namespace NonBaoHiemRoyalHelmet
                 string username = Session["Username"].ToString();
                 lblUsername.Text = $"xin chào {username}";
                 lnkAdmin.Text = "";
+                lnkInfo.Text = "Thông tin tài khoản";
             }
             if (Session["AdminName"] != null)
             {
                 string username = Session["AdminName"].ToString();
                 lblUsername.Text = $"xin chào {username}";
                 lnkAdmin.Text = "Quản trị hệ thống";
+                lnkInfo.Text = "";
             }
             if (!IsPostBack)
             {
@@ -90,6 +92,10 @@ namespace NonBaoHiemRoyalHelmet
         protected void lnkAdmin_Click(object sender, EventArgs e)
         {
             Response.Redirect("QuanTri/QuanLySanPham.aspx");
+        }
+        protected void lnkInfo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ThongTinKhachHang.aspx");
         }
     }
 }

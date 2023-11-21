@@ -24,6 +24,7 @@ namespace NonBaoHiemRoyalHelmet
             string newUsername = txtNewUsername.Text;
             string newPassword = txtNewPassword.Text;
             string tenKH = txtTenKH.Text;
+            string diaChi = txtDiaChi.Text;
 
             string email = txtEmail.Text;
             string soDienThoai = txtSoDienThoai.Text;
@@ -66,7 +67,8 @@ namespace NonBaoHiemRoyalHelmet
                     SoDT = soDienThoai,
                     NgaySinh = ngaySinh,
                     GioiTinh = gioiTinh,
-                    AnhDaiDien = anhDaiDien
+                    AnhDaiDien = anhDaiDien,
+                    DiaChi = diaChi
                 };
 
                 userDAL.RegisterUser(newUser);

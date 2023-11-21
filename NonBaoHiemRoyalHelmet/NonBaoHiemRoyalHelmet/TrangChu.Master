@@ -146,6 +146,9 @@
                             <li>
                                 <asp:LinkButton ID="lnkAdmin" runat="server" OnClick="lnkAdmin_Click"></asp:LinkButton>
                             </li>
+                            <li>
+                                <asp:LinkButton ID="lnkInfo" runat="server" OnClick="lnkInfo_Click"></asp:LinkButton>
+                            </li>
                             <li><a href="#">Item 3</a></li>
                         </ul>
                     </div>

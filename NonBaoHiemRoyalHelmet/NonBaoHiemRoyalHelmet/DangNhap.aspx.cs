@@ -30,7 +30,7 @@ namespace NonBaoHiemRoyalHelmet
                 Session["UserID"] = GetUserIDByUsername(username);
                 Session["Username"] = username;
                 // Chuyển hướng đến trang chính khi đăng nhập thành công
-                Response.Redirect("LoaiSanPham.aspx");
+                Response.Redirect("Home.aspx");
             }
             else if(userDAL.ValidateAdmin(username, password))
             {

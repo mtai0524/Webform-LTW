@@ -89,6 +89,11 @@ namespace NonBaoHiemRoyalHelmet.QuanTri
         {
             string maSP = txtMaSP.Text;
             string tenSP = txtTenSP.Text;
+            string moTa = txtMoTa.Text;
+            string trongLuong = txtTrongLuong.Text;
+            string kichCo = txtKichCo.Text;
+            int soLuongTon = Convert.ToInt32(txtSoLuongTon.Text);
+            decimal giaBan = Convert.ToDecimal(txtGiaBan.Text);
 
             // Kiểm tra xem FileUpload có chứa dữ liệu không
             string hinh1 = GetProductImage(maSP);
@@ -97,25 +102,19 @@ namespace NonBaoHiemRoyalHelmet.QuanTri
             {
                 // Nếu có, thực hiện cập nhật hình ảnh mới
                 string fileName = Path.GetFileName(fileUpload.FileName);
-                string filePath = Server.MapPath("/image/" + fileName);
+                string filePath = Server.MapPath("/image/NonBaoHiem/" + fileName);
                 fileUpload.SaveAs(filePath);
-                hinh1 = "/image/" + fileName;
+                hinh1 = "/image/NonBaoHiem/" + fileName;
             }
 
             if (fileUpload2.HasFile)
             {
                 // Nếu có, thực hiện cập nhật hình ảnh mới
                 string fileName = Path.GetFileName(fileUpload2.FileName);
-                string filePath = Server.MapPath("/image/" + fileName);
+                string filePath = Server.MapPath("/image/NonBaoHiem/" + fileName);
                 fileUpload2.SaveAs(filePath);
-                hinh2 = "/image/" + fileName;
+                hinh2 = "/image/NonBaoHiem/" + fileName;
             }
-
-            string moTa = txtMoTa.Text;
-            string trongLuong = txtTrongLuong.Text;
-            string kichCo = txtKichCo.Text;
-            int soLuongTon = Convert.ToInt32(txtSoLuongTon.Text);
-            decimal giaBan = Convert.ToDecimal(txtGiaBan.Text);
 
             // Truy vấn SQL cập nhật thông tin sản phẩm
             string updateQuery = "UPDATE SanPham SET TenSP = @TenSP, Hinh1 = @Hinh1, Hinh2 = @Hinh2, MoTa = @MoTa, TrongLuong = @TrongLuong, KichCo = @KichCo, SoLuongTon = @SoLuongTon, GiaBan = @GiaBan,MaLoaiSP = @MaLoaiSP WHERE MaSP = @MaSP";

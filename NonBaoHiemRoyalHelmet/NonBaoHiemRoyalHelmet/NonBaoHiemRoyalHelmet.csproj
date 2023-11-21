@@ -143,6 +143,7 @@
     <Content Include="Scripts\jquery-1.6.3.min.js" />
     <Content Include="Scripts\toastr.js" />
     <Content Include="Scripts\toastr.min.js" />
+    <Content Include="ThongTinKhachHang.aspx" />
     <Content Include="VeChungToi.aspx" />
     <Content Include="image\RoyalHelmet-logo.png" />
     <Content Include="Home.aspx" />
@@ -263,6 +264,13 @@
     <Compile Include="SanPham.cs">
       <DependentUpon>Model1.tt</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThongTinKhachHang.aspx.cs">
+      <DependentUpon>ThongTinKhachHang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThongTinKhachHang.aspx.designer.cs">
+      <DependentUpon>ThongTinKhachHang.aspx</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
     <Compile Include="VeChungToi.aspx.cs">
