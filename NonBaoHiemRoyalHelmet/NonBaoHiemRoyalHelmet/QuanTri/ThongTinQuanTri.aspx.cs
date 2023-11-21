@@ -1,15 +1,16 @@
 ﻿using System;
-using System.Data.SqlClient;
+using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
+using System.Data.SqlClient;
 using System.IO;
-using System.Web.UI.WebControls;
-using System.Drawing;
+using System.Linq;
+using System.Web;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
-namespace NonBaoHiemRoyalHelmet
+namespace NonBaoHiemRoyalHelmet.QuanTri
 {
-    public partial class ThongTinKhachHang : System.Web.UI.Page
+    public partial class ThongTinQuanTri : System.Web.UI.Page
     {
         private string connectionString = ConfigurationManager.ConnectionStrings["QuanLyBanHangRoyalHelmetConnectionString"].ConnectionString;
         string userID = "";
@@ -17,9 +18,9 @@ namespace NonBaoHiemRoyalHelmet
         {
             if (!IsPostBack)
             {
-                if (Session["UserID"] != null)
+                if (Session["AdminID"] != null)
                 {
-                    userID = Session["UserID"].ToString();
+                    userID = Session["AdminID"].ToString();
 
                     if (!string.IsNullOrEmpty(userID))
                     {
@@ -28,7 +29,6 @@ namespace NonBaoHiemRoyalHelmet
                 }
             }
         }
-
         private void LoadCustomerInformation(string userID)
         {
             using (var context = new QuanLyBanHangRoyalHelmetEntities())
@@ -36,18 +36,14 @@ namespace NonBaoHiemRoyalHelmet
                 try
                 {
                     // Lấy thông tin khách hàng từ cơ sở dữ liệu bằng MaKH
-                    var customer = context.KhachHangs.SingleOrDefault(kh => kh.MaKH == userID);
+                    var customer = context.QuanTriViens.SingleOrDefault(kh => kh.MaQTV == userID);
 
                     if (customer != null)
                     {
-                        txtTenKH.Text = customer.TenKH;
+                        txtTenKH.Text = customer.HoTen;
                         txtEmail.Text = customer.Email;
-                        txtSoDienThoai.Text = customer.SoDT;
+                        txtSoDienThoai.Text = customer.DienThoai;
                         txtDiaChi.Text = customer.DiaChi;
-                        if (customer.NgaySinh.HasValue)
-                        {
-                            txtNgaySinh.Text = customer.NgaySinh.Value.ToString("yyyy-MM-dd");
-                        }
 
                         string gioiTinh = customer.GioiTinh;
 
@@ -69,7 +65,7 @@ namespace NonBaoHiemRoyalHelmet
                             imgAnhDaiDien.Src = customer.AnhDaiDien;
                         }
                     }
-                   
+
                 }
                 catch (Exception ex)
                 {
@@ -79,13 +75,12 @@ namespace NonBaoHiemRoyalHelmet
         }
         protected void btnUpdateInfo_Click(object sender, EventArgs e)
         {
-            
+
             string tenKH = txtTenKH.Text;
             string diaChi = txtDiaChi.Text;
-            userID = Session["UserID"].ToString();
+            userID = Session["AdminID"].ToString();
             string email = txtEmail.Text;
             string soDienThoai = txtSoDienThoai.Text;
-            DateTime ngaySinh = DateTime.Parse(txtNgaySinh.Text);
 
             // Lấy giới tính từ RadioButton được chọn
             string gioiTinh = radNam.Checked ? "Nam" : "Nữ";
@@ -99,20 +94,19 @@ namespace NonBaoHiemRoyalHelmet
                 fileAnhDaiDien.SaveAs(filePath);
                 anhDaiDien = "/image/AnhDaiDien/" + fileName;
             }
-            string updateQuery = "UPDATE KhachHang SET TenKH = @TenKH, GioiTinh = @GioiTinh, NgaySinh = @NgaySinh, DiaChi = @DiaChi, SoDT = @SoDT, Email = @Email, AnhDaiDien = @AnhDaiDien WHERE MaKH = @MaKH";
+            string updateQuery = "UPDATE QuanTriVien SET HoTen = @HoTen, GioiTinh = @GioiTinh, DiaChi = @DiaChi, DienThoai = @DienThoai, Email = @Email, AnhDaiDien = @AnhDaiDien WHERE MaQTV = @MaQTV";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 using (SqlCommand command = new SqlCommand(updateQuery, connection))
                 {
-                    command.Parameters.AddWithValue("@TenKH", tenKH);
+                    command.Parameters.AddWithValue("@HoTen", tenKH);
                     command.Parameters.AddWithValue("@GioiTinh", gioiTinh);
-                    command.Parameters.AddWithValue("@NgaySinh", ngaySinh);
                     command.Parameters.AddWithValue("@DiaChi", diaChi);
-                    command.Parameters.AddWithValue("@SoDT", soDienThoai);
+                    command.Parameters.AddWithValue("@DienThoai", soDienThoai);
                     command.Parameters.AddWithValue("@Email", email);
                     command.Parameters.AddWithValue("@AnhDaiDien", anhDaiDien);
-                    command.Parameters.AddWithValue("@MaKH", userID);
+                    command.Parameters.AddWithValue("@MaQTV", userID);
 
                     connection.Open();
                     int rowsAffected = command.ExecuteNonQuery();
@@ -133,13 +127,13 @@ namespace NonBaoHiemRoyalHelmet
         private string GetAvatar()
         {
             // Lấy đường dẫn hình ảnh của sản phẩm từ cơ sở dữ liệu
-            string selectQuery = "SELECT AnhDaiDien FROM KhachHang WHERE MaKH = @MaKH";
+            string selectQuery = "SELECT AnhDaiDien FROM QuanTriVien WHERE MaQTV = @MaQTV";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 using (SqlCommand command = new SqlCommand(selectQuery, connection))
                 {
-                    command.Parameters.AddWithValue("@MaKH", userID);
+                    command.Parameters.AddWithValue("@MaQTV", userID);
 
                     connection.Open();
                     object result = command.ExecuteScalar();

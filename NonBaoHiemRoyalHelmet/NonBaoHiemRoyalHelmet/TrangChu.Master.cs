@@ -26,6 +26,7 @@ namespace NonBaoHiemRoyalHelmet
                 lblUsername.Text = $"xin chào {username}";
                 lnkAdmin.Text = "";
                 lnkInfo.Text = "Thông tin tài khoản";
+                LoadAvatar();
             }
             if (Session["AdminName"] != null)
             {
@@ -59,6 +60,33 @@ namespace NonBaoHiemRoyalHelmet
 
                 // Đóng kết nối
                 connection.Close();
+            }
+        }
+
+        private void LoadAvatar()
+        {
+            using (var context = new QuanLyBanHangRoyalHelmetEntities())
+            {
+                try
+                {
+                    // Lấy thông tin khách hàng từ cơ sở dữ liệu bằng MaKH
+                    string userID = Session["UserID"].ToString();
+                    var customer = context.KhachHangs.SingleOrDefault(kh => kh.MaKH == userID);
+
+                    if (customer != null)
+                    {
+                        // Hiển thị ảnh đại diện
+                        if (!string.IsNullOrEmpty(customer.AnhDaiDien))
+                        {
+                            imgAnhDaiDien.Src = customer.AnhDaiDien;
+                        }
+                    }
+
+                }
+                catch (Exception ex)
+                {
+
+                }
             }
         }
         protected void btnConnect_Click(object sender, EventArgs e)

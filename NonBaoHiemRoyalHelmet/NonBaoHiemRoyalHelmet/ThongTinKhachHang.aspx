@@ -124,7 +124,7 @@
         </div>
 
         <div class="form-group">
-            <asp:Button CssClass="my-button" ID="btnUpdateInfo" runat="server" Text="Đăng Ký" OnClick="btnUpdateInfo_Click" />
+            <asp:Button CssClass="my-button" ID="btnUpdateInfo" runat="server" Text="Cập nhật" OnClick="btnUpdateInfo_Click" />
         </div>
     </div>
 

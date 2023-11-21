@@ -90,6 +90,7 @@
         }
 
         .dropdown-menu {
+            width: 200px;
             display: none;
             position: absolute;
             top: 100%;
@@ -98,7 +99,9 @@
             padding: 0;
             margin: 0;
             background-color: white;
+            border-radius: 0 0 8px 8px
         }
+
 
             .dropdown-menu li {
                 display: block;
@@ -114,6 +117,28 @@
             .dropdown-menu li:hover > ul {
                 display: block;
             }
+
+        .circle-image {
+            width: 60px;
+            height: 60px;
+            overflow: hidden;
+            border-radius: 50%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .circle-image img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 50%;
+            }
+
+        .style-link {
+            text-decoration: none;
+            color: #D4A36B;
+        }
     </style>
 </head>
 <body>
@@ -138,18 +163,20 @@
                     </ul>
                     <div style="position: absolute; top: 20px; right: -350px;" class="dropdown-container">
                         <asp:Label CssClass="txtHello" ID="lblUsername" runat="server" Text=""></asp:Label>
-
+                        <div class="circle-image">
+                            <img id="imgAnhDaiDien" runat="server" src="" />
+                        </div>
                         <ul class="dropdown-menu">
+
                             <li>
-                                <asp:LinkButton ID="lnkLogout" runat="server" OnClick="lnkLogout_Click">Đăng xuất</asp:LinkButton>
+                                <asp:LinkButton CssClass="style-link" ID="lnkAdmin" runat="server" OnClick="lnkAdmin_Click"></asp:LinkButton>
                             </li>
                             <li>
-                                <asp:LinkButton ID="lnkAdmin" runat="server" OnClick="lnkAdmin_Click"></asp:LinkButton>
+                                <asp:LinkButton CssClass="style-link" ID="lnkInfo" runat="server" OnClick="lnkInfo_Click"></asp:LinkButton>
                             </li>
                             <li>
-                                <asp:LinkButton ID="lnkInfo" runat="server" OnClick="lnkInfo_Click"></asp:LinkButton>
+                                <asp:LinkButton CssClass="style-link" ID="lnkLogout" runat="server" OnClick="lnkLogout_Click">Đăng xuất</asp:LinkButton>
                             </li>
-                            <li><a href="#">Item 3</a></li>
                         </ul>
                     </div>
                 </div>
@@ -163,7 +190,6 @@
                 <div style="margin-top: -1px; background-color: #0F1A2C; width: 200vh; height: 100px">
                 </div>
             </div>
-
         </header>
 
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

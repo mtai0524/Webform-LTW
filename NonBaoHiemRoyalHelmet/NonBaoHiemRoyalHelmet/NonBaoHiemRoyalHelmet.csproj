@@ -125,9 +125,11 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="QuanTri\QuanLyLoaiSanPham.aspx" />
     <Content Include="QuanTri\QuanLySanPham.aspx" />
     <Content Include="QuanTri\SuaSanPham.aspx" />
     <Content Include="QuanTri\ThemSanPham.aspx" />
+    <Content Include="QuanTri\ThongTinQuanTri.aspx" />
     <Content Include="SanPham.aspx" />
     <Content Include="content\toastr.scss" />
     <Content Include="content\toastr.less" />
@@ -233,6 +235,13 @@
     <Compile Include="QuanTriVien.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="QuanTri\QuanLyLoaiSanPham.aspx.cs">
+      <DependentUpon>QuanLyLoaiSanPham.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuanTri\QuanLyLoaiSanPham.aspx.designer.cs">
+      <DependentUpon>QuanLyLoaiSanPham.aspx</DependentUpon>
+    </Compile>
     <Compile Include="QuanTri\QuanLySanPham.aspx.cs">
       <DependentUpon>QuanLySanPham.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -253,6 +262,13 @@
     </Compile>
     <Compile Include="QuanTri\ThemSanPham.aspx.designer.cs">
       <DependentUpon>ThemSanPham.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuanTri\ThongTinQuanTri.aspx.cs">
+      <DependentUpon>ThongTinQuanTri.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuanTri\ThongTinQuanTri.aspx.designer.cs">
+      <DependentUpon>ThongTinQuanTri.aspx</DependentUpon>
     </Compile>
     <Compile Include="SanPham.aspx.cs">
       <DependentUpon>SanPham.aspx</DependentUpon>
