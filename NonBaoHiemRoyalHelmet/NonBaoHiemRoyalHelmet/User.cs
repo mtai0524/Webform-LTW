@@ -78,10 +78,10 @@ namespace NonBaoHiemRoyalHelmet
             }
         }
 
-        public void RegisterUser(KhachHang admin)
+        public void RegisterUser(KhachHang user)
         {
             // Kiểm tra trước nếu tên đăng nhập đã tồn tại
-            if (IsUsernameExists(admin.TaiKhoan))
+            if (IsUsernameExists(user.TaiKhoan))
             {
                 throw new InvalidOperationException("Tên đăng nhập đã tồn tại. Vui lòng chọn tên đăng nhập khác.");
             }
@@ -90,27 +90,35 @@ namespace NonBaoHiemRoyalHelmet
             {
                 connection.Open();
 
-                // Lấy số lượng người dùng hiện tại trong cơ sở dữ liệu để tạo MaQTV
+                // Lấy số lượng người dùng hiện tại trong cơ sở dữ liệu để tạo MaKH
                 string countQuery = "SELECT COUNT(*) FROM KhachHang";
                 using (var countCommand = new SqlCommand(countQuery, connection))
                 {
                     int userCount = (int)countCommand.ExecuteScalar();
 
-                    // Tạo mã QTV dựa trên số lượng người dùng và tăng dần lên.
+                    // Tạo mã KH dựa trên số lượng người dùng và tăng dần lên.
                     string maKH = $"KH{userCount + 1:D2}"; // +1 tăng lên một đơn vị, D2 số nguyên 2 chữ số
 
-                    string insertQuery = "INSERT INTO KhachHang (MaKH, TaiKhoan, MatKhau) VALUES (@MaKH, @TaiKhoan, @MatKhau)";
+                    string insertQuery = "INSERT INTO KhachHang (MaKH, TaiKhoan, TenKH ,MatKhau, Email, SoDT, NgaySinh, GioiTinh, AnhDaiDien) " +
+                                         "VALUES (@MaKH, @TaiKhoan, @TenKH ,@MatKhau, @Email, @SoDT, @NgaySinh, @GioiTinh, @AnhDaiDien)";
                     using (var command = new SqlCommand(insertQuery, connection))
                     {
                         command.Parameters.AddWithValue("@MaKH", maKH);
-                        command.Parameters.AddWithValue("@TaiKhoan", admin.TaiKhoan);
-                        command.Parameters.AddWithValue("@MatKhau", admin.MatKhau);
+                        command.Parameters.AddWithValue("@TaiKhoan", user.TaiKhoan);
+                        command.Parameters.AddWithValue("@MatKhau", user.MatKhau);
+                        command.Parameters.AddWithValue("@TenKH", user.TenKH);
+                        command.Parameters.AddWithValue("@Email", user.Email);
+                        command.Parameters.AddWithValue("@SoDT", user.SoDT);
+                        command.Parameters.AddWithValue("@NgaySinh", user.NgaySinh);
+                        command.Parameters.AddWithValue("@GioiTinh", user.GioiTinh);
+                        command.Parameters.AddWithValue("@AnhDaiDien", user.AnhDaiDien);
 
                         command.ExecuteNonQuery();
                     }
                 }
             }
         }
+
 
     }
 }
