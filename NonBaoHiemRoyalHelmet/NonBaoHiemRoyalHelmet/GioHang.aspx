@@ -47,8 +47,10 @@
                 <th>Tên sản phẩm</th>
                 <th>Số lượng tồn</th>
                 <th>Số lượng</th>
-                <th>Giá</th>
+                <th>Giá bán</th>
+                <th>Tổng giá</th>
             </tr>
+            
             <asp:Repeater ID="rptCartItems" runat="server">
                 <ItemTemplate>
                     <tr class="cart-item">
@@ -62,18 +64,21 @@
                             <%# Eval("SoLuongTon") %><br />
                         </td>
                         <td>
-                            <asp:TextBox Width="97%" ID="txtQuantity" runat="server"></asp:TextBox>
+                            <asp:TextBox Width="97%" ID="txtQuantity" Text="1" EnableViewState="true" runat="server" ></asp:TextBox>
                         </td>
                         <td><%# Convert.ToDecimal(Eval("GiaBan")).ToString("N0") %> ₫</td>
+                        <td><asp:Label ID="lblTongGia" runat="server" Text="" EnableViewState="true" ></asp:Label></td>
                     </tr>
                     <tr>
                     </tr>
                 </ItemTemplate>
             </asp:Repeater>
         </table>
-
+        <div>
+            <asp:Label ID="Label1" runat="server" Text="Tổng tiền"></asp:Label>
+        </div>
         <div class="buttons">
-            <button>cap nhat</button>
+            <asp:Button ID="btnCapNhat" runat="server" Text="Cập nhật" OnClick="btnCapNhat_Click" />
             <asp:Button ID="btnDatHang" runat="server" Text="Đặt Hàng" OnClick="btnDatHang_Click" />
         </div>
     </div>

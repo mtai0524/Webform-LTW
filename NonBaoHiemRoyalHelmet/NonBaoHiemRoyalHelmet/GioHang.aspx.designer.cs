@@ -24,6 +24,24 @@ namespace NonBaoHiemRoyalHelmet
         protected global::System.Web.UI.WebControls.Repeater rptCartItems;
 
         /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+
+        /// <summary>
+        /// btnCapNhat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCapNhat;
+
+        /// <summary>
         /// btnDatHang control.
         /// </summary>
         /// <remarks>
