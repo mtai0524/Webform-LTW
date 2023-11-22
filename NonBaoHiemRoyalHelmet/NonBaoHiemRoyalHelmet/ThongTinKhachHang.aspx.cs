@@ -85,6 +85,11 @@ namespace NonBaoHiemRoyalHelmet
             userID = Session["UserID"].ToString();
             string email = txtEmail.Text;
             string soDienThoai = txtSoDienThoai.Text;
+
+            Session["Email"] = txtEmail.Text;
+            Session["FullName"] = txtTenKH.Text;
+            Session["Phone"] = txtSoDienThoai.Text;
+            Session["Address"] = txtDiaChi.Text;
             DateTime ngaySinh = DateTime.Parse(txtNgaySinh.Text);
 
             // Lấy giới tính từ RadioButton được chọn
@@ -121,6 +126,8 @@ namespace NonBaoHiemRoyalHelmet
                     if (rowsAffected > 0)
                     {
                         LoadCustomerInformation(userID);
+                        Response.Redirect("Home.aspx");
+
                         // Hiển thị thông báo hoặc chuyển hướng
                         ScriptManager.RegisterStartupScript(this, GetType(), "showToastr", "toastr.success('Product updated successfully!');", true);
                     }

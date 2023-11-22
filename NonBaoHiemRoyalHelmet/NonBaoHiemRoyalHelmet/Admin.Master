@@ -50,7 +50,7 @@
                         <!-- Menu: Sub menu ul -->
                         <ul class="sub-menu collapse" id="project-Components">
                             <li><a class="ms-link" href="/QuanTri/QuanLySanPham.aspx"><span>Quản lý sản phẩm</span></a></li>
-                            <li><a class="ms-link" href=""><span>Quản lý danh mục</span></a></li>
+                            <li><a class="ms-link" href="/QuanTri/QuanLyLoaiSanPham.aspx"><span>Quản lý danh mục</span></a></li>
                         </ul>
                     </li>
 

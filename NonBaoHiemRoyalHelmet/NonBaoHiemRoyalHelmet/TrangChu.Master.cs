@@ -19,6 +19,7 @@ namespace NonBaoHiemRoyalHelmet
             //    string userId = Session["UserID"].ToString();
             //    lblUserId.Text = $"UserID: {userId}";
             //}
+            Session.Timeout = 1000;
 
             if (Session["Username"] != null)
             {
@@ -62,7 +63,7 @@ namespace NonBaoHiemRoyalHelmet
                 connection.Close();
             }
         }
-
+        
         private void LoadAvatar()
         {
             using (var context = new QuanLyBanHangRoyalHelmetEntities())
@@ -119,7 +120,7 @@ namespace NonBaoHiemRoyalHelmet
         }
         protected void lnkAdmin_Click(object sender, EventArgs e)
         {
-            Response.Redirect("QuanTri/QuanLySanPham.aspx");
+            Response.Redirect("QuanTri/ThongTinQuanTri.aspx");
         }
         protected void lnkInfo_Click(object sender, EventArgs e)
         {

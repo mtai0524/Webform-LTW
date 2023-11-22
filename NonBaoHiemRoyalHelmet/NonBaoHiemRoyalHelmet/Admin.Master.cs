@@ -59,10 +59,6 @@ namespace NonBaoHiemRoyalHelmet
             Session.Remove("AdminID");
             Session.Remove("AdminName");
 
-            // Hoặc sử dụng Session.Abandon() để xóa toàn bộ Session của người dùng
-            // Session.Abandon();
-
-            // Chuyển hướng đến trang đăng nhập hoặc trang chính (tùy thuộc vào yêu cầu của bạn)
             Response.Redirect("/DangNhap.aspx");
         }
 

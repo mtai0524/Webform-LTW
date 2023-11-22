@@ -86,6 +86,7 @@ namespace NonBaoHiemRoyalHelmet.QuanTri
             string gioiTinh = radNam.Checked ? "Nam" : "Nữ";
 
             string anhDaiDien = GetAvatar();
+            Session["AdminAnhDaiDien"] = anhDaiDien;
             if (fileAnhDaiDien.HasFile)
             {
                 // Nếu có, thực hiện cập nhật hình ảnh mới
@@ -115,6 +116,8 @@ namespace NonBaoHiemRoyalHelmet.QuanTri
                     if (rowsAffected > 0)
                     {
                         LoadCustomerInformation(userID);
+                        Response.Redirect("QuanLySanPham.aspx");
+
                         // Hiển thị thông báo hoặc chuyển hướng
                         ScriptManager.RegisterStartupScript(this, GetType(), "showToastr", "toastr.success('Product updated successfully!');", true);
                     }

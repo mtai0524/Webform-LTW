@@ -50,8 +50,6 @@ namespace NonBaoHiemRoyalHelmet
             }
         }
 
-      
-
         protected void btnAddToCart_Click(object sender, EventArgs e)
         {
             // Lấy mã sản phẩm từ CommandArgument
@@ -76,12 +74,25 @@ namespace NonBaoHiemRoyalHelmet
             }
             else
             {
-                // Nếu giỏ hàng đã tồn tại, thêm sản phẩm vào danh sách
+                // Nếu giỏ hàng đã tồn tại, kiểm tra xem sản phẩm đã có trong giỏ hàng chưa
                 List<SanPham> cart = (List<SanPham>)Session["Cart"];
-                cart.Add(context.SanPham.SingleOrDefault(sp => sp.MaSP == maSanPham));
-                Session["Cart"] = cart;
+
+                // Kiểm tra xem sản phẩm đã có trong giỏ hàng chưa
+                bool isExist = cart.Any(sp => sp.MaSP == maSanPham);
+
+                if (!isExist)
+                {
+                    // Nếu sản phẩm chưa có trong giỏ hàng, thêm sản phẩm vào danh sách
+                    cart.Add(context.SanPham.SingleOrDefault(sp => sp.MaSP == maSanPham));
+                    Session["Cart"] = cart;
+                }
+                else
+                {
+                    Response.Write("Sản phẩm đã có trong giỏ hàng.");
+                }
             }
         }
+
 
     }
 }

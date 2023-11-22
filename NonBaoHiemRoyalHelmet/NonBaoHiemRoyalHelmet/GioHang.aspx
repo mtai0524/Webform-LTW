@@ -15,25 +15,27 @@
             border: 1px solid #EBEBEB;
         }
 
-        .cart-table th {
-            padding: 8px;
-            text-align: center;
-        }
+            .cart-table th {
+                padding: 8px;
+                text-align: center;
+            }
+               .cart-table td {
+                               border: 1px solid #EBEBEB;
+
+   }
 
         .cart-item img {
             width: 100px;
             height: 100px;
         }
 
-        
+
 
         .buttons {
             margin-top: 10px;
             align-self: flex-end; /* góc dưới bên phải */
             margin-right: 150px;
-
         }
-       
     </style>
 </asp:Content>
 
@@ -43,6 +45,7 @@
             <tr>
                 <th>Hình ảnh</th>
                 <th>Tên sản phẩm</th>
+                <th>Số lượng tồn</th>
                 <th>Số lượng</th>
                 <th>Giá</th>
             </tr>
@@ -56,12 +59,14 @@
                             <asp:LinkButton ID="DelProFromCart" OnClick="btnXoaSanPham_Click" runat="server" CommandArgument='<%# Eval("MaSP") %>'>Xóa</asp:LinkButton>
                         </td>
                         <td>
-                            <asp:TextBox ID="txtQuantity" runat="server" ></asp:TextBox>
+                            <%# Eval("SoLuongTon") %><br />
+                        </td>
+                        <td>
+                            <asp:TextBox Width="97%" ID="txtQuantity" runat="server"></asp:TextBox>
                         </td>
                         <td><%# Convert.ToDecimal(Eval("GiaBan")).ToString("N0") %> ₫</td>
                     </tr>
                     <tr>
-
                     </tr>
                 </ItemTemplate>
             </asp:Repeater>

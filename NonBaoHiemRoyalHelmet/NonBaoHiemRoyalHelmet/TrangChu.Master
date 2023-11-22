@@ -118,7 +118,7 @@
                 display: block;
             }
 
-        .circle-image {
+        .circle-image-master {
             width: 60px;
             height: 60px;
             overflow: hidden;
@@ -129,7 +129,7 @@
             justify-content: center;
         }
 
-            .circle-image img {
+            .circle-image-master img {
                 max-width: 100%;
                 height: auto;
                 border-radius: 50%;
@@ -163,7 +163,7 @@
                     </ul>
                     <div style="position: absolute; top: 20px; right: -350px;" class="dropdown-container">
                         <asp:Label CssClass="txtHello" ID="lblUsername" runat="server" Text=""></asp:Label>
-                        <div class="circle-image">
+                        <div class="circle-image-master">
                             <img id="imgAnhDaiDien" runat="server" src="" />
                         </div>
                         <ul class="dropdown-menu">

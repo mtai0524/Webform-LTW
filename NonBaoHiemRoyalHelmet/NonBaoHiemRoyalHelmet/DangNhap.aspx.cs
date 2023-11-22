@@ -16,7 +16,31 @@ namespace NonBaoHiemRoyalHelmet
         private string connectionString = ConfigurationManager.ConnectionStrings["QuanLyBanHangRoyalHelmetConnectionString"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
+        }
+        void GetInfoUser()
+        {
+            Session.Timeout = 1000;
+            string maKH = Session["UserID"].ToString();
+            using (var context = new QuanLyBanHangRoyalHelmetEntities())
+            {
+                try
+                {
+                    var user = context.KhachHangs.SingleOrDefault(sp => sp.MaKH == maKH);
 
+                    if (user != null)
+                    {
+                        Session["Email"] = user.Email;
+                        Session["FullName"] = user.TenKH;
+                        Session["Phone"] = user.SoDT;
+                        Session["Address"] = user.DiaChi;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                }
+            }
         }
         protected void btnLogin_Click(object sender, EventArgs e)
         {
@@ -29,6 +53,7 @@ namespace NonBaoHiemRoyalHelmet
             {
                 Session["UserID"] = GetUserIDByUsername(username);
                 Session["Username"] = username;
+                GetInfoUser();
                 // Chuyển hướng đến trang chính khi đăng nhập thành công
                 Response.Redirect("Home.aspx");
             }

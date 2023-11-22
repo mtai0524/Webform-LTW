@@ -2,9 +2,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
-        /* Thêm các style cho form đăng ký */
         .registration-form {
-            max-width: 400px;
+            max-width: 600px;
             margin: auto;
             padding: 20px;
             border: 1px solid #ddd;
@@ -81,6 +80,13 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
+    <nav aria-label="breadcrumb">
+        <ol style="background-color: #F9FBFD" class="breadcrumb">
+            <li class="breadcrumb-item"><a>Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="ThongTinQuanTri.aspx" style="font-weight: bold; color: #F19828">Thông tin quản trị</a></li>
+        </ol>
+    </nav>
+    <h2>Thông tin tài khoản quản trị</h2>
     <form id="formAdmin" runat="server">
         <div class="registration-form">
             <div class="form-group">

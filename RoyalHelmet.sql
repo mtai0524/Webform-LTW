@@ -1,6 +1,6 @@
 ﻿USE [QuanLyBanHangRoyalHelmet]
 GO
-/****** Object:  Table [dbo].[CTDH]    Script Date: 11/20/2023 8:30:58 PM ******/
+/****** Object:  Table [dbo].[CTDH]    Script Date: 11/22/2023 10:26:27 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -17,7 +17,7 @@ CREATE TABLE [dbo].[CTDH](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[DonHang]    Script Date: 11/20/2023 8:30:58 PM ******/
+/****** Object:  Table [dbo].[DonHang]    Script Date: 11/22/2023 10:26:27 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -37,7 +37,7 @@ CREATE TABLE [dbo].[DonHang](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[KhachHang]    Script Date: 11/20/2023 8:30:58 PM ******/
+/****** Object:  Table [dbo].[KhachHang]    Script Date: 11/22/2023 10:26:27 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -59,7 +59,7 @@ CREATE TABLE [dbo].[KhachHang](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[LoaiSP]    Script Date: 11/20/2023 8:30:58 PM ******/
+/****** Object:  Table [dbo].[LoaiSP]    Script Date: 11/22/2023 10:26:27 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -73,7 +73,7 @@ CREATE TABLE [dbo].[LoaiSP](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[QuanTriVien]    Script Date: 11/20/2023 8:30:58 PM ******/
+/****** Object:  Table [dbo].[QuanTriVien]    Script Date: 11/22/2023 10:26:27 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -94,7 +94,7 @@ CREATE TABLE [dbo].[QuanTriVien](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[SanPham]    Script Date: 11/20/2023 8:30:58 PM ******/
+/****** Object:  Table [dbo].[SanPham]    Script Date: 11/22/2023 10:26:27 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -141,6 +141,30 @@ INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH10', N'FF0
 INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH11', N'3P401', 1, 780000)
 INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH11', N'3P404', 1, 640000)
 INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH11', N'3P405', 1, 630000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH12', N'1P203', 1, 1845000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH12', N'FF02', 1, 1130000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH13', N'1P202', 1, 1145000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH13', N'3P402', 1, 730000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH13', N'3P403', 1, 700000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH14', N'1P203', 1, 1845000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH14', N'3P402', 1, 730000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH14', N'FF02', 1, 1130000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH15', N'3P401', 1, 780000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH15', N'3P403', 1, 700000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH16', N'3P402', 1, 730000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH16', N'3P403', 1, 700000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH16', N'3P405', 1, 630000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH17', N'1P202', 1, 1145000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH17', N'FF02', 1, 1130000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH17', N'FF04', 1, 760000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH18', N'1P205', 1, 1165000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH19', N'3P403', 1, 700000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH20', N'1P204', 1, 1287000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH21', N'1P205', 1, 1165000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH21', N'FF02', 1, 1130000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH22', N'FF01', 1, 1210000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH23', N'FF03', 1, 975000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH23', N'FF04', 1, 760000)
 GO
 INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'123', N'KH01', N'QTV01', CAST(N'2023-11-20T00:00:00.000' AS DateTime), CAST(N'2023-11-27' AS Date), N'online', N'Đang Xử Lý', 1145000)
 INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH02', N'KH01', N'QTV01', CAST(N'2023-11-20T00:00:00.000' AS DateTime), CAST(N'2023-11-27' AS Date), N'online', N'Đang Xử Lý', 1165000)
@@ -153,15 +177,27 @@ INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [Tr
 INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH09', N'KH01', N'QTV01', CAST(N'2023-11-20T17:15:47.927' AS DateTime), CAST(N'2023-11-27' AS Date), N'online', N'Đang Xử Lý', 1165000)
 INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH10', N'KH01', N'QTV01', CAST(N'2023-11-20T20:08:14.437' AS DateTime), CAST(N'2023-11-27' AS Date), N'online', N'Đang Xử Lý', 1540000)
 INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH11', N'KH01', N'QTV01', CAST(N'2023-11-20T20:11:30.363' AS DateTime), CAST(N'2023-11-27' AS Date), N'online', N'Đang Xử Lý', 2050000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH12', N'KH05', N'QTV01', CAST(N'2023-11-22T09:01:08.073' AS DateTime), CAST(N'2023-11-29' AS Date), N'online', N'Đang Xử Lý', 2975000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH13', N'KH05', N'QTV01', CAST(N'2023-11-22T09:02:56.350' AS DateTime), CAST(N'2023-11-29' AS Date), N'online', N'Đang Xử Lý', 2575000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH14', N'KH04', N'QTV01', CAST(N'2023-11-22T09:10:17.823' AS DateTime), CAST(N'2023-11-29' AS Date), N'online', N'Đang Xử Lý', 3705000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH15', N'KH03', N'QTV01', CAST(N'2023-11-22T09:34:41.257' AS DateTime), CAST(N'2023-11-29' AS Date), N'online', N'Đang Xử Lý', 1480000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH16', N'KH03', N'QTV01', CAST(N'2023-11-22T09:41:43.593' AS DateTime), CAST(N'2023-11-29' AS Date), N'online', N'Đang Xử Lý', 2060000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH17', N'KH03', N'QTV01', CAST(N'2023-11-22T09:42:45.833' AS DateTime), CAST(N'2023-11-29' AS Date), N'online', N'Đang Xử Lý', 3035000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH18', N'KH03', N'QTV01', CAST(N'2023-11-22T09:44:57.337' AS DateTime), CAST(N'2023-11-29' AS Date), N'online', N'Đang Xử Lý', 1165000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH19', N'KH03', N'QTV01', CAST(N'2023-11-22T09:45:30.320' AS DateTime), CAST(N'2023-11-29' AS Date), N'online', N'Đang Xử Lý', 700000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH20', N'KH03', N'QTV01', CAST(N'2023-11-22T09:45:57.760' AS DateTime), CAST(N'2023-11-29' AS Date), N'online', N'Đang Xử Lý', 1287000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH21', N'KH06', N'QTV01', CAST(N'2023-11-22T09:53:18.777' AS DateTime), CAST(N'2023-11-29' AS Date), N'online', N'Đang Xử Lý', 2295000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH22', N'KH06', N'QTV01', CAST(N'2023-11-22T09:53:55.710' AS DateTime), CAST(N'2023-11-29' AS Date), N'online', N'Đang Xử Lý', 1210000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH23', N'KH06', N'QTV01', CAST(N'2023-11-22T09:57:44.897' AS DateTime), CAST(N'2023-11-29' AS Date), N'online', N'Đang Xử Lý', 1735000)
 GO
 INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH01', N'Lê Văn Lương', N'Nam', CAST(N'1969-02-19' AS Date), N'41 Xóm Củi', N'02116584446', N'levanluongpropk1969@gmail.com', NULL, N'taikhoan20', N'matkhau20')
-INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH02', N'Lê Văn Lương', N'Nam', CAST(N'1969-02-19' AS Date), N'41 Xóm Củi', N'02116584446', N'levanluongpropk1969@gmail.com', N' ', N'taikhoan1', N'matkhau1')
-INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH03', N'Bùi Hoàng Sơn', N'Nam', CAST(N'1968-10-15' AS Date), N'31 Nguyễn Xí', N'02116584447', N'BHShoctonducthang13@gmail.com', N' ', N'taikhoan2', N'matkhau2')
-INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH04', N'Nguyễn Đình Nguyên', N'Nam', CAST(N'1967-04-17' AS Date), N'1110 Phan Văn Trị', N'02116584448', N'Nguyenchuot2Gialai@gmail.com', N' ', N'taikhoan3', N'matkhau3')
-INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH05', N'Nguyễn Hoàng Khánh Ngân', N'Nữ', CAST(N'1978-02-10' AS Date), N'91 Thống Nhất', N'02116584449', N'khanhngannek12@gmail.com', N' ', N'taikhoan4', N'matkhau4')
-INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH06', N'Lâm Tâm Như', N'Nữ', CAST(N'1980-05-12' AS Date), N'71 Quang Trung', N'02116584441', N'beltnday@gmail.com', N' ', N'taikhoan5', N'matkhau5')
+INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH02', N'Lê Văn Lương', N'Nam', CAST(N'1969-02-19' AS Date), N'41 Xóm Củi', N'02116584446', N'levanluongpropk1969@gmail.com', N'/image/AnhDaiDien/u1.png', N'taikhoan1', N'matkhau1')
+INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH03', N'Bùi Hoàng Sơn', N'Nam', CAST(N'1968-10-15' AS Date), N'31 Nguyễn Xí', N'02116584447', N'minhnguyen20020524@gmail.com', N'/image/AnhDaiDien/u1.png', N'taikhoan2', N'matkhau2')
+INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH04', N'Nguyễn Đình Nguyên', N'Nam', CAST(N'1967-04-17' AS Date), N'1110 Phan Văn Trị', N'02116584448', N'Nguyenchuot2Gialai@gmail.com', N'/image/AnhDaiDien/a4.jpg', N'taikhoan3', N'matkhau3')
+INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH05', N'Nguyễn Hoàng Khánh Ngân', N'Nữ', CAST(N'1978-02-10' AS Date), N'91 Thống Nhất', N'02116584449', N'khanhngannek12@gmail.com', N'/image/AnhDaiDien/cat (4).png', N'taikhoan4', N'matkhau4')
+INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH06', N'Lâm Tâm Như Cute Đó Nha', N'Nữ', CAST(N'1980-05-12' AS Date), N'71 Quang Trung', N'02116584441', N'itachiyeuminhem01@gmail.com', N'/image/AnhDaiDien/cat5.jpg', N'taikhoan5', N'matkhau5')
 INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH07', N'Ngô Quốc Bảo', N'Nam', CAST(N'1990-06-02' AS Date), N'21 Chu Văn An', N'02116584442', N'wuocbao11@gmail.com', N' ', N'taikhoan6', N'matkhau6')
-INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH08', N'Trương Nguyệt Nhi', N'Nữ', CAST(N'2002-07-13' AS Date), N'71 Huỳnh Thúc Kháng', N'02116584443', N'nhinhinhanh45@gmail.com', N' ', N'taikhoan7', N'matkhau7')
+INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH08', N'Trương Nguyệt Nhi', N'Nữ', CAST(N'2002-07-13' AS Date), N'71 Huỳnh Thúc Kháng', N'02116584443', N'nhinhinhanh45@gmail.com', N'/image/AnhDaiDien/cat7.jpg', N'taikhoan7', N'matkhau7')
 INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH09', N'Phạm Minh Tâm', N'Nam', CAST(N'1993-10-26' AS Date), N'93 Quốc lộ 13', N'02116584444', N'tamthancasau@gmail.com', N' ', N'taikhoan8', N'matkhau8')
 INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH10', N'Đoàn Công Khải', N'Nam', CAST(N'1965-08-17' AS Date), N'455 Xô Viết Nghệ Tĩnh', N'02116584450', N'noledongtien@gmail.com', N' ', N'taikhoan9', N'matkhau9')
 INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH11', N'Trương An Nhiên', N'Nữ', CAST(N'2003-06-17' AS Date), N'445 Linh Đông', N'02116524452', N'NhienKimChi76@gmail.com', N' ', N'taikhoan10', N'matkhau10')
@@ -176,6 +212,10 @@ INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [So
 INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH20', N'Nguyễn Thị Thanh Hằng', N'Nữ', CAST(N'2001-03-15' AS Date), N'324 Quang Trung', N'02116584873', N'HangThanhGiaLai@gmail.com', N' ', N'taikhoan19', N'matkhau19')
 INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH21', NULL, NULL, NULL, NULL, NULL, NULL, NULL, N'demo', N'123')
 INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH22', NULL, NULL, NULL, NULL, NULL, NULL, NULL, N'demo user', N'123')
+INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH23', NULL, N'Nữ', CAST(N'2023-11-04' AS Date), NULL, N'123', N'123', N'', N'213', N'123')
+INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH24', N'tai', N'Nam', CAST(N'2023-11-03' AS Date), NULL, N'123', N'tai@yahoo.com', N'', N'tai', N'tai')
+INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH25', N'111', N'Nữ', CAST(N'2023-11-25' AS Date), NULL, N'111', N'111', N'/image/AnhDaiDien/mybear.jpg', N'111', N'111')
+INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH26', N'2222', N'Nam', CAST(N'2023-11-04' AS Date), N'2222', N'2222', N'222@gmail.com', N'/image/AnhDaiDien/a2.jpg', N'222', N'222')
 GO
 INSERT [dbo].[LoaiSP] ([MaLoaiSP], [TenLoaiSP]) VALUES (N'1P2', N'Mũ bảo hiểm 1/2 Đầu')
 INSERT [dbo].[LoaiSP] ([MaLoaiSP], [TenLoaiSP]) VALUES (N'3P4', N'Mũ bảo hiểm 3/4 Đầu')
@@ -185,12 +225,12 @@ INSERT [dbo].[LoaiSP] ([MaLoaiSP], [TenLoaiSP]) VALUES (N'LC', N'Mũ bảo hiể
 INSERT [dbo].[LoaiSP] ([MaLoaiSP], [TenLoaiSP]) VALUES (N'TE', N'Mũ bảo hiểm Trẻ Em')
 INSERT [dbo].[LoaiSP] ([MaLoaiSP], [TenLoaiSP]) VALUES (N'XD', N'Mũ bảo hiểm Xe Đạp')
 GO
-INSERT [dbo].[QuanTriVien] ([MaQTV], [HoTen], [GioiTinh], [DiaChi], [DienThoai], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'QTV01', N'Phan Thành Duy', N'Nam', N'5 Dương Quảng hàm - GV - TPHCM', N'08858454182', N'PhanThanhDuy123@gmail.com', N' ', N'admin1', N'adpass1')
+INSERT [dbo].[QuanTriVien] ([MaQTV], [HoTen], [GioiTinh], [DiaChi], [DienThoai], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'QTV01', N'Phan Thành Duy', N'Nam', N'5 Dương Quảng hàm - GV - TPHCM', N'08858454182', N'PhanThanhDuy123@gmail.com', N'/image/AnhDaiDien/u1.png', N'admin1', N'adpass1')
 INSERT [dbo].[QuanTriVien] ([MaQTV], [HoTen], [GioiTinh], [DiaChi], [DienThoai], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'QTV02', N'Lâm Đại Ngọc', N'Nam', N'2/1A Quang Trung - p.10 - GV - TP.HCM', N'08354362205', N'LDNpropk@gmail.com', N' ', N'admin2', N'adpass2')
-INSERT [dbo].[QuanTriVien] ([MaQTV], [HoTen], [GioiTinh], [DiaChi], [DienThoai], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'QTV03', N'Trần Châu Khoa', N'Nam', N'10 QL 1A - p.11 - q.12 - TP.HCM', N'09181833333', N'Khoaquan12@gmail.com', N' ', N'admin3', N'adpass3')
-INSERT [dbo].[QuanTriVien] ([MaQTV], [HoTen], [GioiTinh], [DiaChi], [DienThoai], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'QTV04', N'Lê Chí Kiên', N'Nam', N'564/1/3F Nguyễn Xí - Bình Thạnh - TP.HCM', N'09131620000', N'ChiKienBT@gmail.com', N' ', N'admin4', N'adpass4')
+INSERT [dbo].[QuanTriVien] ([MaQTV], [HoTen], [GioiTinh], [DiaChi], [DienThoai], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'QTV03', N'Trần Châu Khoa', N'Nam', N'10 QL 1A - p.11 - q.12 - TP.HCM', N'09181833333', N'Khoaquan12@gmail.com', N'/image/AnhDaiDien/250075007.png', N'admin3', N'adpass3')
+INSERT [dbo].[QuanTriVien] ([MaQTV], [HoTen], [GioiTinh], [DiaChi], [DienThoai], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'QTV04', N'Lê Chí Kiên', N'Nam', N'564/1/3F Nguyễn Xí - Bình Thạnh - TP.HCM', N'09131620000', N'ChiKienBT@gmail.com', N'/image/AnhDaiDien/man.png', N'admin4', N'adpass4')
 INSERT [dbo].[QuanTriVien] ([MaQTV], [HoTen], [GioiTinh], [DiaChi], [DienThoai], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'QTV05', N'Phan Thanh Tâm', N'Nữ', N'123A Nguyễn Kiệm - q. Gò Vấp - TP.HCM', N'09186223333', N'Tamoilatam@gmail.com', N' ', N'admin5', N'adpass5')
-INSERT [dbo].[QuanTriVien] ([MaQTV], [HoTen], [GioiTinh], [DiaChi], [DienThoai], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'QTV06', N'Mai Thị Lựu', N'Nữ', N'256/96/4 Phan Đăng Lưu - Bình Thạnh - HCM', N'09181831444', N'Luudanne@gmail.com', N' ', N'admin6', N'adpass6')
+INSERT [dbo].[QuanTriVien] ([MaQTV], [HoTen], [GioiTinh], [DiaChi], [DienThoai], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'QTV06', N'Mai Thị Lựu', N'Nữ', N'256/96/4 Phan Đăng Lưu - Bình Thạnh - HCM', N'09181831444', N'Luudanne@gmail.com', N'/image/AnhDaiDien/rabbit.png', N'admin6', N'adpass6')
 INSERT [dbo].[QuanTriVien] ([MaQTV], [HoTen], [GioiTinh], [DiaChi], [DienThoai], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'QTV07', N'Đào Thị Hồng', N'Nữ', N'764/94 Phạm Văn Chiêu - p.13 - GV - HCM', N'09754322222', N'DaoThiHong@gmail.com', N' ', N'admin7', N'adpass7')
 INSERT [dbo].[QuanTriVien] ([MaQTV], [HoTen], [GioiTinh], [DiaChi], [DienThoai], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'QTV08', N'Phan Thành Nhân', N'Nam', N'152 Nguyễn Trọng Tuyển - Tân Bình - HCM', N'09135332332', N'NhanThanh113@gmail.com', N' ', N'admin8', N'adpass8')
 INSERT [dbo].[QuanTriVien] ([MaQTV], [HoTen], [GioiTinh], [DiaChi], [DienThoai], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'QTV09', N'Phan Ánh Dương', N'Nữ', N'65 Nam Kỳ Khởi Nghĩa -q.3 - TP.HCM', N'09812127678', N'AnhDuong65@gmail.com', N' ', N'admin9', N'adpass9')
