@@ -10,7 +10,7 @@
     <link href="css/Style.css" rel="stylesheet" />
     <link href="css/Font.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-cHSmWiSfrOj0VDozqGx+PCYK1P0GAAx2N9QrjsyU7O1Jsqax4H9FhwNVRvMmwGJgkOzpkeEe+TmRr6z5tLW-vQQ==" crossorigin="anonymous" />
     <style>
         .logo {
             max-width: 100%;

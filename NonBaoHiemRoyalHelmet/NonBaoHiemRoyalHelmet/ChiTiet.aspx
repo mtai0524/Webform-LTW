@@ -62,6 +62,23 @@
         h3.tenSp {
             font-weight: 900;
         }
+
+        .link-add-cart {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #E8BD72;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+        }
+
+            .link-add-cart:hover {
+                background-color: #242424;
+            }
+
+        .link-add {
+            margin-top: 20px;
+        }
     </style>
     <div class="VCT">
 
@@ -78,7 +95,7 @@
                             <h3 style="font-weight: 900; color: #E8BD72"><%# Eval("TenSp") %></h3>
                             <br />
                             <span style="font-size: 13px">Mã sản phẩm:<span style="font-size: 13px; color: #E8BD72"> <%# Eval("TenSp") %></span></span><br />
-                            <span style="font-size: 13px">Loại:<a href='<%# "LoaiSanPham.aspx?MaLoaiSanPham=" + Eval("LoaiSp.MaLoaiSP") %>' style="font-size: 13px; color: red; text-decoration:none">
+                            <span style="font-size: 13px">Loại:<a href='<%# "LoaiSanPham.aspx?MaLoaiSanPham=" + Eval("LoaiSp.MaLoaiSP") %>' style="font-size: 13px; color: red; text-decoration: none">
                                 <%# Eval("LoaiSp.TenLoaiSp") %>
                             </a></span>
                             <br />
@@ -87,8 +104,12 @@
                             <br />
                             <h15>- <%# Eval("MoTa") %></h15><br />
                             <h15>- <%# Eval("TrongLuong") %></h15><br />
-                            <h15 style="font-weight: bolder">- <%# Eval("KichCo") %></h15> <br />
-                    <asp:LinkButton ID="btnAddToCart" runat="server" Text="Thêm vào giỏ hàng" OnClick="btnAddToCart_Click" CommandArgument='<%# Eval("MaSP") %>' />
+                            <h15 style="font-weight: bolder">- <%# Eval("KichCo") %></h15>
+
+                            <br />
+                            <div class="link-add">
+                                <asp:LinkButton ID="btnAddToCart" CssClass="link-add-cart" runat="server" Text="Thêm vào giỏ hàng" OnClick="btnAddToCart_Click" CommandArgument='<%# Eval("MaSP") %>' />
+                            </div>
 
                         </div>
                     </div>
@@ -101,15 +122,15 @@
                             function () {
                                 // Thay đổi đường dẫn ảnh trong database
                                 var newImageUrl = '<%# Eval("Hinh2") %>';
-                                 $(this).attr('src', newImageUrl);
-                             },
-                             function () {
-                                 // Thay đổi đường dẫn ảnh về ban đầu
-                                 var originalImageUrl = '<%# Eval("Hinh1") %>';
-                                 $(this).attr('src', originalImageUrl);
-                             }
-                         );
-                     });
+                                $(this).attr('src', newImageUrl);
+                            },
+                            function () {
+                                // Thay đổi đường dẫn ảnh về ban đầu
+                                var originalImageUrl = '<%# Eval("Hinh1") %>';
+                                $(this).attr('src', originalImageUrl);
+                            }
+                        );
+                    });
                 </script>
             </ItemTemplate>
         </asp:Repeater>

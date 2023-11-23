@@ -120,6 +120,42 @@ namespace NonBaoHiemRoyalHelmet
             }
         }
 
+        public void RegisterAdmin(QuanTriVien user)
+        {
+            // Kiểm tra trước nếu tên đăng nhập đã tồn tại
+            if (IsUsernameExists(user.TaiKhoan))
+            {
+                throw new InvalidOperationException("Tên đăng nhập đã tồn tại. Vui lòng chọn tên đăng nhập khác.");
+            }
 
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                // Lấy số lượng người dùng hiện tại trong cơ sở dữ liệu để tạo MaKH
+                string countQuery = "SELECT COUNT(*) FROM QuanTriVien";
+                using (var countCommand = new SqlCommand(countQuery, connection))
+                {
+                    int userCount = (int)countCommand.ExecuteScalar();
+
+                    // Tạo mã KH dựa trên số lượng người dùng và tăng dần lên.
+                    string maKH = $"QTV{userCount + 1:D2}"; // +1 tăng lên một đơn vị, D2 số nguyên 2 chữ số
+
+                    string insertQuery = "INSERT INTO QuanTriVien (MaQTV, TaiKhoan, HoTen ,MatKhau, Email, AnhDaiDien) " +
+                                         "VALUES (@MaQTV, @TaiKhoan, @HoTen ,@MatKhau, @Email, @AnhDaiDien)";
+                    using (var command = new SqlCommand(insertQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@MaQTV", maKH);
+                        command.Parameters.AddWithValue("@TaiKhoan", user.TaiKhoan);
+                        command.Parameters.AddWithValue("@HoTen", user.HoTen);
+                        command.Parameters.AddWithValue("@MatKhau", user.MatKhau);
+                        command.Parameters.AddWithValue("@Email", user.Email);
+                        command.Parameters.AddWithValue("@AnhDaiDien", user.AnhDaiDien);
+
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+        }
     }
 }

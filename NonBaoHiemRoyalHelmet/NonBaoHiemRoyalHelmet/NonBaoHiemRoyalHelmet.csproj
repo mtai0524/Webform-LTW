@@ -129,6 +129,7 @@
     <Content Include="QuanTri\QuanLySanPham.aspx" />
     <Content Include="QuanTri\SuaSanPham.aspx" />
     <Content Include="QuanTri\ThemSanPham.aspx" />
+    <Content Include="QuanTri\ThemTaiKhoanQuanTriVien.aspx" />
     <Content Include="QuanTri\ThongTinQuanTri.aspx" />
     <Content Include="SanPham.aspx" />
     <Content Include="content\toastr.scss" />
@@ -262,6 +263,13 @@
     </Compile>
     <Compile Include="QuanTri\ThemSanPham.aspx.designer.cs">
       <DependentUpon>ThemSanPham.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuanTri\ThemTaiKhoanQuanTriVien.aspx.cs">
+      <DependentUpon>ThemTaiKhoanQuanTriVien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuanTri\ThemTaiKhoanQuanTriVien.aspx.designer.cs">
+      <DependentUpon>ThemTaiKhoanQuanTriVien.aspx</DependentUpon>
     </Compile>
     <Compile Include="QuanTri\ThongTinQuanTri.aspx.cs">
       <DependentUpon>ThongTinQuanTri.aspx</DependentUpon>

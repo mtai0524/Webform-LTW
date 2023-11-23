@@ -36,6 +36,11 @@
             align-self: flex-end; /* góc dưới bên phải */
             margin-right: 150px;
         }
+        .linkDel{
+            text-decoration:none;
+            color:red;
+            font-weight:bold;
+        }
     </style>
 </asp:Content>
 
@@ -58,7 +63,7 @@
                             <img src='<%# Eval("Hinh1") %>' alt='<%# Eval("TenSp") %>' /></td>
                         <td>
                             <%# Eval("TenSp") %><br />
-                            <asp:LinkButton ID="DelProFromCart" OnClick="btnXoaSanPham_Click" runat="server" CommandArgument='<%# Eval("MaSP") %>'>Xóa</asp:LinkButton>
+                            <asp:LinkButton CssClass="linkDel" ID="DelProFromCart" OnClick="btnXoaSanPham_Click" runat="server" CommandArgument='<%# Eval("MaSP") %>'>Xóa</asp:LinkButton>
                         </td>
                         <td>
                             <%# Eval("SoLuongTon") %><br />
@@ -75,7 +80,7 @@
             </asp:Repeater>
         </table>
         <div>
-            <asp:Label ID="Label1" runat="server" Text="Tổng tiền"></asp:Label>
+            <asp:Label ID="lbTongTien" runat="server" Text="Tổng tiền"></asp:Label>
         </div>
         <div class="buttons">
             <asp:Button ID="btnCapNhat" runat="server" Text="Cập nhật" OnClick="btnCapNhat_Click" />

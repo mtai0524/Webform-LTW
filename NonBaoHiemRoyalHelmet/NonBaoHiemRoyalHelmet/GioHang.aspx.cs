@@ -16,7 +16,7 @@ namespace NonBaoHiemRoyalHelmet
 {
     public partial class GioHang : System.Web.UI.Page
     {
-        private readonly QuanLyBanHangRoyalHelmetEntities context = new QuanLyBanHangRoyalHelmetEntities(); // có thể thay bằng QuanLyBanHangRoyalHelmetEntities do ADO tự tạo trước
+        private readonly QuanLyBanHangRoyalHelmetEntities context2 = new QuanLyBanHangRoyalHelmetEntities(); // có thể thay bằng QuanLyBanHangRoyalHelmetEntities do ADO tự tạo trước
 
 
         private string connectionString = ConfigurationManager.ConnectionStrings["QuanLyBanHangRoyalHelmetConnectionString"].ConnectionString;
@@ -64,7 +64,7 @@ namespace NonBaoHiemRoyalHelmet
         {
             if (Session["AdminID"] == null)
             {
-                if (Session["Cart"] != null)
+                if (Session["Cart"] != null && Session["UserID"] != null)
                 {
                     // Lấy giỏ hàng từ Session
                     List<SanPham> cart = (List<SanPham>)Session["Cart"];
@@ -103,28 +103,31 @@ namespace NonBaoHiemRoyalHelmet
                         foreach (var sanPham in cart)
                         {
                             TextBox txtQuantity = (TextBox)rptCartItems.Items[cart.IndexOf(sanPham)].FindControl("txtQuantity");
-                            
-                            //var product = context.SanPhams.FirstOrDefault(p => p.MaSP == sanPham.MaSP);
-                            //if (product != null)
-                            //{
-                            //    int orderedQuantity = Convert.ToInt32(txtQuantity.Text);
-                            //    if (product.SoLuongTon >= orderedQuantity)
-                            //    {
-                            //        product.SoLuongTon -= orderedQuantity;
-                            //    }
-                            //    else
-                            //    {
-                            //        // Xử lý trường hợp số lượng đặt vượt quá số lượng tồn
-                            //        Response.Write($"Lỗi: Sản phẩm '{product.TenSP}' không đủ số lượng tồn.");
-                            //        return; // Hoặc xử lý theo ý bạn
-                            //    }
-                            //}
-                            //else
-                            //{
-                            //    // Xử lý trường hợp không tìm thấy sản phẩm
-                            //    Response.Write($"Lỗi: Không tìm thấy sản phẩm có mã '{sanPham.MaSP}'.");
-                            //    return;
-                            //}
+
+                            // Xử lý số lượngt tồn
+                            int orderedQuantity = Convert.ToInt32(txtQuantity.Text);
+                            using (var connection = new SqlConnection(connectionString))
+                            {
+                                connection.Open();
+
+                                string updateQuery = "UPDATE SanPham SET SoLuongTon = SoLuongTon - @OrderedQuantity WHERE MaSP = @MaSP";
+
+                                using (var updateCommand = new SqlCommand(updateQuery, connection))
+                                {
+                                    updateCommand.Parameters.AddWithValue("@OrderedQuantity", orderedQuantity);
+                                    updateCommand.Parameters.AddWithValue("@MaSP", sanPham.MaSP);
+
+                                    int rowsAffected = updateCommand.ExecuteNonQuery();
+
+                                    if (rowsAffected == 0)
+                                    {
+                                        Response.Write($"Lỗi: Sản phẩm '{sanPham.TenSP}' không đủ số lượng tồn.");
+                                        return;
+                                    }
+                                }
+                            }
+
+
                             CTDH chiTietDonHang = new CTDH
                             {
                                 MaDH = donHang.MaDH,
@@ -203,7 +206,7 @@ namespace NonBaoHiemRoyalHelmet
             body.AppendLine("<table>");
             body.AppendLine("<tr><th>Tên sản phẩm</th><th>Giá bán</th><th>Số lượng</th><th>Tổng giá</th></tr>");
             double tongTien = 0;
-            List<CTDH> chiTietDonHang = context.CTDHs.Include("SanPham")
+            List<CTDH> chiTietDonHang = context2.CTDHs.Include("SanPham")
                                               .Where(ct => ct.MaDH == donHang.MaDH)
                                               .ToList();
             foreach (CTDH item in chiTietDonHang)
@@ -258,7 +261,7 @@ namespace NonBaoHiemRoyalHelmet
 
 
 
-
+        double tongTien = 0;
         protected void btnCapNhat_Click(object sender, EventArgs e)
         {
             if (Session["Cart"] != null)
@@ -283,8 +286,12 @@ namespace NonBaoHiemRoyalHelmet
                             // Cập nhật Tổng Giá
                             lblTongGia.Text = (sanPham.GiaBan * quantity).ToString("N0") + " ₫";
                             txtQuantity.Text = quantity.ToString();
+                            double tongGia = sanPham.GiaBan * quantity;
+                            tongTien += tongGia;
                         }
                     }
+                    lbTongTien.Text = "Tổng tiền: " + tongTien.ToString("N0") + " ₫";
+
                 }
                 if (!IsPostBack)
                 {
