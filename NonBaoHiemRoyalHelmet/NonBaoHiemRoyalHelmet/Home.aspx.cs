@@ -24,13 +24,11 @@ namespace NonBaoHiemRoyalHelmet
             if (Session["UserID"] != null)
             {
                 string userId = Session["UserID"].ToString();
-                lblUserId.Text = $"UserID: {userId}";
             }
 
             if (Session["Username"] != null)
             {
                 string username = Session["Username"].ToString();
-                lblUsername.Text = $"Username: {username}";
             }
 
             // Mở kết nối

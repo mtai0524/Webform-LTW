@@ -79,7 +79,6 @@ namespace NonBaoHiemRoyalHelmet.QuanTri
                     // Title
                     gfx.DrawString("Hóa đơn thanh toán", titleFont, XBrushes.Black, new XRect(10, 10, page.Width, 20), XStringFormats.Center);
 
-                    // Order details
                     gfx.DrawString($"Mã hóa đơn: {order.MaDH}", headingFont, XBrushes.Black, new XRect(30, 40, page.Width, 20), XStringFormats.TopLeft);
                     gfx.DrawString($"Ngày đặt: {order.NgayDH.ToString("dd/MM/yyyy HH:mm")}", headingFont, XBrushes.Black, new XRect(50, 40, page.Width - 80, 20), XStringFormats.TopRight);
 
@@ -87,11 +86,9 @@ namespace NonBaoHiemRoyalHelmet.QuanTri
                     gfx.DrawString($"Email: {khachHang.Email}", headingFont, XBrushes.Black, new XRect(30, 80, page.Width, 20), XStringFormats.TopLeft);
                     gfx.DrawString($"Số điện thoại: {khachHang.SoDT}", headingFont, XBrushes.Black, new XRect(30, 100, page.Width, 20), XStringFormats.TopLeft);
 
-                    // Order items
                     gfx.DrawString("Danh sách sản phẩm:", headingFont, XBrushes.Black, new XRect(30, 120, page.Width, 20), XStringFormats.TopLeft);
                     int yOffset = 140;
           
-                    // Order items table
                     int tableX = 10;
                     int tableY = 140;
                     int cellPadding = 5;
@@ -103,7 +100,6 @@ namespace NonBaoHiemRoyalHelmet.QuanTri
 
                     tableY += 20;
 
-                    // Data rows
                     foreach (var item in order.CTDHs)
                     {
                         SanPham sanpham = context.SanPhams.FirstOrDefault(x => x.MaSP == item.MaSP);

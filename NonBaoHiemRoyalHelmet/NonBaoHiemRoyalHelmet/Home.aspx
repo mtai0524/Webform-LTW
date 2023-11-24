@@ -91,8 +91,6 @@
         </div>
     </div>
     <div class="VCT-aspx" style="text-align: center">
-    <asp:Label ID="lblUsername" runat="server" Text="Label"></asp:Label>
-    <asp:Label ID="lblUserId" runat="server" Text="Label"></asp:Label>
 
         <p>Phan Đức Lê Nam - 2121001091</p>
         <div class="VCT-title">

@@ -10,11 +10,11 @@
     <link href="css/Style.css" rel="stylesheet" />
     <link href="css/Font.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-   
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/icofont/4.7.0/css/icofont.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/icofont/4.7.0/css/icofont.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/@icon/icofont/icofont.css">
 
-        <link href="/admin/css/stylethongke.css" rel="stylesheet" />
+    <link href="/admin/css/stylethongke.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <style>
         .logo {
@@ -144,6 +144,28 @@
             text-decoration: none;
             color: #D4A36B;
         }
+        .search-button{
+            padding:8px;
+            background-color:#E8BD72;
+            color:#FFFFFF;
+            margin-left:5px;
+            margin-right:5px;
+            border-radius:8px;
+            text-decoration:none;
+        }
+        .search-box {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.search-box:focus {
+    outline: none;
+    border-color: #E8BD72;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+}
     </style>
 </head>
 <body>
@@ -165,7 +187,9 @@
                         <li><a href="#" target="_self" class="Header-lk">Liên hệ</a></li>
                         <li><a href="DangKi.aspx" target="_self" class="Header-lk">Đăng kí</a></li>
                         <li><a href="DangNhap.aspx" target="_self" class="Header-lk">Đăng nhập</a></li>
+
                     </ul>
+
                     <div style="position: absolute; top: 20px; right: -350px;" class="dropdown-container">
                         <asp:Label CssClass="txtHello" ID="lblUsername" runat="server" Text=""></asp:Label>
                         <div class="circle-image-master">
@@ -188,11 +212,19 @@
             </div>
 
             <div class="Header-line">
-                <hr width="2000vh" align="center" color="#e8bd72" />
+                <hr width="1670px" align="center" color="#e8bd72" />
+
             </div>
             <div class="Header-funtion">
+                <div style="margin-top: -1px; background-color: #0F1A2C; width: 198vh; height: 100px; display: flex; justify-content: flex-end; align-items: center;">
 
-                <div style="margin-top: -1px; background-color: #0F1A2C; width: 200vh; height: 100px">
+                    <div style="display: flex; align-items: center; margin-right: 20px">
+                        <asp:TextBox ID="txtSearch" runat="server" placeholder="Tìm kiếm sản phẩm..." CssClass="search-box"></asp:TextBox>
+                        <asp:LinkButton ID="btnSearchPro" runat="server" CssClass="search-button" OnClick="btnSearch_Click">
+                            Tìm
+                        </asp:LinkButton>
+                    </div>
+
                 </div>
             </div>
         </header>
@@ -202,8 +234,6 @@
         </asp:ContentPlaceHolder>
 
 
-
-        <asp:Label ID="lbStatus" runat="server" Text="Trạng thái"></asp:Label>
 
         <footer class="Footer">
             <div>

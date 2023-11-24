@@ -105,5 +105,11 @@ namespace NonBaoHiemRoyalHelmet
         {
             Response.Redirect("ThongTinKhachHang.aspx");
         }
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            string keyword = txtSearch.Text.Trim();
+
+            Response.Redirect($"LoaiSanPham.aspx?keyword={Server.UrlEncode(keyword)}");
+        }
     }
 }

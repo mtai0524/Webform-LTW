@@ -65,12 +65,12 @@
                 <tr>
                     <td>Số lượng tồn:</td>
                     <td>
-                        <asp:TextBox ID="txtSoLuongTon" runat="server" Text="Nhập số nguyên"></asp:TextBox></td>
+                        <asp:TextBox ID="txtSoLuongTon" runat="server"  placeholder="Nhập số nguyên"></asp:TextBox></td>
                 </tr>
                 <tr>
                     <td>Giá bán:</td>
                     <td>
-                        <asp:TextBox ID="txtGiaBan" runat="server" Text="Nhập số nguyên"></asp:TextBox></td>
+                        <asp:TextBox ID="txtGiaBan" runat="server" placeholder="Nhập số nguyên"></asp:TextBox></td>
                 </tr>
                 <tr>
                     <td>Mô tả:</td>

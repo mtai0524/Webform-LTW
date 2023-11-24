@@ -24,17 +24,26 @@ namespace NonBaoHiemRoyalHelmet
                 {
                     if (!IsPostBack)
                     {
+                        // tìm kiếm
+                        string keyword = Request.QueryString["keyword"];
+
+                        if (string.IsNullOrEmpty(keyword))
+                        {
+                            // Nếu keyword rỗng, hiển thị tất cả sản phẩm
+                            DanhSachSanPham(null);
+                        }
+                        else
+                        {
+                            // Thực hiện tìm kiếm và hiển thị kết quả
+                            HienThiKetQuaTimKiem(keyword);
+                        }
+
                         LoadLoaiSanPhamData();
 
                         if (Request.QueryString["MaLoaiSanPham"] != null)
                         {
                             string maLoai = Request.QueryString["MaLoaiSanPham"];
                             DanhSachSanPham(maLoai);
-                        }
-                        else
-                        {
-                            // nếu tham số là null thì hiển thị tất cả
-                            DanhSachSanPham(null);
                         }
                     }
                 }
@@ -44,6 +53,37 @@ namespace NonBaoHiemRoyalHelmet
                 }
             }
         }
+
+
+
+        private void HienThiKetQuaTimKiem(string keyword)
+        {
+            try
+            {
+                // Lấy danh sách sản phẩm từ cơ sở dữ liệu
+                var listSp = context.SanPhams
+                    .Where(sp =>
+                        string.IsNullOrEmpty(keyword) || sp.TenSP.Contains(keyword))
+                    .ToList();
+
+                rptListSp.DataSource = listSp.Select(sp => new
+                {
+                    Hinh1 = sp.Hinh1,
+                    Hinh2 = sp.Hinh2,
+                    TenSp = sp.TenSP,
+                    GiaBan = sp.GiaBan.ToString("N0"),
+                    DetailUrl = $"ChiTiet.aspx?MaSanPham={sp.MaSP}",
+                });
+
+                rptListSp.DataBind();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+        }
+
+
 
         private void LoadLoaiSanPhamData()
         {
