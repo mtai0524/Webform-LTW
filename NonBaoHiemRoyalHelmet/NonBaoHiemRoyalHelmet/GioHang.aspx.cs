@@ -62,6 +62,7 @@ namespace NonBaoHiemRoyalHelmet
 
         protected void btnDatHang_Click(object sender, EventArgs e)
         {
+            btnCapNhat_Click(sender, e);
             if (Session["AdminID"] == null)
             {
                 if (Session["Cart"] != null && Session["UserID"] != null)

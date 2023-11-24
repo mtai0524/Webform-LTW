@@ -1,6 +1,6 @@
 ﻿USE [QuanLyBanHangRoyalHelmet]
 GO
-/****** Object:  Table [dbo].[CTDH]    Script Date: 11/22/2023 10:26:27 AM ******/
+/****** Object:  Table [dbo].[CTDH]    Script Date: 11/24/2023 8:39:41 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -17,7 +17,7 @@ CREATE TABLE [dbo].[CTDH](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[DonHang]    Script Date: 11/22/2023 10:26:27 AM ******/
+/****** Object:  Table [dbo].[DonHang]    Script Date: 11/24/2023 8:39:41 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -37,7 +37,7 @@ CREATE TABLE [dbo].[DonHang](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[KhachHang]    Script Date: 11/22/2023 10:26:27 AM ******/
+/****** Object:  Table [dbo].[KhachHang]    Script Date: 11/24/2023 8:39:41 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -59,7 +59,7 @@ CREATE TABLE [dbo].[KhachHang](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[LoaiSP]    Script Date: 11/22/2023 10:26:27 AM ******/
+/****** Object:  Table [dbo].[LoaiSP]    Script Date: 11/24/2023 8:39:41 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -73,7 +73,7 @@ CREATE TABLE [dbo].[LoaiSP](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[QuanTriVien]    Script Date: 11/22/2023 10:26:27 AM ******/
+/****** Object:  Table [dbo].[QuanTriVien]    Script Date: 11/24/2023 8:39:41 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -94,22 +94,22 @@ CREATE TABLE [dbo].[QuanTriVien](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[SanPham]    Script Date: 11/22/2023 10:26:27 AM ******/
+/****** Object:  Table [dbo].[SanPham]    Script Date: 11/24/2023 8:39:41 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[SanPham](
 	[MaSP] [nvarchar](6) NOT NULL,
-	[TenSP] [nvarchar](50) NOT NULL,
+	[TenSP] [nvarchar](50) NULL,
 	[Hinh1] [nvarchar](200) NULL,
 	[Hinh2] [nvarchar](200) NULL,
-	[MoTa] [nvarchar](50) NOT NULL,
-	[TrongLuong] [nvarchar](50) NOT NULL,
-	[KichCo] [nvarchar](100) NOT NULL,
-	[SoLuongTon] [int] NOT NULL,
-	[GiaBan] [int] NOT NULL,
-	[MaLoaiSP] [nvarchar](4) NOT NULL,
+	[MoTa] [nvarchar](50) NULL,
+	[TrongLuong] [nvarchar](50) NULL,
+	[KichCo] [nvarchar](100) NULL,
+	[SoLuongTon] [int] NULL,
+	[GiaBan] [int] NULL,
+	[MaLoaiSP] [nvarchar](4) NULL,
  CONSTRAINT [PK_SanPham] PRIMARY KEY CLUSTERED 
 (
 	[MaSP] ASC
@@ -165,6 +165,55 @@ INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH21', N'FF0
 INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH22', N'FF01', 1, 1210000)
 INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH23', N'FF03', 1, 975000)
 INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH23', N'FF04', 1, 760000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH24', N'1P204', 1, 1287000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH24', N'3P402', 1, 730000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH24', N'3P405', 1, 630000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH24', N'FF01', 1, 1210000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH25', N'1P205', 1, 1165000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH25', N'3P404', 1, 640000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH25', N'3P405', 1, 630000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH25', N'FF05', 1, 760000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH26', N'3P405', 0, 630000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH27', N'1P203', 0, 1845000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH28', N'1P205', 1, 1165000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH28', N'3P402', 1, 730000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH28', N'3P404', 1, 640000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH28', N'3P405', 1, 630000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH30', N'3P405', 12, 630000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH31', N'1P204', 12, 1287000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH31', N'3P404', 1132, 640000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH32', N'1P204', 12, 1287000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH32', N'3P403', 12, 700000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH32', N'3P405', 132, 630000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH33', N'1P204', 12, 1287000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH33', N'3P403', 112, 700000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH34', N'3P403', 12, 700000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH34', N'3P405', 1231, 630000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH35', N'1P204', 121, 1287000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH35', N'3P403', 132, 700000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH36', N'1P205', 12, 1165000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH36', N'3P403', 1231, 700000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH36', N'3P405', 112, 630000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH37', N'3P404', 221, 640000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH37', N'FF04', 122, 760000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH38', N'1P204', 121, 1287000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH38', N'3P403', 1213, 700000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH38', N'3P404', 1123, 640000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH39', N'3P402', 1312, 730000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH39', N'3P404', 12, 640000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH39', N'FF01', 112, 1210000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH45', N'1P204', 3, 1287000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH46', N'1P204', 3, 1287000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH52', N'3P405', 7, 630000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH53', N'1P203', 16, 1845000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH53', N'3P404', 5, 640000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH53', N'3P405', 5, 630000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH54', N'1P205', 14, 1165000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH55', N'1P205', 4, 1165000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH56', N'1P202', 12, 1145000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH56', N'3P405', 4, 630000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH56', N'FF02', 2, 1130000)
+INSERT [dbo].[CTDH] ([MaDH], [MaSP], [SoLuong], [DonGia]) VALUES (N'DH57', N'3P405', 23, 630000)
 GO
 INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'123', N'KH01', N'QTV01', CAST(N'2023-11-20T00:00:00.000' AS DateTime), CAST(N'2023-11-27' AS Date), N'online', N'Đang Xử Lý', 1145000)
 INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH02', N'KH01', N'QTV01', CAST(N'2023-11-20T00:00:00.000' AS DateTime), CAST(N'2023-11-27' AS Date), N'online', N'Đang Xử Lý', 1165000)
@@ -189,17 +238,51 @@ INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [Tr
 INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH21', N'KH06', N'QTV01', CAST(N'2023-11-22T09:53:18.777' AS DateTime), CAST(N'2023-11-29' AS Date), N'online', N'Đang Xử Lý', 2295000)
 INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH22', N'KH06', N'QTV01', CAST(N'2023-11-22T09:53:55.710' AS DateTime), CAST(N'2023-11-29' AS Date), N'online', N'Đang Xử Lý', 1210000)
 INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH23', N'KH06', N'QTV01', CAST(N'2023-11-22T09:57:44.897' AS DateTime), CAST(N'2023-11-29' AS Date), N'online', N'Đang Xử Lý', 1735000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH24', N'KH06', N'QTV01', CAST(N'2023-11-22T10:37:22.287' AS DateTime), CAST(N'2023-11-29' AS Date), N'online', N'Đang Xử Lý', 3857000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH25', N'KH06', N'QTV01', CAST(N'2023-11-22T10:38:32.730' AS DateTime), CAST(N'2023-11-29' AS Date), N'online', N'Đang Xử Lý', 3195000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH26', N'KH03', N'QTV01', CAST(N'2023-11-22T23:12:42.027' AS DateTime), CAST(N'2023-11-29' AS Date), N'online', N'Đang Xử Lý', 630000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH27', N'KH03', N'QTV01', CAST(N'2023-11-22T23:15:21.833' AS DateTime), CAST(N'2023-11-29' AS Date), N'online', N'Đang Xử Lý', 1845000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH28', N'KH03', N'QTV01', CAST(N'2023-11-22T23:20:00.200' AS DateTime), CAST(N'2023-11-29' AS Date), N'online', N'Đang Xử Lý', 3165000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH29', N'KH03', N'QTV01', CAST(N'2023-11-22T23:39:00.713' AS DateTime), CAST(N'2023-11-29' AS Date), N'online', N'Đang Xử Lý', 1360000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH30', N'KH03', N'QTV01', CAST(N'2023-11-22T23:40:05.197' AS DateTime), CAST(N'2023-11-29' AS Date), N'online', N'Đang Xử Lý', 630000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH31', N'KH03', N'QTV01', CAST(N'2023-11-22T23:43:18.500' AS DateTime), CAST(N'2023-11-29' AS Date), N'online', N'Đang Xử Lý', 1927000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH32', N'KH03', N'QTV01', CAST(N'2023-11-22T23:47:50.463' AS DateTime), CAST(N'2023-11-29' AS Date), N'online', N'Đang Xử Lý', 2617000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH33', N'KH03', N'QTV01', CAST(N'2023-11-22T23:50:54.107' AS DateTime), CAST(N'2023-11-29' AS Date), N'online', N'Đang Xử Lý', 1987000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH34', N'KH03', N'QTV01', CAST(N'2023-11-22T23:52:46.553' AS DateTime), CAST(N'2023-11-29' AS Date), N'online', N'Đang Xử Lý', 1330000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH35', N'KH03', N'QTV01', CAST(N'2023-11-23T00:02:06.347' AS DateTime), CAST(N'2023-11-30' AS Date), N'online', N'Đang Xử Lý', 1987000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH36', N'KH03', N'QTV01', CAST(N'2023-11-23T00:06:04.677' AS DateTime), CAST(N'2023-11-30' AS Date), N'online', N'Đang Xử Lý', 2495000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH37', N'KH03', N'QTV01', CAST(N'2023-11-23T00:11:25.410' AS DateTime), CAST(N'2023-11-30' AS Date), N'online', N'Đang Xử Lý', 1400000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH38', N'KH03', N'QTV01', CAST(N'2023-11-23T00:16:56.110' AS DateTime), CAST(N'2023-11-30' AS Date), N'online', N'Đang Xử Lý', 2627000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH39', N'KH03', N'QTV01', CAST(N'2023-11-23T00:22:16.387' AS DateTime), CAST(N'2023-11-30' AS Date), N'online', N'Đang Xử Lý', 2580000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH40', N'KH03', N'QTV01', CAST(N'2023-11-23T00:28:16.130' AS DateTime), CAST(N'2023-11-30' AS Date), N'online', N'Đang Xử Lý', 2777000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH41', N'KH03', N'QTV01', CAST(N'2023-11-23T00:30:18.577' AS DateTime), CAST(N'2023-11-30' AS Date), N'online', N'Đang Xử Lý', 2250000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH42', N'KH03', N'QTV01', CAST(N'2023-11-23T00:33:59.337' AS DateTime), CAST(N'2023-11-30' AS Date), N'online', N'Đang Xử Lý', 760000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH43', N'KH03', N'QTV01', CAST(N'2023-11-23T00:38:19.267' AS DateTime), CAST(N'2023-11-30' AS Date), N'online', N'Đang Xử Lý', 630000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH44', N'KH03', N'QTV01', CAST(N'2023-11-23T18:15:17.143' AS DateTime), CAST(N'2023-11-30' AS Date), N'online', N'Đang Xử Lý', 1165000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH45', N'KH03', N'QTV01', CAST(N'2023-11-23T18:16:43.640' AS DateTime), CAST(N'2023-11-30' AS Date), N'online', N'Đang Xử Lý', 1287000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH46', N'KH03', N'QTV01', CAST(N'2023-11-23T18:17:19.863' AS DateTime), CAST(N'2023-11-30' AS Date), N'online', N'Đang Xử Lý', 1287000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH47', N'KH03', N'QTV01', CAST(N'2023-11-23T18:21:21.807' AS DateTime), CAST(N'2023-11-30' AS Date), N'online', N'Đang Xử Lý', 630000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH48', N'KH03', N'QTV01', CAST(N'2023-11-23T18:23:21.813' AS DateTime), CAST(N'2023-11-30' AS Date), N'online', N'Đang Xử Lý', 2475000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH49', N'KH03', N'QTV01', CAST(N'2023-11-23T18:24:07.843' AS DateTime), CAST(N'2023-11-30' AS Date), N'online', N'Đang Xử Lý', 1165000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH50', N'KH03', N'QTV01', CAST(N'2023-11-23T18:29:36.437' AS DateTime), CAST(N'2023-11-30' AS Date), N'online', N'Đang Xử Lý', 780000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH51', N'KH03', N'QTV01', CAST(N'2023-11-23T18:32:50.927' AS DateTime), CAST(N'2023-11-30' AS Date), N'online', N'Đang Xử Lý', 780000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH52', N'KH03', N'QTV01', CAST(N'2023-11-23T18:39:19.460' AS DateTime), CAST(N'2023-11-30' AS Date), N'online', N'Đang Xử Lý', 630000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH53', N'KH03', N'QTV01', CAST(N'2023-11-23T18:39:52.487' AS DateTime), CAST(N'2023-11-30' AS Date), N'online', N'Đang Xử Lý', 3115000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH54', N'KH03', N'QTV01', CAST(N'2023-11-24T12:45:08.120' AS DateTime), CAST(N'2023-12-01' AS Date), N'online', N'Đang Xử Lý', 0)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH55', N'KH03', N'QTV01', CAST(N'2023-11-24T12:49:04.137' AS DateTime), CAST(N'2023-12-01' AS Date), N'online', N'Đang Xử Lý', 4660000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH56', N'KH03', N'QTV01', CAST(N'2023-11-24T12:49:41.557' AS DateTime), CAST(N'2023-12-01' AS Date), N'online', N'Đang Xử Lý', 18520000)
+INSERT [dbo].[DonHang] ([MaDH], [MaKH], [MaQTV], [NgayDH], [NgayGH], [PTTT], [TrangThai], [TongTien]) VALUES (N'DH57', N'KH03', N'QTV01', CAST(N'2023-11-24T20:36:50.150' AS DateTime), CAST(N'2023-12-01' AS Date), N'online', N'Đang Xử Lý', 14490000)
 GO
 INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH01', N'Lê Văn Lương', N'Nam', CAST(N'1969-02-19' AS Date), N'41 Xóm Củi', N'02116584446', N'levanluongpropk1969@gmail.com', NULL, N'taikhoan20', N'matkhau20')
 INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH02', N'Lê Văn Lương', N'Nam', CAST(N'1969-02-19' AS Date), N'41 Xóm Củi', N'02116584446', N'levanluongpropk1969@gmail.com', N'/image/AnhDaiDien/u1.png', N'taikhoan1', N'matkhau1')
 INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH03', N'Bùi Hoàng Sơn', N'Nam', CAST(N'1968-10-15' AS Date), N'31 Nguyễn Xí', N'02116584447', N'minhnguyen20020524@gmail.com', N'/image/AnhDaiDien/u1.png', N'taikhoan2', N'matkhau2')
 INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH04', N'Nguyễn Đình Nguyên', N'Nam', CAST(N'1967-04-17' AS Date), N'1110 Phan Văn Trị', N'02116584448', N'Nguyenchuot2Gialai@gmail.com', N'/image/AnhDaiDien/a4.jpg', N'taikhoan3', N'matkhau3')
 INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH05', N'Nguyễn Hoàng Khánh Ngân', N'Nữ', CAST(N'1978-02-10' AS Date), N'91 Thống Nhất', N'02116584449', N'khanhngannek12@gmail.com', N'/image/AnhDaiDien/cat (4).png', N'taikhoan4', N'matkhau4')
-INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH06', N'Lâm Tâm Như Cute Đó Nha', N'Nữ', CAST(N'1980-05-12' AS Date), N'71 Quang Trung', N'02116584441', N'itachiyeuminhem01@gmail.com', N'/image/AnhDaiDien/cat5.jpg', N'taikhoan5', N'matkhau5')
+INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH06', N'Lâm Tâm Như Cute Đó Nha', N'Nữ', CAST(N'1980-05-12' AS Date), N'71 Quang Trung', N'02116584441', N'phanduclenamdeptrai2003@gmail.com', N'/image/AnhDaiDien/cat5.jpg', N'taikhoan5', N'matkhau5')
 INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH07', N'Ngô Quốc Bảo', N'Nam', CAST(N'1990-06-02' AS Date), N'21 Chu Văn An', N'02116584442', N'wuocbao11@gmail.com', N' ', N'taikhoan6', N'matkhau6')
 INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH08', N'Trương Nguyệt Nhi', N'Nữ', CAST(N'2002-07-13' AS Date), N'71 Huỳnh Thúc Kháng', N'02116584443', N'nhinhinhanh45@gmail.com', N'/image/AnhDaiDien/cat7.jpg', N'taikhoan7', N'matkhau7')
 INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH09', N'Phạm Minh Tâm', N'Nam', CAST(N'1993-10-26' AS Date), N'93 Quốc lộ 13', N'02116584444', N'tamthancasau@gmail.com', N' ', N'taikhoan8', N'matkhau8')
-INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH10', N'Đoàn Công Khải', N'Nam', CAST(N'1965-08-17' AS Date), N'455 Xô Viết Nghệ Tĩnh', N'02116584450', N'noledongtien@gmail.com', N' ', N'taikhoan9', N'matkhau9')
+INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH10', N'Đoàn Công Khải', N'Nam', CAST(N'1965-08-17' AS Date), N'455 Xô Viết Nghệ Tĩnh', N'02116584450', N'noledongtien@gmail.com', N'/image/AnhDaiDien/NS02.jpg', N'taikhoan9', N'matkhau9')
 INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH11', N'Trương An Nhiên', N'Nữ', CAST(N'2003-06-17' AS Date), N'445 Linh Đông', N'02116524452', N'NhienKimChi76@gmail.com', N' ', N'taikhoan10', N'matkhau10')
 INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH12', N'Trần Cao Huy', N'Nam', CAST(N'1997-03-20' AS Date), N'416 Cộng Hòa', N'02116584440', N'HuyNhong18c@gmail.com', N' ', N'taikhoan11', N'matkhau11')
 INSERT [dbo].[KhachHang] ([MaKH], [TenKH], [GioiTinh], [NgaySinh], [DiaChi], [SoDT], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'KH13', N'Đinh Cao Thắng', N'Nam', CAST(N'1999-05-02' AS Date), N'43 Bùi Thị Xuân', N'02116673450', N'dripinurarea@gmail.com', N' ', N'taikhoan12', N'matkhau12')
@@ -247,20 +330,23 @@ INSERT [dbo].[QuanTriVien] ([MaQTV], [HoTen], [GioiTinh], [DiaChi], [DienThoai],
 INSERT [dbo].[QuanTriVien] ([MaQTV], [HoTen], [GioiTinh], [DiaChi], [DienThoai], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'QTV20', N'Trương An Nhiên', N'Nữ', N'429 Trần Phú - q.12 - HCM', N'09812346554', N'NhienHocGioi@gmail.com', N' ', N'admin20', N'adpass20')
 INSERT [dbo].[QuanTriVien] ([MaQTV], [HoTen], [GioiTinh], [DiaChi], [DienThoai], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'QTV21', NULL, NULL, NULL, NULL, NULL, NULL, N'213213', N'3123')
 INSERT [dbo].[QuanTriVien] ([MaQTV], [HoTen], [GioiTinh], [DiaChi], [DienThoai], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'QTV22', NULL, NULL, NULL, NULL, NULL, NULL, N'demo', N'123')
+INSERT [dbo].[QuanTriVien] ([MaQTV], [HoTen], [GioiTinh], [DiaChi], [DienThoai], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'QTV23', NULL, NULL, NULL, NULL, N'testadmin@gmail.com', N'/image/AnhDaiDien/NS13.jpg', N'testadmin@gmail.com', N'12345')
+INSERT [dbo].[QuanTriVien] ([MaQTV], [HoTen], [GioiTinh], [DiaChi], [DienThoai], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'QTV24', NULL, NULL, NULL, NULL, N'testadmin2@gmail.com', N'/image/AnhDaiDien/NS13.jpg', N'testadmin2@gmail.com', N'12345')
+INSERT [dbo].[QuanTriVien] ([MaQTV], [HoTen], [GioiTinh], [DiaChi], [DienThoai], [Email], [AnhDaiDien], [TaiKhoan], [MatKhau]) VALUES (N'QTV25', N'demo', N'Nữ', N'Sài Gòn', N'1234566788', N'testadmin4@gmail.com', N'/image/AnhDaiDien/NS14.jpg', N'testadmin4@gmail.com', N'12345')
 GO
 INSERT [dbo].[SanPham] ([MaSP], [TenSP], [Hinh1], [Hinh2], [MoTa], [TrongLuong], [KichCo], [SoLuongTon], [GiaBan], [MaLoaiSP]) VALUES (N'1P201', N'MŨ BẢO HIỂM LẬT 1/2 ĐẦU ROYAL M152K', N' /image/NonBaoHiem/M152K.jpg', NULL, N'Vỏ bằng nhựa ABS nguyên sinh', N'573g ± 50g', N'size L: 55 - 57cm, size XL: 57 - 59cm', 40, 1140000, N'1P2')
-INSERT [dbo].[SanPham] ([MaSP], [TenSP], [Hinh1], [Hinh2], [MoTa], [TrongLuong], [KichCo], [SoLuongTon], [GiaBan], [MaLoaiSP]) VALUES (N'1P202', N'MŨ BẢO HIỂM LẬT 1/2 ĐẦU ROYAL M153K', N'/image/NonBaoHiem/M153K.jpg', NULL, N'Vỏ bằng nhựa ABS nguyên sinh', N'752g ± 50g', N'size L: 55 - 57cm, size XL: 57 - 59cm', 38, 1145000, N'1P2')
-INSERT [dbo].[SanPham] ([MaSP], [TenSP], [Hinh1], [Hinh2], [MoTa], [TrongLuong], [KichCo], [SoLuongTon], [GiaBan], [MaLoaiSP]) VALUES (N'1P203', N'MŨ BẢO HIỂM LẬT 1/2 ĐẦU ROYAL M156K', N'/image/NonBaoHiem/M156K.jpg', N'/image/a1.jpg', N'Vỏ bằng nhựa ABS nguyên sinh', N'573g ± 50g', N'size L: 55 - 57cm, size XL: 57 - 59cm', 56, 1845000, N'1P2')
+INSERT [dbo].[SanPham] ([MaSP], [TenSP], [Hinh1], [Hinh2], [MoTa], [TrongLuong], [KichCo], [SoLuongTon], [GiaBan], [MaLoaiSP]) VALUES (N'1P202', N'MŨ BẢO HIỂM LẬT 1/2 ĐẦU ROYAL M153K', N'/image/NonBaoHiem/M153K.jpg', NULL, N'Vỏ bằng nhựa ABS nguyên sinh', N'752g ± 50g', N'size L: 55 - 57cm, size XL: 57 - 59cm', 26, 1145000, N'1P2')
+INSERT [dbo].[SanPham] ([MaSP], [TenSP], [Hinh1], [Hinh2], [MoTa], [TrongLuong], [KichCo], [SoLuongTon], [GiaBan], [MaLoaiSP]) VALUES (N'1P203', N'MŨ BẢO HIỂM LẬT 1/2 ĐẦU ROYAL M156K', N'/image/NonBaoHiem/M156K.jpg', N'/image/a1.jpg', N'Vỏ bằng nhựa ABS nguyên sinh', N'573g ± 50g', N'size L: 55 - 57cm, size XL: 57 - 59cm', 40, 1845000, N'1P2')
 INSERT [dbo].[SanPham] ([MaSP], [TenSP], [Hinh1], [Hinh2], [MoTa], [TrongLuong], [KichCo], [SoLuongTon], [GiaBan], [MaLoaiSP]) VALUES (N'1P204', N'MŨ BẢO HIỂM LẬT 1/2 ĐẦU ROYAL M379', N'/image/NonBaoHiem/M379.jpg', NULL, N'Vỏ bằng nhựa ABS nguyên sinh', N'540g ± 50g', N'size L: 55 - 58cm ', 11, 1287000, N'1P2')
-INSERT [dbo].[SanPham] ([MaSP], [TenSP], [Hinh1], [Hinh2], [MoTa], [TrongLuong], [KichCo], [SoLuongTon], [GiaBan], [MaLoaiSP]) VALUES (N'1P205', N'MŨ BẢO HIỂM LẬT 1/2 ĐẦU ROYAL M158', N'/image/NonBaoHiem/M158.jpg', NULL, N'Vỏ bằng nhựa ABS nguyên sinh', N'590g ± 50g', N'Freesize (Vòng đầu 54-58 cm)', 96, 1165000, N'1P2')
+INSERT [dbo].[SanPham] ([MaSP], [TenSP], [Hinh1], [Hinh2], [MoTa], [TrongLuong], [KichCo], [SoLuongTon], [GiaBan], [MaLoaiSP]) VALUES (N'1P205', N'MŨ BẢO HIỂM LẬT 1/2 ĐẦU ROYAL M158', N'/image/NonBaoHiem/M158.jpg', NULL, N'Vỏ bằng nhựa ABS nguyên sinh', N'590g ± 50g', N'Freesize (Vòng đầu 54-58 cm)', 78, 1165000, N'1P2')
 INSERT [dbo].[SanPham] ([MaSP], [TenSP], [Hinh1], [Hinh2], [MoTa], [TrongLuong], [KichCo], [SoLuongTon], [GiaBan], [MaLoaiSP]) VALUES (N'3P401', N'MŨ BẢO HIỂM 3/4 ROYAL M20D', N'/image/NonBaoHiem/M20D.jpg', N'/image/NonBaoHiemHinh2/M20D_white.jpg', N'Vỏ bằng nhựa ABS nguyên sinh', N'850g ± 50g', N'size L: 55 - 57cm, size XL: 57 - 59cm', 20, 780000, N'3P4')
 INSERT [dbo].[SanPham] ([MaSP], [TenSP], [Hinh1], [Hinh2], [MoTa], [TrongLuong], [KichCo], [SoLuongTon], [GiaBan], [MaLoaiSP]) VALUES (N'3P402', N'MŨ BẢO HIỂM 3/4 ROYAL M139 KÍNH ÂM DESIGN', N'/image/NonBaoHiem/M139_Tron_KinhAm_Design.jpg', NULL, N'Thiết kế kính âm đột phá, nhiều mẫu tem độc đáo', N'950g', N' size M:54-55 cm, size L:55-57 cm, size XL:57-59 cm', 50, 730000, N'3P4')
 INSERT [dbo].[SanPham] ([MaSP], [TenSP], [Hinh1], [Hinh2], [MoTa], [TrongLuong], [KichCo], [SoLuongTon], [GiaBan], [MaLoaiSP]) VALUES (N'3P403', N'MŨ BẢO HIỂM 3/4 ROYAL M139-TRƠN-KÍNH ÂM', N'/image/NonBaoHiem/M139_Tron_KinhAm.jpg', NULL, N'Thiết kế kính âm đột phá, màu sắc đa dạng', N'950g', N'size M: 54-55 cm, size L: 55-57 cm, size XL: 57-59 cm', 53, 700000, N'3P4')
-INSERT [dbo].[SanPham] ([MaSP], [TenSP], [Hinh1], [Hinh2], [MoTa], [TrongLuong], [KichCo], [SoLuongTon], [GiaBan], [MaLoaiSP]) VALUES (N'3P404', N'MŨ BẢO HIỂM 3/4 ROYAL M268 TRƠN - 2 KÍNH', N'/image/NonBaoHiem/M268.jpg', NULL, N'Vỏ bằng nhựa ABS nguyên sinh', N'876g ± 50g', N'size L: 55 - 57cm, size XL: 57 - 59cm', 40, 640000, N'3P4')
-INSERT [dbo].[SanPham] ([MaSP], [TenSP], [Hinh1], [Hinh2], [MoTa], [TrongLuong], [KichCo], [SoLuongTon], [GiaBan], [MaLoaiSP]) VALUES (N'3P405', N'MŨ BẢO HIỂM 3/4 ROYAL M20C DESIGN', N'/image/NonBaoHiem/M20C_Design.jpg', NULL, N'Vỏ bằng nhựa ABS nguyên sinh', N'850g ± 50g', N'size L: 55 - 57cm, size XL: 57 - 59cm', 67, 630000, N'3P4')
+INSERT [dbo].[SanPham] ([MaSP], [TenSP], [Hinh1], [Hinh2], [MoTa], [TrongLuong], [KichCo], [SoLuongTon], [GiaBan], [MaLoaiSP]) VALUES (N'3P404', N'MŨ BẢO HIỂM 3/4 ROYAL M268 TRƠN - 2 KÍNH', N'/image/NonBaoHiem/M268.jpg', NULL, N'Vỏ bằng nhựa ABS nguyên sinh', N'876g ± 50g', N'size L: 55 - 57cm, size XL: 57 - 59cm', 35, 640000, N'3P4')
+INSERT [dbo].[SanPham] ([MaSP], [TenSP], [Hinh1], [Hinh2], [MoTa], [TrongLuong], [KichCo], [SoLuongTon], [GiaBan], [MaLoaiSP]) VALUES (N'3P405', N'MŨ BẢO HIỂM 3/4 ROYAL M20C DESIGN', N'/image/NonBaoHiem/M20C_Design.jpg', NULL, N'Vỏ bằng nhựa ABS nguyên sinh', N'850g ± 50g', N'size L: 55 - 57cm, size XL: 57 - 59cm', 28, 630000, N'3P4')
 INSERT [dbo].[SanPham] ([MaSP], [TenSP], [Hinh1], [Hinh2], [MoTa], [TrongLuong], [KichCo], [SoLuongTon], [GiaBan], [MaLoaiSP]) VALUES (N'add2', N'add2', N'/image/NonBaoHiem/a2.jpg', N'/image/NonBaoHiem/a3.jpg', N'add2', N'add2', N'add2', 123, 123, N'XD')
 INSERT [dbo].[SanPham] ([MaSP], [TenSP], [Hinh1], [Hinh2], [MoTa], [TrongLuong], [KichCo], [SoLuongTon], [GiaBan], [MaLoaiSP]) VALUES (N'FF01', N'MŨ BẢO HIỂM FULLFACE ROYAL M141K', N'/image/NonBaoHiem/M141K.jpg', NULL, N'Vỏ bằng nhựa ABS nguyên sinh', N'1200g ± 50g', N'size L: 56 - 57cm, size XL: 58 - 59cm', 45, 1210000, N'FF')
-INSERT [dbo].[SanPham] ([MaSP], [TenSP], [Hinh1], [Hinh2], [MoTa], [TrongLuong], [KichCo], [SoLuongTon], [GiaBan], [MaLoaiSP]) VALUES (N'FF02', N'MŨ BẢO HIỂM FULLFACE ROYAL M141', N'/image/NonBaoHiem/M141.jpg', NULL, N'Vỏ bằng nhựa ABS nguyên sinh', N'1200g ± 50g', N'size L: 56 - 57cm, size XL: 58 - 59cm', 70, 1130000, N'FF')
+INSERT [dbo].[SanPham] ([MaSP], [TenSP], [Hinh1], [Hinh2], [MoTa], [TrongLuong], [KichCo], [SoLuongTon], [GiaBan], [MaLoaiSP]) VALUES (N'FF02', N'MŨ BẢO HIỂM FULLFACE ROYAL M141', N'/image/NonBaoHiem/M141.jpg', NULL, N'Vỏ bằng nhựa ABS nguyên sinh', N'1200g ± 50g', N'size L: 56 - 57cm, size XL: 58 - 59cm', 68, 1130000, N'FF')
 INSERT [dbo].[SanPham] ([MaSP], [TenSP], [Hinh1], [Hinh2], [MoTa], [TrongLuong], [KichCo], [SoLuongTon], [GiaBan], [MaLoaiSP]) VALUES (N'FF03', N'MŨ BẢO HIỂM FULLFACE ROYAL H01', N'/image/NonBaoHiem/H01.jpg', NULL, N'Vỏ bằng nhựa ABS nguyên sinh', N'1200g ± 50g', N'size L: 56 - 57cm, size XL: 58 - 59cm', 30, 975000, N'FF')
 INSERT [dbo].[SanPham] ([MaSP], [TenSP], [Hinh1], [Hinh2], [MoTa], [TrongLuong], [KichCo], [SoLuongTon], [GiaBan], [MaLoaiSP]) VALUES (N'FF04', N'MŨ BẢO HIỂM FULLFACE ROYAL M138B', N'/image/NonBaoHiem/M138B.jpg', NULL, N'Vỏ bằng nhựa ABS nguyên sinh', N'1050g ± 50g', N'size M, size L: 56 - 57cm, size XL: 58 - 59cm', 20, 760000, N'FF')
 INSERT [dbo].[SanPham] ([MaSP], [TenSP], [Hinh1], [Hinh2], [MoTa], [TrongLuong], [KichCo], [SoLuongTon], [GiaBan], [MaLoaiSP]) VALUES (N'FF05', N'MŨ BẢO HIỂM FULLFACE 2 KÍNH ROYAL M266 DESIGN', N'image/NonBaoHiem/M266_DESIGN.jpg', NULL, N'Vỏ bằng nhựa ABS nguyên sinh', N'1111g ± 50g', N'size L: 55 - 57cm, size XL: 57 - 59cm', 50, 760000, N'FF')
