@@ -63,7 +63,7 @@
                             <img src='<%# Eval("Hinh1") %>' alt='<%# Eval("TenSp") %>' /></td>
                         <td>
                             <%# Eval("TenSp") %><br />
-                            <asp:LinkButton CssClass="linkDel" ID="DelProFromCart" OnClick="btnXoaSanPham_Click" runat="server" CommandArgument='<%# Eval("MaSP") %>'>Xóa</asp:LinkButton>
+                            <asp:LinkButton CssClass="linkDel" ID="DelProFromCart" OnClick="btnXoaSanPham_Click" runat="server" CommandArgument='<%# Eval("MaSP") %>'>Xóa <i class="fa-solid fa-trash fa-xs" style="color: #e21d1d;"></i></asp:LinkButton>
                         </td>
                         <td>
                             <%# Eval("SoLuongTon") %><br />

@@ -92,7 +92,8 @@ namespace NonBaoHiemRoyalHelmet
                         NgayGH = DateTime.Now.AddDays(7),
                         PTTT = "online",
                         TrangThai = "Đang Xử Lý",
-                        TongTien = cart.Sum(item => item.GiaBan)
+
+                        TongTien = Convert.ToInt32(Session["TongTien"])
                     };
 
                     using (var context = new QuanLyBanHangRoyalHelmetEntities())
@@ -105,21 +106,21 @@ namespace NonBaoHiemRoyalHelmet
                             TextBox txtQuantity = (TextBox)rptCartItems.Items[cart.IndexOf(sanPham)].FindControl("txtQuantity");
 
                             // Xử lý số lượngt tồn
-                            int orderedQuantity = Convert.ToInt32(txtQuantity.Text);
+                            int soLuongDat = Convert.ToInt32(txtQuantity.Text);
                             using (var connection = new SqlConnection(connectionString))
                             {
                                 connection.Open();
 
-                                string updateQuery = "UPDATE SanPham SET SoLuongTon = SoLuongTon - @OrderedQuantity WHERE MaSP = @MaSP";
+                                string updateQuery = "UPDATE SanPham SET SoLuongTon = SoLuongTon - @SoLuongDatHang WHERE MaSP = @MaSP";
 
                                 using (var updateCommand = new SqlCommand(updateQuery, connection))
                                 {
-                                    updateCommand.Parameters.AddWithValue("@OrderedQuantity", orderedQuantity);
+                                    updateCommand.Parameters.AddWithValue("@SoLuongDatHang", soLuongDat);
                                     updateCommand.Parameters.AddWithValue("@MaSP", sanPham.MaSP);
 
-                                    int rowsAffected = updateCommand.ExecuteNonQuery();
+                                    int row = updateCommand.ExecuteNonQuery();
 
-                                    if (rowsAffected == 0)
+                                    if (row == 0)
                                     {
                                         Response.Write($"Lỗi: Sản phẩm '{sanPham.TenSP}' không đủ số lượng tồn.");
                                         return;
@@ -290,6 +291,7 @@ namespace NonBaoHiemRoyalHelmet
                             tongTien += tongGia;
                         }
                     }
+                    Session["TongTien"] = tongTien;
                     lbTongTien.Text = "Tổng tiền: " + tongTien.ToString("N0") + " ₫";
 
                 }

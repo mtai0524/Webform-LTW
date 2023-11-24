@@ -90,28 +90,7 @@ namespace NonBaoHiemRoyalHelmet
                 }
             }
         }
-        protected void btnConnect_Click(object sender, EventArgs e)
-        {
-            //SqlDataSource1.DataBind();
-
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    connection.Open();
-                    lbStatus.Text = "Kết nối thành công!";
-                }
-                catch (Exception ex)
-                {
-                    lbStatus.Text = "Lỗi kết nối: " + ex.Message;
-                }
-                finally
-                {
-                    connection.Close();
-                }
-            }
-        }
+       
         protected void lnkLogout_Click(object sender, EventArgs e)
         {
             Session.Clear();

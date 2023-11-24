@@ -108,7 +108,9 @@
 
                             <br />
                             <div class="link-add">
-                                <asp:LinkButton ID="btnAddToCart" CssClass="link-add-cart" runat="server" Text="Thêm vào giỏ hàng" OnClick="btnAddToCart_Click" CommandArgument='<%# Eval("MaSP") %>' />
+                                <asp:LinkButton ID="btnAddToCart" CssClass="link-add-cart" runat="server" Text="Thêm vào giỏ hàng" OnClick="btnAddToCart_Click" CommandArgument='<%# Eval("MaSP") %>'>
+        <i class="fas fa-shopping-cart"></i> Thêm vào giỏ hàng
+                                </asp:LinkButton>
                             </div>
 
                         </div>
